@@ -1,0 +1,17 @@
+{
+  "title": "Desacoplar o recebimento do processamento no provedor fictício",
+  "context": "Exercício Aurora: a confirmação da API significa recebimento durável, não liquidação. Dependência pode ficar lenta e retornar confirmações repetidas.",
+  "options": [
+    "Processamento síncrono ponta a ponta",
+    "Persistência durável e processamento por fila com estado consultável"
+  ],
+  "decision": "Propor processamento assíncrono e controle explícito de estado; validar idempotência, consistência entre persistência e publicação, limites do provedor e observabilidade antes de adotar.",
+  "consequences": [
+    "Cliente precisa distinguir recebido de concluído",
+    "Definir chave de idempotência e transições válidas",
+    "Evitar a janela entre commit de estado e publicação, por exemplo com outbox apropriado",
+    "Limitar concorrência de acordo com capacidade downstream",
+    "Custo e metas de disponibilidade ainda exigem validação"
+  ],
+  "status": "proposed"
+}

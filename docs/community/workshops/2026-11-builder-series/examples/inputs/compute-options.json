@@ -1,0 +1,9 @@
+{
+  "family": "compute",
+  "constraints": [
+    "Equipe fictícia com cinco pessoas",
+    "Pico inicial de 100 solicitações/s é hipótese de exercício",
+    "API confirma recebimento durável; processamento externo é assíncrono",
+    "Dependência externa tem capacidade limitada"
+  ]
+}

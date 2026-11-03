@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Arquitetura proposta do agente de triagem</title>
+<style>
+*{box-sizing:border-box}body{margin:0;padding:32px;background:#fff;color:#172b40;font-family:Inter,system-ui,sans-serif}
+main{max-width:1280px;min-width:0;margin:auto}h1{font-size:32px;line-height:1.2;margin:8px 0 16px}
+p{max-width:80ch;line-height:1.6;color:#526175}.eyebrow{font-size:12px;letter-spacing:.12em;color:#995100}
+.diagram-container{width:100%;overflow-x:auto}svg{width:100%;min-width:1280px;display:block}
+.name{font-size:16px;font-weight:600;fill:#172b40}.sub{font-size:12px;fill:#526175}
+.label{font-family:ui-monospace,monospace;font-size:12px;fill:#526175}
+@media print{body{padding:0}.diagram-container{overflow-x:visible}svg{min-width:0}}
+</style></head><body><main>
+<p class="eyebrow">FERNANDO AZEVEDO · WORKSHOP 01 · ARQUITETURA PROPOSTA</p>
+<h1>Um agente que consulta evidências antes de recomendar</h1>
+<p>Visão lógica do laboratório a implementar e ensaiar. O modelo não recebe permissão para alterar a infraestrutura. As ferramentas acessam somente dados sintéticos.</p>
+<div class="diagram-container"><svg viewBox="0 0 1280 720" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="agent-architecture-title agent-architecture-desc">
+<title id="agent-architecture-title">Arquitetura proposta do agente de triagem</title>
+<desc id="agent-architecture-desc">Uma pessoa consulta um agente no AgentCore Runtime, que usa Bedrock e ferramentas de leitura com dados sintéticos, com telemetria configurada para revisão.</desc>
+<defs><marker id="agent-arrow" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto"><polygon points="0 0,8 3,0 6" fill="#526175"/></marker></defs>
+<rect x="0" y="0" width="1280" height="720" fill="#fff"/>
+<g fill="none" stroke="#526175" stroke-width="2" marker-end="url(#agent-arrow)">
+<path d="M224 312 H384"/>
+<path d="M504 240 V144 Q504 136 512 136 H800"/>
+<path d="M624 312 H800"/>
+<path d="M920 360 V468"/>
+<path d="M504 384 V468" stroke-dasharray="5 4"/>
+</g>
+<g><rect x="260" y="284" width="92" height="20" fill="#fff"/><text x="306" y="298" text-anchor="middle" class="label">PERGUNTA</text>
+<rect x="612" y="108" width="112" height="20" fill="#fff"/><text x="668" y="122" text-anchor="middle" class="label">INFERÊNCIA</text>
+<rect x="664" y="284" width="96" height="20" fill="#fff"/><text x="712" y="298" text-anchor="middle" class="label">CONSULTA</text>
+<rect x="936" y="404" width="104" height="20" fill="#fff"/><text x="988" y="418" text-anchor="middle" class="label">LEITURA</text>
+<rect x="520" y="412" width="104" height="20" fill="#fff"/><text x="572" y="426" text-anchor="middle" class="label">TELEMETRIA</text></g>
+<g>
+<rect x="64" y="280" width="160" height="64" rx="24" fill="#f5f7fa" stroke="#68778a"/>
+<text x="144" y="308" text-anchor="middle" class="name">Participante</text><text x="144" y="330" text-anchor="middle" class="sub">revisa a resposta</text>
+<rect x="384" y="240" width="240" height="144" rx="6" fill="#fff4df" stroke="#995100" stroke-width="2"/>
+<text x="504" y="276" text-anchor="middle" class="name">Agente de triagem</text>
+<text x="504" y="306" text-anchor="middle" class="sub">AgentCore Runtime</text><text x="504" y="330" text-anchor="middle" class="sub">Implementação com Strands</text><text x="504" y="354" text-anchor="middle" class="sub">Sem ferramentas de alteração</text>
+<rect x="800" y="96" width="240" height="80" rx="6" fill="#f5f7fa" stroke="#68778a"/>
+<text x="920" y="128" text-anchor="middle" class="name">Amazon Bedrock</text><text x="920" y="154" text-anchor="middle" class="sub">Modelo escolhido para o ensaio</text>
+<rect x="800" y="280" width="240" height="80" rx="6" fill="#f5f7fa" stroke="#68778a"/>
+<text x="920" y="312" text-anchor="middle" class="name">Ferramentas de consulta</text><text x="920" y="338" text-anchor="middle" class="sub">Funções Python do laboratório</text>
+<rect x="800" y="468" width="240" height="80" rx="6" fill="#fff" stroke="#68778a"/>
+<path d="M800 484 Q920 508 1040 484" fill="none" stroke="#68778a"/>
+<text x="920" y="516" text-anchor="middle" class="name">Dados sintéticos</text><text x="920" y="538" text-anchor="middle" class="sub">Status de componentes e runbook</text>
+<rect x="384" y="468" width="240" height="80" rx="6" fill="#f5f7fa" stroke="#68778a"/>
+<text x="504" y="502" text-anchor="middle" class="name">Logs e traces</text><text x="504" y="528" text-anchor="middle" class="sub">CloudWatch / OpenTelemetry</text>
+</g>
+<line x1="64" y1="612" x2="1216" y2="612" stroke="#68778a"/>
+<text x="64" y="644" class="sub">Linha contínua: solicitação ou consulta. Linha tracejada: telemetria a configurar. Retornos omitidos para legibilidade.</text>
+<text x="64" y="670" class="sub">Componentes representam responsabilidades lógicas; as funções de consulta podem executar no mesmo processo do agente.</text>
+<text x="64" y="696" class="sub">Proposta didática, sem afirmação de deploy. Autorização e telemetria exigem configuração e testes.</text>
+</svg></div></main></body></html>

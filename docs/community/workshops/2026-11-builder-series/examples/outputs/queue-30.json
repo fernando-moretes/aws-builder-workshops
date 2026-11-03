@@ -1,0 +1,31 @@
+{
+  "kind": "calculation",
+  "formulas": [
+    "offeredLoad = arrivals × serviceTime (Little's law)",
+    "utilization = offeredLoad / (consumers × concurrency)",
+    "P(wait) = Erlang C(servers, offeredLoad)",
+    "drainSeconds = backlog / (capacity/serviceTime − arrivals)"
+  ],
+  "inputs": {
+    "arrivalsPerSecond": 100,
+    "serviceTimeMs": 200,
+    "consumers": 30,
+    "backlogMessages": 6000,
+    "targetUtilizationPercent": 70,
+    "maxConcurrencyPerConsumer": 1
+  },
+  "offeredLoadErlangs": 20,
+  "totalCapacity": 30,
+  "utilizationPercent": 66.7,
+  "stable": true,
+  "waitProbability": 0.025,
+  "meanInSystem": 20.05,
+  "backlogDrainSeconds": 120,
+  "consumersForTargetUtilization": 29,
+  "visibilityTimeoutHintSeconds": 30,
+  "warnings": [],
+  "limitations": [
+    "Assumes Poisson arrivals and exponential service times (M/M/c); bursty traffic waits longer",
+    "Ignores batch receive, broker limits, retries and failures"
+  ]
+}

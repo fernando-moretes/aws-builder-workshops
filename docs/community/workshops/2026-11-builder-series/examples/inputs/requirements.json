@@ -1,0 +1,11 @@
+{
+  "workload": "Assistente interno de procedimentos de uma empresa fictícia. Documentos têm diferentes níveis de acesso.",
+  "requirements": [
+    "Respostas devem citar fontes",
+    "Autorizar acesso aos documentos por usuário"
+  ],
+  "constraints": [
+    "Dados do exercício são sintéticos",
+    "Volume, orçamento, região permitida e retenção ainda precisam ser definidos"
+  ]
+}

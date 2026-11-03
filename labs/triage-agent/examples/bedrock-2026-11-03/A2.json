@@ -1,0 +1,76 @@
+{
+  "mode": "bedrock",
+  "synthetic": true,
+  "case_id": "A2",
+  "request_id": "ee458f5f-fb5b-41db-8a69-a33f3d2b34c7",
+  "model_id": "amazon.nova-micro-v1:0",
+  "answer": "**Evidências**\n- **API**: \n  - Fonte: fixture://A2/status/api\n  - Observado em: 2026-11-03T11:59:30+00:00\n  - Status: succeeded\n  - Métricas: chegadas por segundo = 100, aceitação p95 em ms = 320\n\n- **Fila**: \n  - Fonte: fixture://A2/status/fila\n  - Observado em: 2026-11-03T11:59:30+00:00\n  - Status: succeeded\n  - Métricas: idade mais antiga da mensagem em segundos = 90, mensagens em backlog = 6000\n\n- **Liquidação**: \n  - Consulta falhou. Estado desconhecido; não inferir falha ou saúde do componente.\n\n**Hipóteses**\n- A API e a fila estão operando normalmente, com métricas dentro dos padrões esperados.\n\n**Lacunas**\n- O estado da liquidação é desconhecido devido à falha na consulta.\n\n**Próximo passo**\n- Não posso fornecer mais detalhes sobre a liquidação. Recomendo que alguém com acesso a ferramentas de monitoramento da liquidação verifique seu estado.",
+  "evidence": [
+    {
+      "synthetic": true,
+      "source": "fixture://A2/status/api",
+      "as_of": "2026-11-03T12:00:00+00:00",
+      "component": "api",
+      "query_status": "succeeded",
+      "observed_at": "2026-11-03T11:59:30+00:00",
+      "age_seconds": 30.0,
+      "stale": false,
+      "metrics": {
+        "arrivals_per_second": 100,
+        "acceptance_p95_ms": 320
+      }
+    },
+    {
+      "synthetic": true,
+      "source": "fixture://A2/status/fila",
+      "as_of": "2026-11-03T12:00:00+00:00",
+      "component": "fila",
+      "query_status": "succeeded",
+      "observed_at": "2026-11-03T11:59:30+00:00",
+      "age_seconds": 30.0,
+      "stale": false,
+      "metrics": {
+        "oldest_message_age_seconds": 90,
+        "backlog_messages": 6000
+      }
+    },
+    {
+      "synthetic": true,
+      "source": "fixture://A2/status/liquidacao",
+      "as_of": "2026-11-03T12:00:00+00:00",
+      "component": "liquidacao",
+      "query_status": "unavailable",
+      "observed_at": null,
+      "metrics": null,
+      "component_health": "unknown",
+      "error": "A consulta falhou. O estado da liquidação é desconhecido; não inferir falha ou saúde do componente."
+    }
+  ],
+  "tool_calls": [
+    {
+      "tool": "consultar_status",
+      "component": "api"
+    },
+    {
+      "tool": "consultar_status",
+      "component": "fila"
+    },
+    {
+      "tool": "consultar_status",
+      "component": "liquidacao"
+    }
+  ],
+  "review_required": true,
+  "quality_warnings": [
+    "Uma ou mais evidências recuperadas não foram citadas na resposta final."
+  ],
+  "model_calls": 2,
+  "mutations": 0,
+  "duration_ms": 2709,
+  "usage": {
+    "inputTokens": 2246,
+    "outputTokens": 438,
+    "totalTokens": 2684
+  },
+  "limitation": "Resposta de modelo requer revisão. Dados sintéticos; nenhuma infraestrutura foi alterada."
+}

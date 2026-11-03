@@ -1,0 +1,8 @@
+{
+  "arrivalsPerSecond": 100,
+  "serviceTimeMs": 200,
+  "consumers": 20,
+  "backlogMessages": 6000,
+  "targetUtilizationPercent": 70,
+  "maxConcurrencyPerConsumer": 1
+}

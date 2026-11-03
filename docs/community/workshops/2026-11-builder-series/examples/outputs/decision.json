@@ -1,0 +1,9 @@
+{
+  "kind": "heuristic-design-aid",
+  "validated": false,
+  "limitation": "Validate assumptions and current AWS documentation. This is not an official AWS review, security audit, deployment or price quote.",
+  "sources": [
+    "https://docs.aws.amazon.com/wellarchitected/latest/framework/welcome.html"
+  ],
+  "markdown": "# ADR: Desacoplar o recebimento do processamento no provedor fictício\n\nStatus: proposed\n\n## Context\nExercício Aurora: a confirmação da API significa recebimento durável, não liquidação. Dependência pode ficar lenta e retornar confirmações repetidas.\n\n## Options\n- Processamento síncrono ponta a ponta\n- Persistência durável e processamento por fila com estado consultável\n\n## Decision\nPropor processamento assíncrono e controle explícito de estado; validar idempotência, consistência entre persistência e publicação, limites do provedor e observabilidade antes de adotar.\n\n## Consequences\n- Cliente precisa distinguir recebido de concluído\n- Definir chave de idempotência e transições válidas\n- Evitar a janela entre commit de estado e publicação, por exemplo com outbox apropriado\n- Limitar concorrência de acordo com capacidade downstream\n- Custo e metas de disponibilidade ainda exigem validação\n\n## Validation\nRecord owner, test evidence, pricing date and review date before adoption.\n"
+}

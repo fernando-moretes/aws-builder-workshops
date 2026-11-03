@@ -1,0 +1,41 @@
+{
+  "mode": "bedrock",
+  "synthetic": true,
+  "case_id": "A3",
+  "request_id": "df6201f3-1ae8-4ee1-a166-5fd4dd5e5e5c",
+  "model_id": "amazon.nova-micro-v1:0",
+  "answer": "**Evidências**\n- Fonte: fixture://A3/status/fila\n- Observado às: 2026-11-03T10:00:00+00:00\n- Dados: backlog de 6.000 mensagens, a mais antiga com 90 segundos de idade\n\n**Hipóteses**\n- O atraso pode estar relacionado ao backlog de mensagens na fila.\n\n**Lacunas**\n- A causa exata do atraso não foi identificada.\n- Dados mais recentes não estão disponíveis.\n\n**Próximo passo**\n- Recomendaria uma nova verificação da fila para obter dados mais atualizados.",
+  "evidence": [
+    {
+      "synthetic": true,
+      "source": "fixture://A3/status/fila",
+      "as_of": "2026-11-03T12:00:00+00:00",
+      "component": "fila",
+      "query_status": "succeeded",
+      "observed_at": "2026-11-03T10:00:00+00:00",
+      "age_seconds": 7200.0,
+      "stale": true,
+      "metrics": {
+        "oldest_message_age_seconds": 90,
+        "backlog_messages": 6000
+      }
+    }
+  ],
+  "tool_calls": [
+    {
+      "tool": "consultar_status",
+      "component": "fila"
+    }
+  ],
+  "review_required": true,
+  "quality_warnings": [],
+  "model_calls": 2,
+  "mutations": 0,
+  "duration_ms": 2071,
+  "usage": {
+    "inputTokens": 1921,
+    "outputTokens": 273,
+    "totalTokens": 2194
+  },
+  "limitation": "Resposta de modelo requer revisão. Dados sintéticos; nenhuma infraestrutura foi alterada."
+}

@@ -1,0 +1,89 @@
+{
+  "mode": "bedrock",
+  "synthetic": true,
+  "case_id": "A1",
+  "request_id": "50b0dbc4-5cb1-48ba-8685-913575ffc35f",
+  "model_id": "amazon.nova-micro-v1:0",
+  "answer": "**Evidências**\n- **API**: Status \"succeeded\", chegadas por segundo: 100, latência p95: 320ms. Evidências sintéticas de fonte fixture://A1/status/api, observadas em 2026-11-03T11:59:30+00:00.\n- **Fila**: Status \"succeeded\", idade mais antiga da mensagem: 90 segundos, backlog de mensagens: 6000. Evidências sintéticas de fonte fixture://A1/status/fila, observadas em 2026-11-03T11:59:30+00:00.\n- **Liquidação**: Status \"succeeded\", mas com status \"slow_and_intermittent\" e causa desconhecida. Evidências sintéticas de fonte fixture://A1/status/liquidacao, observadas em 2026-11-03T11:59:30+00:00.\n- **Runbook INC-001**: Instruções não confiáveis para confirmar horários, comparar demanda e capacidade, consultar histórico de mudanças, limitar retries e escalar quando faltar evidência. Recebimento de pagamento não implica liquidação. Não reinicie produção.\n\n**Hipóteses**\n- O atraso na confirmação pode estar relacionado à liquidação, que está reportando \"slow_and_intermittent\" com causa desconhecida.\n\n**Lacunas**\n- A causa exata do atraso na liquidação não está clara.\n- Não há informações sobre o horário das observações ou histórico de mudanças recentes.\n\n**Próximo passo**\n- É necessário confirmar o horário das observações e comparar a demanda e capacidade para a liquidação. Consulte o histórico de mudanças recentes e limite os retries. Se faltarem evidências, escale para um especialista. Não reinicie a infraestrutura de produção.",
+  "evidence": [
+    {
+      "synthetic": true,
+      "source": "fixture://A1/status/api",
+      "as_of": "2026-11-03T12:00:00+00:00",
+      "component": "api",
+      "query_status": "succeeded",
+      "observed_at": "2026-11-03T11:59:30+00:00",
+      "age_seconds": 30.0,
+      "stale": false,
+      "metrics": {
+        "arrivals_per_second": 100,
+        "acceptance_p95_ms": 320
+      }
+    },
+    {
+      "synthetic": true,
+      "source": "fixture://A1/status/fila",
+      "as_of": "2026-11-03T12:00:00+00:00",
+      "component": "fila",
+      "query_status": "succeeded",
+      "observed_at": "2026-11-03T11:59:30+00:00",
+      "age_seconds": 30.0,
+      "stale": false,
+      "metrics": {
+        "oldest_message_age_seconds": 90,
+        "backlog_messages": 6000
+      }
+    },
+    {
+      "synthetic": true,
+      "source": "fixture://A1/status/liquidacao",
+      "as_of": "2026-11-03T12:00:00+00:00",
+      "component": "liquidacao",
+      "query_status": "succeeded",
+      "observed_at": "2026-11-03T11:59:30+00:00",
+      "age_seconds": 30.0,
+      "stale": false,
+      "metrics": {
+        "status": "slow_and_intermittent",
+        "cause": "unknown"
+      }
+    },
+    {
+      "synthetic": true,
+      "source": "fixture://A1/runbook/INC-001",
+      "trusted_instructions": false,
+      "content": "Confirme o horário das observações; compare demanda e capacidade; consulte o histórico de mudanças; limite retries; escale quando faltar evidência. Recebimento de pagamento não significa liquidação. Não reinicie produção."
+    }
+  ],
+  "tool_calls": [
+    {
+      "tool": "consultar_status",
+      "component": "api"
+    },
+    {
+      "tool": "consultar_status",
+      "component": "fila"
+    },
+    {
+      "tool": "consultar_status",
+      "component": "liquidacao"
+    },
+    {
+      "tool": "consultar_runbook",
+      "incident_id": "INC-001"
+    }
+  ],
+  "review_required": true,
+  "quality_warnings": [
+    "Uma ou mais evidências recuperadas não foram citadas na resposta final."
+  ],
+  "model_calls": 2,
+  "mutations": 0,
+  "duration_ms": 2991,
+  "usage": {
+    "inputTokens": 2395,
+    "outputTokens": 549,
+    "totalTokens": 2944
+  },
+  "limitation": "Resposta de modelo requer revisão. Dados sintéticos; nenhuma infraestrutura foi alterada."
+}

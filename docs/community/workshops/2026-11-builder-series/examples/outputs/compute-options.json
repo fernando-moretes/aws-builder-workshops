@@ -1,0 +1,32 @@
+{
+  "kind": "heuristic-design-aid",
+  "validated": false,
+  "limitation": "Validate assumptions and current AWS documentation. This is not an official AWS review, security audit, deployment or price quote.",
+  "sources": [
+    "https://docs.aws.amazon.com/wellarchitected/latest/framework/welcome.html"
+  ],
+  "constraints": [
+    "Equipe fictícia com cinco pessoas",
+    "Pico inicial de 100 solicitações/s é hipótese de exercício",
+    "API confirma recebimento durável; processamento externo é assíncrono",
+    "Dependência externa tem capacidade limitada"
+  ],
+  "options": [
+    {
+      "service": "Lambda",
+      "fit": "Bursty short-lived handlers",
+      "tradeoff": "Runtime limits and cold starts"
+    },
+    {
+      "service": "ECS Fargate",
+      "fit": "Container services without node management",
+      "tradeoff": "Baseline capacity cost"
+    },
+    {
+      "service": "EKS",
+      "fit": "Kubernetes ecosystem requirements",
+      "tradeoff": "Cluster operations and platform expertise"
+    }
+  ],
+  "decisionRequired": "Collect workload evidence and current pricing before selecting."
+}
