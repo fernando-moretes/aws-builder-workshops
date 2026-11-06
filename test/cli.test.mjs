@@ -33,6 +33,13 @@ test("queue reproduz o gabarito", () => {
   assert.equal(q("--consumers", "30", "--dependency-limit", "80").stable, false);
 });
 test("doc lê só a lista fixa", () => assert.match(run("doc", "atividades").stdout, /Caderno dos participantes/));
+test("menu guia pela resposta e sai bem sem entrada", () => {
+  const menu = (input, ...a) => spawnSync(process.execPath, [BIN, "menu", ...a], { input, encoding: "utf8", env: { ...process.env, NO_COLOR: "1" } });
+  assert.match(menu("3\n").stdout, /Missão 3: Lambda quebrada/);
+  assert.match(menu("2\n", "--lang", "en").stdout, /Mission 2: Portfolio online/);
+  assert.match(menu("4\n").stdout, /experiment meu-artigo/);
+  assert.equal(menu("").status, 0);
+});
 test("doctor passa", () => assert.equal(run("doctor").status, 0));
 
 test("experiment cria os quatro arquivos e não sobrescreve", () => {
@@ -75,4 +82,25 @@ test("init --dry-run não grava nada", () => {
   const dir = tmp();
   assert.equal(run("init", "kiro", "--dir", dir, "--dry-run").status, 0);
   assert.ok(!existsSync(join(dir, ".kiro")));
+});
+
+test("missões: lista, guia, cópia sem sobrescrever e custos", () => {
+  assert.match(run("missoes").stdout, /Lambda quebrada/);
+  assert.match(run("missao", "2").stdout, /Block Public Access/);
+  assert.equal(run("missao", "9").status, 2);
+  const dir = join(tmp(), "m");
+  assert.equal(run("missao", "3", dir).status, 0);
+  assert.ok(existsSync(join(dir, "lambda_function.py")));
+  assert.equal(run("missao", "3", dir).status, 2);
+  const csv = new URL("../missoes/01-conta-sem-susto/custos-exemplo.csv", import.meta.url).pathname;
+  assert.match(run("custos", csv).stdout, /Total: 0\.92 USD -> 25\.63 USD \(\+24\.71 USD\)/);
+  assert.equal(run("custos", "/nao/existe.csv").status, 2);
+});
+test("a função quebrada da missão 3 quebra de verdade, e o evento certo funciona", () => {
+  const cwd = new URL("../missoes/03-lambda-quebrada/", import.meta.url).pathname;
+  const py = (arg) => spawnSync("python3", ["-B", "rodar_local.py", arg], { cwd, encoding: "utf8" });
+  const bad = py("{}");
+  assert.notEqual(bad.status, 0);
+  assert.match(bad.stderr, /KeyError: 'nome'/);
+  assert.match(py('{"nome": "Ana"}').stdout, /Oi, Ana!/);
 });

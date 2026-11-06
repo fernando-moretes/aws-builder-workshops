@@ -2,7 +2,27 @@
 
 Formato: [Keep a Changelog](https://keepachangelog.com/pt-BR/1.1.0/). Versões: [SemVer](https://semver.org/lang/pt-BR/).
 
-## [0.1.0] - não publicada
+## [0.2.0] - não publicada
+
+### Adicionado
+- Três missões para iniciantes, testadas em conta real: conta sem susto, portfólio no ar e Lambda quebrada.
+- Menu interativo no site e na CLI, progresso por missão, perguntas frequentes e exemplos com respostas reais de IA.
+- Comandos `menu`, `missoes`, `missao` e `custos`, e ferramentas MCP `list_missions`, `get_mission` e `compare_costs`.
+- Roteiro de dois encontros de 1h30.
+- Novos vídeos e áudio, só com a voz do Fernando.
+
+### Mudado
+- As missões viraram a entrada principal. O lab de triagem e os workshops longos passaram para Avançado.
+
+### Removido
+- Vídeos e áudio anteriores, com personagens em voz sintética.
+
+## [0.1.1] - 2026-11-06
+
+### Corrigido
+- Imagens Docker agora saem para `linux/amd64` e `linux/arm64`. Antes, falhavam em Mac com chip Apple.
+
+## [0.1.0] - 2026-11-06
 
 ### Adicionado
 - Trilha "Primeiro experimento": dúvida real, experimento pequeno, evidência e artigo, com exemplo completo.

@@ -1,0 +1,38 @@
+---
+const { mission } = Astro.props;
+const en = Astro.currentLocale === "en";
+const steps = en
+  ? ["I wrote my hypothesis", "I tested it", "I checked the AI's answer", "I cleaned up", "I filled in the evidence"]
+  : ["Escrevi minha hipótese", "Testei", "Conferi a resposta da IA", "Fiz a limpeza", "Preenchi as evidências"];
+---
+<details class="bw-progress" data-mission={mission} open>
+  <summary><span>{en ? "Your progress" : "Seu progresso"}</span> <span class="bw-progress-count" aria-live="polite"></span></summary>
+  <div class="bw-progress-bar" aria-hidden="true"><div></div></div>
+  <ul>
+    {steps.map((s, i) => <li><label><input type="checkbox" data-step={i} /> {s}</label></li>)}
+  </ul>
+  <p>{en ? "Saved only in this browser." : "Fica salvo só neste navegador."}</p>
+</details>
+<script>
+  for (const box of document.querySelectorAll<HTMLElement>(".bw-progress")) {
+    const key = `bw-progress-${box.dataset.mission}`;
+    const inputs = [...box.querySelectorAll<HTMLInputElement>("input")];
+    const bar = box.querySelector<HTMLElement>(".bw-progress-bar div")!;
+    const count = box.querySelector<HTMLElement>(".bw-progress-count")!;
+    const load = () => { try { return JSON.parse(localStorage.getItem(key) ?? "[]"); } catch { return []; } };
+    const paint = () => {
+      const done = inputs.filter((i) => i.checked).length;
+      count.textContent = `${done}/${inputs.length}`;
+      bar.style.width = `${(done / inputs.length) * 100}%`;
+    };
+    const saved = load();
+    inputs.forEach((input, i) => {
+      input.checked = saved.includes(i);
+      input.addEventListener("change", () => {
+        try { localStorage.setItem(key, JSON.stringify(inputs.flatMap((x, n) => (x.checked ? [n] : [])))); } catch { /* sem armazenamento: segue na sessão */ }
+        paint();
+      });
+    });
+    paint();
+  }
+</script>

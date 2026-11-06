@@ -62,7 +62,11 @@ No credentials needed. Nothing here calls the network.
 ```
 
 :::caution[What doesn't exist yet in the first version]
-`npx`, `npm` and the Docker image depend on the package's first publication. If one of these commands can't find the package, use **Source code**: it's the same program.
+If `npx` or `npm` can't find the package, it hasn't been published to npm yet. Use the release package, which is the same program:
+
+```sh
+npx -y https://github.com/fernando-moretes/aws-builder-workshops/releases/latest/download/moretes-builder-workshops.tgz doctor --lang en
+```
 :::
 
 ## Common problems

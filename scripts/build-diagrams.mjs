@@ -89,7 +89,7 @@ function pipe(t) {
   b += arrow(705, 122, 705, 142);
   return svg(830, 320, title, desc, b);
 }
-const BANNER = { pt: ["Construa. Teste. Mostre a evidência.", "Agentes de IA e arquitetura, fazendo. Offline, dados fictícios, só leitura."], en: ["Build. Test. Show the evidence.", "AI agents and architecture, by doing. Offline, fictional data, read-only."] };
+const BANNER = { pt: ["Aprenda AWS testando.", "Missões de 1 hora, com a IA ao seu lado. Dá para começar sem conta."], en: ["Learn AWS by testing.", "One-hour missions, with AI at your side. You can start without an account."] };
 function banner(lang) {
   const [title, sub] = BANNER[lang];
   let grid = "";
@@ -99,7 +99,7 @@ function banner(lang) {
     + text(60, 78, "BUILDER WORKSHOPS", { size: 20, weight: 700, fill: "#ff9900", anchor: "start" })
     + text(60, 150, title, { size: 52, weight: 700, fill: "#fff", anchor: "start" })
     + text(60, 200, sub, { size: 24, fill: "#d5dbdb", anchor: "start" })
-    + text(60, 256, "$ npx -y moretes-builder-workshops run A2", { size: 19, fill: "#eaeded", anchor: "start" });
+    + text(60, 256, "$ npx -y moretes-builder-workshops menu", { size: 19, fill: "#eaeded", anchor: "start" });
   return `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 300" role="img" aria-label="Builder Workshops: ${esc(title)}" font-family="'Open Sans','Helvetica Neue',Arial,sans-serif">${body}</svg>\n`;
 }
 for (const lang of ["pt", "en"]) {

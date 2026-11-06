@@ -7,6 +7,9 @@ Preferimos dizer aqui a deixar você descobrir no meio de um workshop.
 
 ## Verificado
 
+- **Missões:** comandos, saídas e limpeza executados em uma conta real em 06/11/2026, pela AWS CLI, sem nenhum recurso restante.
+- **Respostas de IA:** um teste por prompt, com links e citações conferidos.
+
 - Testes da CLI, do motor e do servidor MCP, este último com o cliente oficial.
 - Paridade entre `core.mjs` e `core.py`, por saída.
 - Testes Python do lab, inclusive o ciclo do SDK Strands com Bedrock simulado.
@@ -14,6 +17,10 @@ Preferimos dizer aqui a deixar você descobrir no meio de um workshop.
 - Duas imagens Docker construídas e executadas.
 
 ## Ainda não verificado
+
+- **Missões na CloudShell e no console:** os comandos rodaram pela AWS CLI, não dentro da CloudShell, e os cliques no console seguem a documentação.
+- **Missões com iniciantes:** nenhuma turma testou ainda. Tempos e dificuldade são estimativas.
+- **Valores do nível gratuito:** mudam e dependem do plano da conta.
 
 - **Runtime gerenciado do AgentCore:** não foi implantado nem ensaiado.
 - **Dentro do Kiro, Cursor e VS Code:** o formato segue a documentação oficial, sem teste no aplicativo.

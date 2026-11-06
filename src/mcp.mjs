@@ -1,8 +1,8 @@
 // Servidor MCP por stdio sem dependências. Só leitura: nenhuma ferramenta escreve, chama rede ou modelo.
 import { readFileSync, readdirSync } from "node:fs";
 import { createInterface } from "node:readline";
-import { CASES, checkCitations, offlineReport, queueCapacity } from "./core.mjs";
-import { CASE_INFO, DOCS, WORKSHOPS } from "./catalog.mjs";
+import { CASES, checkCitations, compareCosts, offlineReport, queueCapacity } from "./core.mjs";
+import { CASE_INFO, DOCS, MISSIONS, WORKSHOPS } from "./catalog.mjs";
 
 const ROOT = new URL("../", import.meta.url);
 const VERSION = JSON.parse(readFileSync(new URL("package.json", ROOT), "utf8")).version;
@@ -12,6 +12,24 @@ const CASE = { type: "string", enum: CASES, description: "Lab case" };
 const READ_ONLY = { readOnlyHint: true, destructiveHint: false, idempotentHint: true, openWorldHint: false };
 
 export const TOOLS = [
+  {
+    name: "list_missions",
+    description: "Start here. List the three beginner missions: about an hour each, learn AWS by testing, with AI as a tutor. Each starts from a real question and produces evidence for an article.",
+    inputSchema: { type: "object", properties: { lang: LANG }, additionalProperties: false },
+    run: ({ lang = "pt" }) => MISSIONS.map((m) => ({ mission: m.n, id: m.id, minutes: m.minutes, title: m.title[lang], question: m.question[lang], takeaway: m.takeaway[lang] })),
+  },
+  {
+    name: "get_mission",
+    description: "Read a mission guide in full (in Portuguese): prompts, commands, how to catch AI mistakes, cost and cleanup. Guide the person through it step by step, asking for their hypothesis first. Never run cloud commands for them or write their article.",
+    inputSchema: { type: "object", properties: { mission: { type: "number", enum: [1, 2, 3] } }, required: ["mission"], additionalProperties: false },
+    run: ({ mission }) => readFileSync(new URL(`${MISSIONS.find((m) => m.n === mission).dir}/README.md`, ROOT), "utf8"),
+  },
+  {
+    name: "compare_costs",
+    description: "Sum a cost report in CSV (service, month A, month B) and rank what changed, so a person can check an AI's reading of a bill. It only sums the file: it does not explain causes or know prices.",
+    inputSchema: { type: "object", properties: { csv: { type: "string", maxLength: 100000 } }, required: ["csv"], additionalProperties: false },
+    run: ({ csv }) => compareCosts(csv),
+  },
   {
     name: "list_workshops",
     description: "List the three 120-minute workshops with summary and prerequisites.",

@@ -19,19 +19,25 @@ export default defineConfig({
       components: { Footer: "./src/components/Footer.astro" },
       sidebar: [
         { ...L("Comece aqui", "Start here"), items: [
-          { slug: "comece/o-que-e" }, { slug: "comece/primeiros-5-minutos" }, { slug: "comece/instalar" },
+          { slug: "comece/escolha" }, { slug: "comece/o-que-e" }, { slug: "comece/primeiros-5-minutos" }, { slug: "comece/instalar" }, { slug: "comece/perguntas-frequentes" },
         ] },
-        { ...L("Trilhas", "Learning paths"), items: [
-          { slug: "trilhas/primeiro-experimento" }, { slug: "trilhas/exemplo-completo" }, { slug: "trilhas/lab-triagem" }, { slug: "trilhas/capacidade-de-fila" }, { slug: "trilhas/bedrock-opcional" },
+        { ...L("Missões", "Missions"), items: [
+          { slug: "missoes/1-conta-sem-susto" }, { slug: "missoes/2-portfolio-no-ar" }, { slug: "missoes/3-lambda-quebrada" },
         ] },
-        { ...L("Ferramentas para agentes", "Tools for agents"), items: [
-          { slug: "agentes/mcp" }, { slug: "agentes/skill" }, { slug: "agentes/kiro" }, { slug: "agentes/outros-ides" },
+        { ...L("Do teste ao artigo", "From test to article"), items: [
+          { slug: "trilhas/primeiro-experimento" }, { slug: "trilhas/exemplos" }, { slug: "trilhas/exemplo-completo" },
         ] },
-        { ...L("Conduzir um workshop", "Run a workshop"), items: [
-          { slug: "facilitar/os-tres-workshops" }, { slug: "facilitar/guia-rapido" },
+        { ...L("Sua IA no IDE", "Your AI in the IDE"), items: [
+          { slug: "agentes/kiro" }, { slug: "agentes/outros-ides" }, { slug: "agentes/mcp" }, { slug: "agentes/skill" },
         ] },
-        { ...L("Referência", "Reference"), items: [
-          { slug: "referencia/cli" }, { slug: "referencia/arquitetura" }, { slug: "referencia/docker" }, { slug: "referencia/hugging-face" }, { slug: "referencia/midia" }, { slug: "referencia/limites" }, { slug: "referencia/contribuir" },
+        { ...L("Para quem ensina", "For teachers"), items: [
+          { slug: "facilitar/dois-encontros" }, { slug: "facilitar/guia-rapido" }, { slug: "facilitar/os-tres-workshops" },
+        ] },
+        { ...L("Avançado", "Advanced"), collapsed: true, items: [
+          { slug: "trilhas/lab-triagem" }, { slug: "trilhas/capacidade-de-fila" }, { slug: "trilhas/bedrock-opcional" },
+        ] },
+        { ...L("Referência", "Reference"), collapsed: true, items: [
+          { slug: "referencia/midia" }, { slug: "referencia/cli" }, { slug: "referencia/arquitetura" }, { slug: "referencia/docker" }, { slug: "referencia/hugging-face" }, { slug: "referencia/limites" }, { slug: "referencia/contribuir" },
         ] },
       ],
     }),

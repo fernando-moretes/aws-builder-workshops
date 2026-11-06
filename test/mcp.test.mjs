@@ -15,7 +15,7 @@ test("cliente oficial: ferramentas, recursos e prompts", async (t) => {
   assert.match(client.getInstructions(), /read-only/);
 
   const { tools } = await client.listTools();
-  assert.deepEqual(tools.map((x) => x.name).sort(), ["check_citations", "get_doc", "list_cases", "list_workshops", "queue_capacity", "run_case", "start_experiment"]);
+  assert.deepEqual(tools.map((x) => x.name).sort(), ["check_citations", "compare_costs", "get_doc", "get_mission", "list_cases", "list_missions", "list_workshops", "queue_capacity", "run_case", "start_experiment"]);
   for (const tool of tools) assert.equal(tool.annotations.readOnlyHint, true, tool.name);
 
   const call = async (name, args) => {
@@ -23,6 +23,10 @@ test("cliente oficial: ferramentas, recursos e prompts", async (t) => {
     return { ...r, text: r.content[0].text };
   };
   assert.equal(JSON.parse((await call("run_case", { case_id: "A5" })).text).mutations, 0);
+  assert.equal(JSON.parse((await call("list_missions", { lang: "en" })).text).length, 3);
+  assert.match((await call("get_mission", { mission: 3 })).text, /FunctionError/);
+  assert.equal(JSON.parse((await call("compare_costs", { csv: "s,a,b\nx,1,3.5" })).text).change, 2.5);
+  assert.equal((await call("get_mission", { mission: 9 })).isError, true);
   assert.equal((await call("run_case", { case_id: "A5" })).structuredContent.case_id, "A5");
   assert.equal(JSON.parse((await call("queue_capacity", { arrivalsPerSecond: 100, serviceTimeMs: 200, consumers: 30, backlogMessages: 6000 })).text).drainSeconds, 120);
   assert.equal(JSON.parse((await call("check_citations", { answer: "fixture://A1/status/banco", case_id: "A1" })).text).invented.length, 1);

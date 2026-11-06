@@ -191,3 +191,33 @@ export function queueCapacity({ arrivalsPerSecond, serviceTimeMs, consumers, bac
     assumptions: "Constant rates. Ignores broker limits, batching, retries and failures. Not a benchmark or a production setting.",
   };
 }
+
+/** Soma um relatório de custos em CSV (servico,mes_a,mes_b). Serve para conferir a IA sem usar a IA. */
+export function compareCosts(csv) {
+  const lines = String(csv).trim().split(/\r?\n/).filter(Boolean);
+  if (lines.length < 2) throw new Error("CSV must have a header and at least one row");
+  const header = lines[0].split(",");
+  if (header.length !== 3) throw new Error("CSV must have 3 columns: service, month A, month B");
+  const cents = (value, line) => {
+    const n = Number(value);
+    if (value === undefined || value.trim() === "" || !Number.isFinite(n)) throw new Error(`Invalid number on line ${line}`);
+    return Math.round(n * 100);
+  };
+  const rows = lines.slice(1).map((line, i) => {
+    const parts = line.split(",");
+    if (parts.length !== 3) throw new Error(`Line ${i + 2} must have 3 columns`);
+    const a = cents(parts[1], i + 2), b = cents(parts[2], i + 2);
+    return { service: parts[0].trim(), a: a / 100, b: b / 100, change: (b - a) / 100 };
+  });
+  const total = (key) => Math.round(rows.reduce((sum, r) => sum + r[key] * 100, 0)) / 100;
+  const a = total("a"), b = total("b");
+  return {
+    kind: "calculation",
+    months: [header[1].trim(), header[2].trim()],
+    totalA: a,
+    totalB: b,
+    change: Math.round((b - a) * 100) / 100,
+    changes: rows.filter((r) => r.change !== 0).sort((x, y) => Math.abs(y.change) - Math.abs(x.change)),
+    note: "Sums only what is in the file. It does not explain the cause or know current prices.",
+  };
+}

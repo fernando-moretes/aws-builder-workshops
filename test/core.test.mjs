@@ -1,6 +1,7 @@
 import assert from "node:assert/strict";
 import { test } from "node:test";
-import { CASES, EvidenceStore, checkCitations, offlineReport, queueCapacity, validatePayload } from "../src/core.mjs";
+import { readFileSync } from "node:fs";
+import { CASES, EvidenceStore, checkCitations, compareCosts, offlineReport, queueCapacity, validatePayload } from "../src/core.mjs";
 
 test("todo caso declara zero chamadas de modelo, AWS e mutação", () => {
   for (const lang of ["pt", "en"]) {
@@ -78,4 +79,17 @@ test("fila: teto de 80/s na dependência invalida o ganho (gabarito do caderno)"
 test("fila: entrada inválida é recusada", () => {
   assert.throws(() => queueCapacity({ ...base, consumers: 0 }));
   assert.throws(() => queueCapacity({ ...base, consumers: "20" }));
+});
+
+test("custos: soma o exemplo da missão e ordena o que mudou", () => {
+  const r = compareCosts(readFileSync(new URL("../missoes/01-conta-sem-susto/custos-exemplo.csv", import.meta.url), "utf8"));
+  assert.deepEqual([r.totalA, r.totalB, r.change], [0.92, 25.63, 24.71]);
+  assert.equal(r.changes[0].service, "Amazon VPC (NAT Gateway)");
+  assert.equal(r.changes[0].change, 16.2);
+});
+test("custos: recusa arquivo fora do formato", () => {
+  assert.throws(() => compareCosts("só cabeçalho"));
+  assert.throws(() => compareCosts("a,b\nx,1"));
+  assert.throws(() => compareCosts("s,a,b\nx,um,2"));
+  assert.throws(() => compareCosts("s,a,b\nx,1"));
 });

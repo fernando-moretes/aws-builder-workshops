@@ -8,12 +8,14 @@
 <a href="https://github.com/fernando-moretes/aws-builder-workshops/actions/workflows/ci.yml"><img src="https://github.com/fernando-moretes/aws-builder-workshops/actions/workflows/ci.yml/badge.svg" alt="CI"></a>
 <a href="LICENSE"><img src="https://img.shields.io/badge/licen%C3%A7a-MIT-232f3e" alt="Licença MIT"></a>
 <img src="https://img.shields.io/badge/conta%20na%20nuvem-n%C3%A3o%20precisa-ec7211" alt="Não precisa de conta na nuvem">
-<img src="https://img.shields.io/badge/MCP-7%20ferramentas%20s%C3%B3%20leitura-0073bb" alt="MCP com 7 ferramentas só de leitura">
+<img src="https://img.shields.io/badge/MCP-10%20ferramentas%20s%C3%B3%20leitura-0073bb" alt="MCP com 10 ferramentas só de leitura">
 <a href="https://huggingface.co/spaces/fernandofa42/triage-console"><img src="https://img.shields.io/badge/Hugging%20Face-Space-ff9900" alt="Space no Hugging Face"></a>
 <a href="https://fernando-moretes.github.io/aws-builder-workshops/"><img src="https://img.shields.io/badge/docs-PT%20%7C%20EN-232f3e" alt="Documentação em português e inglês"></a>
 </p>
 
-Aprenda agentes de IA e arquitetura **fazendo**. Comece sem conta na nuvem e saia com algo que outra pessoa consegue repetir: uma decisão, as evidências, um risco e o próximo teste.
+Aprenda AWS **testando**, com a IA ao seu lado. São missões de cerca de 1 hora para quem está começando: você testa algo pequeno, confere o que a IA disse e sai com algo para mostrar. Dá para começar sem conta na AWS.
+
+**Comece aqui:** [escolha sua missão](https://fernando-moretes.github.io/aws-builder-workshops/comece/escolha/) · [Conta sem susto](missoes/01-conta-sem-susto/README.md) · [Portfólio no ar](missoes/02-portfolio-no-ar/README.md) · [Lambda quebrada](missoes/03-lambda-quebrada/README.md) · [Exemplos](https://fernando-moretes.github.io/aws-builder-workshops/trilhas/exemplos/) · [Perguntas frequentes](https://fernando-moretes.github.io/aws-builder-workshops/comece/perguntas-frequentes/)
 
 ![Demonstração do caso A2 no terminal: a consulta falha e o valor continua ausente](docs/img/demo-cli.pt.gif)
 
@@ -26,7 +28,6 @@ Aprenda agentes de IA e arquitetura **fazendo**. Comece sem conta na nuvem e sai
 - [A rotina do primeiro experimento](#a-rotina-do-primeiro-experimento)
 - [Os cinco casos do lab](#os-cinco-casos-do-lab)
 - [Use no seu agente ou IDE](#use-no-seu-agente-ou-ide)
-- [Vídeos e áudio](#vídeos-e-áudio)
 - [Hugging Face](#hugging-face)
 - [Conduza um workshop](#conduza-um-workshop)
 - [Como é feito](#como-é-feito)
@@ -45,10 +46,9 @@ Aprenda agentes de IA e arquitetura **fazendo**. Comece sem conta na nuvem e sai
 | 🧪 | **Primeiro experimento:** da dúvida real ao artigo técnico, com evidência | [Trilha](https://fernando-moretes.github.io/aws-builder-workshops/trilhas/primeiro-experimento/) · [exemplo](examples/first-experiment/README.md) |
 | 🚦 | **Lab de triagem:** avalie um agente em 5 casos adversos | [Console](https://fernando-moretes.github.io/aws-builder-workshops/console/) · [Python](labs/triage-agent/README.md) |
 | 🧮 | **Capacidade de fila:** preveja quando mais consumidores ajudam | [Calculadora](https://fernando-moretes.github.io/aws-builder-workshops/console/?view=queue) |
-| 🔌 | **Servidor MCP:** 7 ferramentas só de leitura, sem dependências | [Referência](https://fernando-moretes.github.io/aws-builder-workshops/agentes/mcp/) |
+| 🔌 | **Servidor MCP:** 10 ferramentas só de leitura, sem dependências | [Referência](https://fernando-moretes.github.io/aws-builder-workshops/agentes/mcp/) |
 | 🧠 | **Skill para agentes:** no formato aberto Agent Skills | [Skill](skills/builder-workshops/SKILL.md) |
 | 🎓 | **Três workshops de 120 minutos:** roteiro, caderno e modelos | [Kit](docs/community/workshops/2026-11-builder-series/README.md) |
-| 🎬 | **Vídeos e áudio:** com legendas e transcrição | [Mídia](https://fernando-moretes.github.io/aws-builder-workshops/referencia/midia/) |
 
 ## Comece em 1 minuto
 
@@ -57,7 +57,7 @@ Aprenda agentes de IA e arquitetura **fazendo**. Comece sem conta na nuvem e sai
 **No terminal,** com Node.js 20 ou mais novo:
 
 ```sh
-npx -y moretes-builder-workshops run A2
+npx -y moretes-builder-workshops menu
 ```
 
 **Com Python,** a partir do código:
@@ -128,14 +128,6 @@ Instala o servidor MCP e a skill `builder-workshops` no formato de cada cliente,
 | `start_experiment` | Entrega os modelos do experimento |
 | `list_cases`, `list_workshops`, `get_doc` | Consulta o material do kit |
 
-## Vídeos e áudio
-
-<table><tr>
-<td width="50%"><a href="https://fernando-moretes.github.io/aws-builder-workshops/referencia/midia/"><img src="docs/img/poster-first-experiment.pt.jpg" alt="Vídeo: primeiro experimento"></a><br><strong>Primeiro experimento</strong></td>
-<td width="50%"><a href="https://fernando-moretes.github.io/aws-builder-workshops/referencia/midia/"><img src="docs/img/poster-triage-lab.pt.jpg" alt="Vídeo: lab de triagem"></a><br><strong>Lab de triagem</strong></td>
-</tr></table>
-
-Há também um episódio de áudio sobre o primeiro artigo técnico. [Veja tudo, com legendas e transcrição](https://fernando-moretes.github.io/aws-builder-workshops/referencia/midia/).
 
 ## Hugging Face
 

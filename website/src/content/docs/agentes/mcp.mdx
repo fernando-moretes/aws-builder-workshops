@@ -1,6 +1,6 @@
 ---
 title: Servidor MCP
-description: Sete ferramentas só de leitura, recursos e prompts para o seu agente usar o lab, sem rede, sem credenciais e sem dependências.
+description: Dez ferramentas só de leitura, recursos e prompts para a sua IA guiar as missões, sem rede, sem credenciais e sem dependências.
 ---
 
 O servidor fala MCP por stdio. É testado com o cliente oficial do protocolo em cada mudança.
@@ -17,6 +17,9 @@ Todas têm `readOnlyHint: true`. Nenhuma grava em disco, chama a rede ou chama u
 
 | Ferramenta | O que faz | Exemplo de pedido |
 |---|---|---|
+| `list_missions` | Lista as três missões | "Por qual missão eu começo?" |
+| `get_mission` | Lê o guia da missão | "Me guie na missão 3, um passo por vez" |
+| `compare_costs` | Soma um relatório de custos | "Confira este CSV" |
 | `list_workshops` | Lista os três workshops | "Quais workshops existem?" |
 | `list_cases` | Lista A1 a A5 e o comportamento esperado | "Quais casos adversos eu devo testar?" |
 | `run_case` | Roda um caso na simulação | "Rode o caso A4 e me explique" |
