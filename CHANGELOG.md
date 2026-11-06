@@ -10,7 +10,8 @@ Formato: [Keep a Changelog](https://keepachangelog.com/pt-BR/1.1.0/). Versões: 
 - Motor do lab em JavaScript, com teste de paridade contra o `core.py`.
 - Skill `builder-workshops` no formato Agent Skills e `init` para Kiro, Claude Code, Cursor, VS Code e Codex.
 - Imagens Docker do kit e do servidor do lab.
-- Console do lab no navegador, site de documentação bilíngue e Space no Hugging Face.
+- Console do lab no navegador, site de documentação bilíngue, Space e dataset no Hugging Face.
+- Dois vídeos e um episódio de áudio, em pt e en, com legendas e transcrição.
 - Pipelines de CI, Pages, release e sincronização com o Hugging Face.
 
 ### Sem mudança
