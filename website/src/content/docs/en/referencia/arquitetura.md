@@ -39,7 +39,7 @@ test/                    tests, including parity and MCP
 | Workflow | When it runs | What it does |
 |---|---|---|
 | `ci.yml` | Pull request and `main` | Tests on Node 20, 22, 24 and 26, Python tests, sync, Docker and site |
-| `qualidade.yml` | Pull request | Title, branch and new dependencies |
+| `qualidade.yml` | Pull request | Title, branch and PR size |
 | `seguranca.yml` | `main` and weekly | Leaked secrets and vulnerable dependencies |
 | `codeql.yml` | Pull request, `main` and weekly | Static analysis of JavaScript and Python |
 | `pages.yml` | `main` | Publishes this site |

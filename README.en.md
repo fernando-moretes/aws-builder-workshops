@@ -189,7 +189,7 @@ website/               documentation
 | Workflow | When | What it does |
 |---|---|---|
 | [CI](.github/workflows/ci.yml) | Pull request and `main` | Node 20, 22, 24 and 26, Python, Docker and docs checks |
-| [PR quality](.github/workflows/qualidade.yml) | Pull request | Title, branch and new dependencies |
+| [PR quality](.github/workflows/qualidade.yml) | Pull request | Title, branch and PR size |
 | [Security](.github/workflows/seguranca.yml) | `main` and weekly | Leaked secrets and vulnerable dependencies |
 | [CodeQL](.github/workflows/codeql.yml) | Pull request, `main` and weekly | Static analysis of JavaScript and Python |
 | [Pages](.github/workflows/pages.yml) | `main` | Publishes the site |

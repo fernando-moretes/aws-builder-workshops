@@ -39,7 +39,7 @@ test/                    testes, inclusive paridade e MCP
 | Workflow | Quando roda | O que faz |
 |---|---|---|
 | `ci.yml` | Pull request e `main` | Testes em Node 20, 22, 24 e 26, testes Python, sincronia, Docker e site |
-| `qualidade.yml` | Pull request | Título, branch e dependências novas |
+| `qualidade.yml` | Pull request | Título, branch e tamanho do PR |
 | `seguranca.yml` | `main` e semanal | Segredos vazados e dependências vulneráveis |
 | `codeql.yml` | Pull request, `main` e semanal | Análise estática de JavaScript e Python |
 | `pages.yml` | `main` | Publica este site |
