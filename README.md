@@ -9,11 +9,46 @@
 <a href="LICENSE"><img src="https://img.shields.io/badge/licen%C3%A7a-MIT-232f3e" alt="Licença MIT"></a>
 <img src="https://img.shields.io/badge/conta%20na%20nuvem-n%C3%A3o%20precisa-ec7211" alt="Não precisa de conta na nuvem">
 <img src="https://img.shields.io/badge/MCP-7%20ferramentas%20s%C3%B3%20leitura-0073bb" alt="MCP com 7 ferramentas só de leitura">
+<a href="https://huggingface.co/spaces/fernandofa42/triage-console"><img src="https://img.shields.io/badge/Hugging%20Face-Space-ff9900" alt="Space no Hugging Face"></a>
+<a href="https://fernando-moretes.github.io/aws-builder-workshops/"><img src="https://img.shields.io/badge/docs-PT%20%7C%20EN-232f3e" alt="Documentação em português e inglês"></a>
 </p>
 
 Aprenda agentes de IA e arquitetura **fazendo**. Comece sem conta na nuvem e saia com algo que outra pessoa consegue repetir: uma decisão, as evidências, um risco e o próximo teste.
 
 ![Demonstração do caso A2 no terminal: a consulta falha e o valor continua ausente](docs/img/demo-cli.pt.gif)
+
+<details>
+<summary><strong>Índice</strong></summary>
+
+- [O que você encontra aqui](#o-que-você-encontra-aqui)
+- [Comece em 1 minuto](#comece-em-1-minuto)
+- [Escolha sua trilha](#escolha-sua-trilha)
+- [A rotina do primeiro experimento](#a-rotina-do-primeiro-experimento)
+- [Os cinco casos do lab](#os-cinco-casos-do-lab)
+- [Use no seu agente ou IDE](#use-no-seu-agente-ou-ide)
+- [Vídeos e áudio](#vídeos-e-áudio)
+- [Hugging Face](#hugging-face)
+- [Conduza um workshop](#conduza-um-workshop)
+- [Como é feito](#como-é-feito)
+- [Como é entregue](#como-é-entregue)
+- [Documentação](#documentação)
+- [Perguntas frequentes](#perguntas-frequentes)
+- [Limites](#limites)
+- [Contribua](#contribua)
+
+</details>
+
+## O que você encontra aqui
+
+| | O que é | Onde |
+|---|---|---|
+| 🧪 | **Primeiro experimento:** da dúvida real ao artigo técnico, com evidência | [Trilha](https://fernando-moretes.github.io/aws-builder-workshops/trilhas/primeiro-experimento/) · [exemplo](examples/first-experiment/README.md) |
+| 🚦 | **Lab de triagem:** avalie um agente em 5 casos adversos | [Console](https://fernando-moretes.github.io/aws-builder-workshops/console/) · [Python](labs/triage-agent/README.md) |
+| 🧮 | **Capacidade de fila:** preveja quando mais consumidores ajudam | [Calculadora](https://fernando-moretes.github.io/aws-builder-workshops/console/?view=queue) |
+| 🔌 | **Servidor MCP:** 7 ferramentas só de leitura, sem dependências | [Referência](https://fernando-moretes.github.io/aws-builder-workshops/agentes/mcp/) |
+| 🧠 | **Skill para agentes:** no formato aberto Agent Skills | [Skill](skills/builder-workshops/SKILL.md) |
+| 🎓 | **Três workshops de 120 minutos:** roteiro, caderno e modelos | [Kit](docs/community/workshops/2026-11-builder-series/README.md) |
+| 🎬 | **Vídeos e áudio:** com legendas e transcrição | [Mídia](https://fernando-moretes.github.io/aws-builder-workshops/referencia/midia/) |
 
 ## Comece em 1 minuto
 
@@ -102,6 +137,30 @@ Instala o servidor MCP e a skill `builder-workshops` no formato de cada cliente,
 
 Há também um episódio de áudio sobre o primeiro artigo técnico. [Veja tudo, com legendas e transcrição](https://fernando-moretes.github.io/aws-builder-workshops/referencia/midia/).
 
+## Hugging Face
+
+| Repositório | O que é |
+|---|---|
+| [Triage Console](https://huggingface.co/spaces/fernandofa42/triage-console) | O console do lab, rodando direto no navegador |
+| [Triage Agent Eval](https://huggingface.co/datasets/fernandofa42/triage-agent-eval) | Os 5 casos em pt e en, mais as saídas reais do Bedrock |
+
+```python
+from datasets import load_dataset
+cases = load_dataset("fernandofa42/triage-agent-eval", "cases", split="train")
+```
+
+## Conduza um workshop
+
+Três encontros independentes de 120 minutos, em duplas. Funcionam em meetups e User Groups, e há uma versão de palestra de 40+10 minutos.
+
+| Workshop | O participante sai com | Precisa de |
+|---|---|---|
+| **Da ideia ao agente que trabalha** | Critérios para aceitar ou rejeitar a resposta de um agente | Nada para a simulação |
+| **Arquitetura sob pressão** | Um desenho revisado, um ADR e três testes | Papel e caneta |
+| **Do briefing à arquitetura que você consegue defender** | Um ADR revisado por outra pessoa | Navegador |
+
+[Caderno](docs/community/workshops/2026-11-builder-series/ATIVIDADES.md) · [Guia do facilitador](docs/community/workshops/2026-11-builder-series/FACILITADOR.md) · [Modelos](docs/community/workshops/2026-11-builder-series/MODELOS.md) · [Propostas para organizadores](docs/community/workshops/2026-11-builder-series/PROPOSTAS.md)
+
 ## Como é feito
 
 ![Um motor sem rede atende CLI, servidor MCP e console. O lab Python é a referência.](docs/img/architecture.pt.svg)
@@ -120,6 +179,59 @@ labs/triage-agent/     lab Python com Strands, Bedrock e AgentCore
 docs/community/        kit dos workshops: caderno, facilitador, modelos
 website/               documentação
 ```
+
+## Como é entregue
+
+![Pull request, CI, merge e tag. O merge publica a documentação. A tag publica npm, imagens, release e Hugging Face.](docs/img/delivery.pt.svg)
+
+| Workflow | Quando | O que faz |
+|---|---|---|
+| [CI](.github/workflows/ci.yml) | Pull request e `main` | Node 20, 22 e 24, Python, Docker e checagem da documentação |
+| [Pages](.github/workflows/pages.yml) | `main` | Publica o site |
+| [npm](.github/workflows/release-npm.yml) | Tag `v*` | Publica com OIDC e provenance, sem token |
+| [Imagens](.github/workflows/release-images.yml) | Tag `v*` | Publica no GHCR |
+| [Release](.github/workflows/release-github.yml) | Tag `v*` | Cria o release com o pacote e as notas |
+| [Hugging Face](.github/workflows/huggingface.yml) | Tag `v*` | Atualiza o Space e o dataset |
+
+## Documentação
+
+| Você procura | Vá para |
+|---|---|
+| O primeiro contato | [Primeiros 5 minutos](https://fernando-moretes.github.io/aws-builder-workshops/comece/primeiros-5-minutos/) |
+| Instalar em cada ambiente | [Instalar](https://fernando-moretes.github.io/aws-builder-workshops/comece/instalar/) |
+| Configurar o Kiro | [Usar no Kiro](https://fernando-moretes.github.io/aws-builder-workshops/agentes/kiro/) |
+| Configurar outros IDEs | [Claude Code, Cursor, VS Code e Codex](https://fernando-moretes.github.io/aws-builder-workshops/agentes/outros-ides/) |
+| Todos os comandos | [Referência da CLI](https://fernando-moretes.github.io/aws-builder-workshops/referencia/cli/) |
+| Rodar em contêiner | [Docker](https://fernando-moretes.github.io/aws-builder-workshops/referencia/docker/) |
+| Decisões de arquitetura | [Arquitetura do projeto](https://fernando-moretes.github.io/aws-builder-workshops/referencia/arquitetura/) |
+| O histórico de mudanças | [CHANGELOG](CHANGELOG.md) |
+
+## Perguntas frequentes
+
+<details><summary><strong>Preciso de conta na AWS?</strong></summary>
+
+Não. Só o [modo Bedrock opcional](https://fernando-moretes.github.io/aws-builder-workshops/trilhas/bedrock-opcional/) usa a nuvem, e ele só roda se você ativar.
+</details>
+
+<details><summary><strong>Isso gera custo?</strong></summary>
+
+Fora do modo Bedrock, não: tudo roda na sua máquina, sem rede. No modo Bedrock, as chamadas ao modelo podem ser cobradas.
+</details>
+
+<details><summary><strong>A saída é de um modelo de IA?</strong></summary>
+
+Não. A simulação é determinística e diz isso em toda saída: `model_calls: 0`. As respostas reais de um modelo estão publicadas na [avaliação](labs/triage-agent/EVALUATION.md).
+</details>
+
+<details><summary><strong>Posso usar em uma aula ou meetup?</strong></summary>
+
+Pode. A licença é MIT. Os dados são fictícios e o [guia do facilitador](docs/community/workshops/2026-11-builder-series/FACILITADOR.md) traz o roteiro e as contingências.
+</details>
+
+<details><summary><strong>É material oficial da AWS?</strong></summary>
+
+Não. É um projeto independente de comunidade.
+</details>
 
 ## Limites
 

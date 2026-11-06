@@ -9,11 +9,46 @@
 <a href="LICENSE"><img src="https://img.shields.io/badge/license-MIT-232f3e" alt="MIT license"></a>
 <img src="https://img.shields.io/badge/cloud%20account-not%20needed-ec7211" alt="No cloud account needed">
 <img src="https://img.shields.io/badge/MCP-7%20read--only%20tools-0073bb" alt="MCP with 7 read-only tools">
+<a href="https://huggingface.co/spaces/fernandofa42/triage-console"><img src="https://img.shields.io/badge/Hugging%20Face-Space-ff9900" alt="Hugging Face Space"></a>
+<a href="https://fernando-moretes.github.io/aws-builder-workshops/en/"><img src="https://img.shields.io/badge/docs-PT%20%7C%20EN-232f3e" alt="Docs in Portuguese and English"></a>
 </p>
 
 Learn AI agents and architecture **by doing**. Start without a cloud account and finish with something someone else can repeat: a decision, its evidence, one risk and the next test.
 
 ![Case A2 in the terminal: the query fails and the value stays missing](docs/img/demo-cli.en.gif)
+
+<details>
+<summary><strong>Contents</strong></summary>
+
+- [What's inside](#whats-inside)
+- [Start in 1 minute](#start-in-1-minute)
+- [Pick your path](#pick-your-path)
+- [The first experiment routine](#the-first-experiment-routine)
+- [The five lab cases](#the-five-lab-cases)
+- [Use it in your agent or IDE](#use-it-in-your-agent-or-ide)
+- [Videos and audio](#videos-and-audio)
+- [Hugging Face](#hugging-face)
+- [Run a workshop](#run-a-workshop)
+- [How it's built](#how-its-built)
+- [How it ships](#how-it-ships)
+- [Documentation](#documentation)
+- [FAQ](#faq)
+- [Limits](#limits)
+- [Contribute](#contribute)
+
+</details>
+
+## What's inside
+
+| | What it is | Where |
+|---|---|---|
+| 🧪 | **First experiment:** from a real question to a technical article, with evidence | [Path](https://fernando-moretes.github.io/aws-builder-workshops/en/trilhas/primeiro-experimento/) · [example](examples/first-experiment/en/README.md) |
+| 🚦 | **Triage lab:** evaluate an agent on 5 adverse cases | [Console](https://fernando-moretes.github.io/aws-builder-workshops/console/?lang=en) · [Python](labs/triage-agent/README.md) |
+| 🧮 | **Queue capacity:** predict when more consumers help | [Calculator](https://fernando-moretes.github.io/aws-builder-workshops/console/?lang=en&view=queue) |
+| 🔌 | **MCP server:** 7 read-only tools, no dependencies | [Reference](https://fernando-moretes.github.io/aws-builder-workshops/en/agentes/mcp/) |
+| 🧠 | **Agent skill:** in the open Agent Skills format | [Skill](skills/builder-workshops/SKILL.md) |
+| 🎓 | **Three 120-minute workshops:** agenda, notebook and templates, in Portuguese | [Kit](docs/community/workshops/2026-11-builder-series/README.md) |
+| 🎬 | **Videos and audio:** with captions and transcript | [Media](https://fernando-moretes.github.io/aws-builder-workshops/en/referencia/midia/) |
 
 ## Start in 1 minute
 
@@ -102,6 +137,30 @@ Installs the MCP server and the `builder-workshops` skill in each client's forma
 
 There is also an audio episode about writing your first technical article. [See everything, with captions and transcript](https://fernando-moretes.github.io/aws-builder-workshops/en/referencia/midia/).
 
+## Hugging Face
+
+| Repository | What it is |
+|---|---|
+| [Triage Console](https://huggingface.co/spaces/fernandofa42/triage-console) | The lab console, running right in the browser |
+| [Triage Agent Eval](https://huggingface.co/datasets/fernandofa42/triage-agent-eval) | The 5 cases in pt and en, plus the real Bedrock outputs |
+
+```python
+from datasets import load_dataset
+cases = load_dataset("fernandofa42/triage-agent-eval", "cases", split="train")
+```
+
+## Run a workshop
+
+Three independent 120-minute sessions, in pairs. They work for meetups and User Groups, and there is a 40+10 minute talk version. The materials are in Portuguese.
+
+| Workshop | Participants leave with | You need |
+|---|---|---|
+| **From idea to a working agent** | Criteria to accept or reject an agent's answer | Nothing for the simulation |
+| **Architecture under pressure** | A revised design, an ADR and three tests | Pen and paper |
+| **From briefing to an architecture you can defend** | An ADR reviewed by someone else | A browser |
+
+[Notebook](docs/community/workshops/2026-11-builder-series/ATIVIDADES.md) · [Facilitator guide](docs/community/workshops/2026-11-builder-series/FACILITADOR.md) · [Templates](docs/community/workshops/2026-11-builder-series/MODELOS.md) · [Proposals for organizers](docs/community/workshops/2026-11-builder-series/PROPOSTAS.md)
+
 ## How it's built
 
 ![One engine with no network serves the CLI, the MCP server and the console. The Python lab is the reference.](docs/img/architecture.en.svg)
@@ -120,6 +179,59 @@ labs/triage-agent/     Python lab with Strands, Bedrock and AgentCore
 docs/community/        workshop kit: notebook, facilitator guide, templates (Portuguese)
 website/               documentation
 ```
+
+## How it ships
+
+![Pull request, CI, merge and tag. A merge publishes the docs. A tag publishes npm, images, the release and Hugging Face.](docs/img/delivery.en.svg)
+
+| Workflow | When | What it does |
+|---|---|---|
+| [CI](.github/workflows/ci.yml) | Pull request and `main` | Node 20, 22 and 24, Python, Docker and docs checks |
+| [Pages](.github/workflows/pages.yml) | `main` | Publishes the site |
+| [npm](.github/workflows/release-npm.yml) | Tag `v*` | Publishes with OIDC and provenance, no token |
+| [Images](.github/workflows/release-images.yml) | Tag `v*` | Publishes to GHCR |
+| [Release](.github/workflows/release-github.yml) | Tag `v*` | Creates the release with the package and notes |
+| [Hugging Face](.github/workflows/huggingface.yml) | Tag `v*` | Updates the Space and the dataset |
+
+## Documentation
+
+| You're looking for | Go to |
+|---|---|
+| A first look | [First 5 minutes](https://fernando-moretes.github.io/aws-builder-workshops/en/comece/primeiros-5-minutos/) |
+| Installing in each environment | [Install](https://fernando-moretes.github.io/aws-builder-workshops/en/comece/instalar/) |
+| Setting up Kiro | [Use it in Kiro](https://fernando-moretes.github.io/aws-builder-workshops/en/agentes/kiro/) |
+| Setting up other IDEs | [Claude Code, Cursor, VS Code and Codex](https://fernando-moretes.github.io/aws-builder-workshops/en/agentes/outros-ides/) |
+| Every command | [CLI reference](https://fernando-moretes.github.io/aws-builder-workshops/en/referencia/cli/) |
+| Running in a container | [Docker](https://fernando-moretes.github.io/aws-builder-workshops/en/referencia/docker/) |
+| Architecture decisions | [Project architecture](https://fernando-moretes.github.io/aws-builder-workshops/en/referencia/arquitetura/) |
+| The change history | [CHANGELOG](CHANGELOG.md) |
+
+## FAQ
+
+<details><summary><strong>Do I need an AWS account?</strong></summary>
+
+No. Only the [optional Bedrock mode](https://fernando-moretes.github.io/aws-builder-workshops/en/trilhas/bedrock-opcional/) uses the cloud, and it only runs if you turn it on.
+</details>
+
+<details><summary><strong>Does it cost anything?</strong></summary>
+
+Outside Bedrock mode, no: everything runs on your machine, with no network. In Bedrock mode, model calls may be billed.
+</details>
+
+<details><summary><strong>Is the output from an AI model?</strong></summary>
+
+No. The simulation is deterministic and says so in every output: `model_calls: 0`. Real model answers are published in the [evaluation](labs/triage-agent/EVALUATION.md).
+</details>
+
+<details><summary><strong>Can I use this in a class or meetup?</strong></summary>
+
+Yes. It's MIT licensed, the data is fictional, and the [facilitator guide](docs/community/workshops/2026-11-builder-series/FACILITADOR.md) has the agenda and contingencies, in Portuguese.
+</details>
+
+<details><summary><strong>Is this official AWS material?</strong></summary>
+
+No. It's an independent community project.
+</details>
 
 ## Limits
 
