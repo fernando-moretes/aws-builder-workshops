@@ -1,0 +1,69 @@
+---
+title: Primeiros 5 minutos
+description: Rode o primeiro caso, veja um agente errar e entenda por quê, sem instalar nada ou com um único comando.
+---
+
+import { Steps, Tabs, TabItem } from "@astrojs/starlight/components";
+
+Escolha o caminho e rode o caso A2: uma ferramenta falha, e a pergunta é o que um bom agente faz com isso.
+
+<Tabs>
+<TabItem label="Navegador">
+
+Não precisa instalar nada. [Abra o console no caso A2](/aws-builder-workshops/console/?case=A2) e clique em **Próximo passo** até o fim.
+
+![Console do lab mostrando a consulta à liquidação como indisponível](/aws-builder-workshops/img/console-a2.pt.png)
+
+</TabItem>
+<TabItem label="Terminal">
+
+Precisa de Node.js 20 ou mais novo.
+
+```sh
+npx -y moretes-builder-workshops run A2
+```
+
+</TabItem>
+<TabItem label="Docker">
+
+```sh
+docker run --rm ghcr.io/fernando-moretes/builder-workshops run A2
+```
+
+</TabItem>
+<TabItem label="Python">
+
+O lab original, sem dependências para este modo:
+
+```sh
+git clone https://github.com/fernando-moretes/aws-builder-workshops.git
+cd aws-builder-workshops/labs/triage-agent
+python3 cli.py --case A2
+```
+
+</TabItem>
+</Tabs>
+
+## O que observar
+
+<Steps>
+
+1. **Procure a linha da liquidação.** A consulta falhou, e `metrics` é `null`, não zero.
+
+2. **Leia o estado do componente.** Está `unknown`. Consulta indisponível não quer dizer que o componente caiu, e também não quer dizer que está saudável.
+
+3. **Veja as três contagens.** `model_calls`, `aws_calls` e `mutations` estão em 0. Isto é uma simulação de ensino, não a resposta de um modelo.
+
+4. **Agora pense:** se um agente respondesse "a liquidação está normal", qual evidência você pediria?
+
+</Steps>
+
+:::tip[Na vida real]
+Quando rodamos estes casos com um modelo real, ele reconheceu a falha no A2, mas classificou outras métricas como normais sem nenhum SLO que sustentasse isso. [Veja a avaliação](/aws-builder-workshops/trilhas/bedrock-opcional/).
+:::
+
+## Próximo passo
+
+- Quer publicar algo seu? Vá para o [Primeiro experimento](/aws-builder-workshops/trilhas/primeiro-experimento/).
+- Quer continuar com os casos? Siga no [Lab de triagem](/aws-builder-workshops/trilhas/lab-triagem/).
+- Encontrou algo confuso? [Conte na issue #1](https://github.com/fernando-moretes/aws-builder-workshops/issues/1): é a contribuição mais útil neste momento.

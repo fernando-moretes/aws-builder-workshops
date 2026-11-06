@@ -1,0 +1,43 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Console do Lab de Triagem</title>
+<meta name="description" content="Lab de triagem de agentes de IA no navegador: casos adversos, evidência sintética, checagem de citações e conta de capacidade. Sem servidor, sem conta na nuvem.">
+<link rel="stylesheet" href="console.css">
+<script type="module" src="app.js"></script>
+</head>
+<body>
+<header class="top"><strong class="brand">Builder Workshops</strong><span class="crumb" id="t-crumb"></span><span class="grow"></span>
+<label class="lang"><span class="sr" id="t-lang"></span><select id="lang"><option value="pt">Português</option><option value="en">English</option></select></label></header>
+<div class="banner" role="note"><strong id="t-mode-title"></strong> <span id="t-mode"></span></div>
+<div class="layout">
+<nav class="side" aria-labelledby="t-cases"><h2 id="t-cases"></h2><ul id="cases"></ul><h2 id="t-tools"></h2><ul id="tools"></ul>
+<p class="side-note"><a id="t-docs" href="https://fernando-moretes.github.io/aws-builder-workshops/" target="_blank" rel="noopener"></a><br><a href="https://github.com/fernando-moretes/aws-builder-workshops" target="_blank" rel="noopener">GitHub</a></p></nav>
+<main>
+<section id="view-case">
+ <p class="kicker" id="case-kicker"></p><h1 id="case-title"></h1><p id="case-prompt" class="prompt"></p>
+ <div class="panel"><h3 id="t-expected"></h3><p id="case-expected"></p></div>
+ <div class="panel"><div class="head"><h3 id="t-run"></h3><span class="grow"></span><span id="progress" class="muted" role="status" aria-live="polite"></span><button id="next" class="primary"></button><button id="reset" class="ghost"></button></div>
+  <ol id="steps" class="steps"></ol></div>
+ <div class="panel" id="answer-panel" hidden><h3 id="t-answer"></h3><p id="answer"></p>
+  <dl class="stats"><div><dt>model_calls</dt><dd id="s-model"></dd></div><div><dt>aws_calls</dt><dd id="s-aws"></dd></div><div><dt>mutations</dt><dd id="s-mut"></dd></div><div><dt id="t-evi"></dt><dd id="s-evi"></dd></div></dl>
+  <p class="muted" id="limitation"></p></div>
+ <div class="panel"><h3 id="t-check"></h3><p class="muted" id="t-check-help"></p><label for="draft" id="t-draft"></label><textarea id="draft" rows="5" maxlength="20000"></textarea>
+  <p><button id="check" class="primary"></button> <button id="sample" class="ghost"></button></p><div id="check-out" role="status" aria-live="polite"></div></div>
+</section>
+<section id="view-queue" hidden>
+ <p class="kicker" id="q-kicker"></p><h1 id="q-title"></h1><p id="q-intro"></p>
+ <div class="panel"><div class="fields">
+  <div><label for="q-arr" id="l-arr"></label><input id="q-arr" type="number" min="0" value="100"></div>
+  <div><label for="q-svc" id="l-svc"></label><input id="q-svc" type="number" min="1" value="200"></div>
+  <div><label for="q-con" id="l-con"></label><input id="q-con" type="number" min="1" value="20"></div>
+  <div><label for="q-bac" id="l-bac"></label><input id="q-bac" type="number" min="0" value="6000"></div>
+  <div><label for="q-dep" id="l-dep"></label><input id="q-dep" type="number" min="1" placeholder="-"></div></div>
+  <p class="chips" id="presets"></p></div>
+ <div class="panel" id="q-out" role="status" aria-live="polite"></div>
+ <p class="muted" id="q-note"></p>
+</section>
+<footer class="foot" id="t-foot"></footer>
+</main></div>
+</body></html>

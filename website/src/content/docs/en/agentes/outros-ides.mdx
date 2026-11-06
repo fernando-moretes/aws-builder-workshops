@@ -1,0 +1,74 @@
+---
+title: Claude Code, Cursor, VS Code and Codex
+description: Install the MCP and the skill in other clients, with each one's configuration format.
+---
+
+import { Tabs, TabItem } from "@astrojs/starlight/components";
+
+`init` writes in the right format for each client and preserves what's already there.
+
+<Tabs>
+<TabItem label="Claude Code">
+
+```sh
+npx -y moretes-builder-workshops init claude --lang en
+```
+
+```json title=".mcp.json"
+{ "mcpServers": { "builder-workshops": { "type": "stdio", "command": "npx", "args": ["-y", "moretes-builder-workshops", "mcp"] } } }
+```
+
+</TabItem>
+<TabItem label="Cursor">
+
+```sh
+npx -y moretes-builder-workshops init cursor --lang en
+```
+
+```json title=".cursor/mcp.json"
+{ "mcpServers": { "builder-workshops": { "type": "stdio", "command": "npx", "args": ["-y", "moretes-builder-workshops", "mcp"] } } }
+```
+
+</TabItem>
+<TabItem label="VS Code">
+
+```sh
+npx -y moretes-builder-workshops init vscode --lang en
+```
+
+Heads up: here the key is `servers`, not `mcpServers`.
+
+```json title=".vscode/mcp.json"
+{ "servers": { "builder-workshops": { "type": "stdio", "command": "npx", "args": ["-y", "moretes-builder-workshops", "mcp"] } } }
+```
+
+</TabItem>
+<TabItem label="Codex">
+
+```sh
+npx -y moretes-builder-workshops init codex --lang en
+```
+
+Installs the skill in `.agents/skills/`. The MCP server is configured in Codex itself, with the command `npx -y moretes-builder-workshops mcp`.
+
+</TabItem>
+<TabItem label="Docker in any client">
+
+For those who prefer not to have Node.js:
+
+```json
+{ "mcpServers": { "builder-workshops": { "command": "docker", "args": ["run", "--rm", "-i", "ghcr.io/fernando-moretes/builder-workshops", "mcp"] } } }
+```
+
+</TabItem>
+</Tabs>
+
+## What was tested
+
+| Client | Status |
+|---|---|
+| Official MCP client (SDK) | Tested automatically on every change |
+| Claude Code | Detects the repo's server. Using it asks for your approval the first time |
+| Kiro, Cursor, VS Code | Format checked against the official documentation, not tested in the app |
+
+If you test any of these, [tell us in issue #1](https://github.com/fernando-moretes/aws-builder-workshops/issues/1).

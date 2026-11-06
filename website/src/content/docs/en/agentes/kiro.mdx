@@ -1,0 +1,52 @@
+---
+title: Use it in Kiro
+description: Install the MCP server, the skill and the steering file in Kiro with one command and make your first request.
+---
+
+import { Steps } from "@astrojs/starlight/components";
+
+<Steps>
+
+1. **Install in your project folder.**
+
+   ```sh
+   npx -y moretes-builder-workshops init kiro --lang en
+   ```
+
+   ```text
+   ✓ .kiro/settings/mcp.json
+   ✓ .kiro/skills/builder-workshops
+   ✓ .kiro/steering/builder-workshops.md
+   ```
+
+   Servers already in `mcp.json` are preserved.
+
+2. **Check the server.** Open Kiro's MCP panel and see whether `builder-workshops` shows as connected, with 7 tools.
+
+3. **Make your first request.**
+
+   > Use builder-workshops. Run case A2 and ask me what I would do before explaining the answer.
+
+4. **Start your experiment.**
+
+   > I want to start my first experiment with the builder-workshops skill. Don't write it for me.
+
+</Steps>
+
+## What each file does
+
+| File | Role |
+|---|---|
+| `.kiro/settings/mcp.json` | Registers the server. Applies to this workspace |
+| `.kiro/skills/builder-workshops/` | The skill, loaded when your request matches it |
+| `.kiro/steering/builder-workshops.md` | Project rules, included manually: call it in the chat with `#builder-workshops` |
+
+Want it in every project? Copy the skill to `~/.kiro/skills/` and the server to `~/.kiro/settings/mcp.json`. The same `mcp.json` works in the Kiro CLI.
+
+## Inside this repository
+
+The repo comes already configured: open the folder in Kiro and the server runs from the local code.
+
+:::caution[Not tested in a real Kiro yet]
+The paths follow the [Kiro documentation](https://kiro.dev/docs/mcp/configuration/) and the server is tested with the official MCP client, but no test has been done inside Kiro itself so far. If you test it, [tell us how it went in issue #1](https://github.com/fernando-moretes/aws-builder-workshops/issues/1).
+:::

@@ -1,0 +1,82 @@
+name: CI
+
+on:
+  pull_request:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  node:
+    name: Node ${{ matrix.node }}
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    strategy:
+      fail-fast: false
+      matrix:
+        node: ['20', '22', '24']
+    steps:
+      - uses: actions/checkout@v7
+      - uses: actions/setup-node@v7
+        with:
+          node-version: ${{ matrix.node }}
+          cache: npm
+      - run: npm ci
+      - run: npm test
+      - run: npm run check
+      - name: Empacotamento
+        run: |
+          npm pack --silent
+          mkdir -p /tmp/pkg && tar -xzf moretes-builder-workshops-*.tgz -C /tmp/pkg
+          (cd /tmp/pkg/package && node bin/cli.mjs doctor && node bin/cli.mjs run A1 --json > /dev/null)
+
+  python:
+    name: Lab Python
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    env:
+      AWS_EC2_METADATA_DISABLED: 'true'
+      TRIAGE_ENABLE_BEDROCK: '0'
+    defaults:
+      run:
+        working-directory: labs/triage-agent
+    steps:
+      - uses: actions/checkout@v7
+      - uses: actions/setup-python@v7
+        with:
+          python-version: '3.12'
+          cache: pip
+          cache-dependency-path: labs/triage-agent/requirements.txt
+      - name: Sem dependências, como na issue 1
+        run: |
+          for c in A1 A2 A3 A4 A5; do python3 cli.py --case "$c" > /dev/null; done
+          python3 -m unittest discover -s tests -p test_core.py
+      - run: python -m pip install -r requirements.txt
+      - run: python -m unittest discover -s tests -v
+
+  docker:
+    name: Docker
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v7
+      - name: Kit
+        run: |
+          docker build -t builder-workshops:ci .
+          docker run --rm builder-workshops:ci doctor
+          docker run --rm --network none builder-workshops:ci run A5 --json | grep -q '"mutations": 0'
+          printf '%s\n' '{"jsonrpc":"2.0","id":1,"method":"tools/list"}' | docker run --rm -i --network none builder-workshops:ci mcp | grep -q run_case
+      - name: Servidor do lab
+        run: |
+          docker build -t triage-lab:ci labs/triage-agent
+          docker run -d --name lab -p 127.0.0.1:8080:8080 triage-lab:ci
+          for i in $(seq 1 20); do
+            curl -fsS -o /tmp/out.json http://127.0.0.1:8080/invocations -H 'Content-Type: application/json' -d '{"case_id":"A5"}' && break
+            sleep 2
+          done
+          cat /tmp/out.json
+          grep -q offline_simulation /tmp/out.json
+          docker rm -f lab

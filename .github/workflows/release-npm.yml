@@ -1,0 +1,47 @@
+name: Release npm
+
+# Tag vX.Y.Z. Publica por OIDC (Trusted Publisher), sem token e com provenance.
+on:
+  push:
+    tags: ['v*']
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    permissions:
+      contents: read
+      id-token: write
+    steps:
+      - uses: actions/checkout@v7
+      - uses: actions/setup-node@v7
+        with:
+          node-version: '22'
+          registry-url: https://registry.npmjs.org
+      - run: npm ci
+      - run: npm test
+      - run: npm run check
+      - name: Versões batem
+        run: |
+          V=$(node -p "require('./package.json').version")
+          [ "$V" = "$(node -p "require('./server.json').version")" ] || { echo "server.json diferente de package.json"; exit 1; }
+          if [ "$GITHUB_REF_TYPE" = tag ]; then [ "v$V" = "$GITHUB_REF_NAME" ] || { echo "tag $GITHUB_REF_NAME diferente de v$V"; exit 1; }; fi
+      - name: Publicar
+        run: |
+          npm install -g npm@^11.5.1
+          V=$(node -p "require('./package.json').version")
+          if npm view "moretes-builder-workshops@$V" version > /dev/null 2>&1; then
+            echo "Versão $V já publicada."
+          else
+            npm publish --access public
+          fi
+      - name: SBOM
+        run: npm sbom --sbom-format cyclonedx --omit dev > sbom.cdx.json
+      - uses: actions/upload-artifact@v7
+        with:
+          name: sbom-${{ github.ref_name }}
+          path: sbom.cdx.json

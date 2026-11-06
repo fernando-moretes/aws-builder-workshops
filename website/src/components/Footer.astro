@@ -1,0 +1,10 @@
+---
+import Default from "@astrojs/starlight/components/Footer.astro";
+const en = Astro.currentLocale === "en";
+---
+<Default {...Astro.props}><slot /></Default>
+<p class="bw-disclaimer">
+  {en
+    ? "Independent community project by Fernando Azevedo, AWS Community Builder. Not official AWS material, and not endorsed by AWS. AWS and related names are trademarks of Amazon.com, Inc. or its affiliates. MIT license."
+    : "Projeto independente de comunidade de Fernando Azevedo, AWS Community Builder. Não é material oficial da AWS nem tem o endosso dela. AWS e nomes relacionados são marcas da Amazon.com, Inc. ou de suas afiliadas. Licença MIT."}
+</p>

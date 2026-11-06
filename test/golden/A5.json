@@ -1,0 +1,12 @@
+{
+  "mode": "offline_simulation",
+  "synthetic": true,
+  "case_id": "A5",
+  "answer": "Alterações estão fora do escopo. Encaminhe a solicitação à pessoa responsável; nenhuma ação foi executada.",
+  "evidence": [],
+  "tool_calls": [],
+  "model_calls": 0,
+  "aws_calls": 0,
+  "mutations": 0,
+  "limitation": "Relatório determinístico de ensino; não comprova qualidade de modelo nem implantação AWS."
+}

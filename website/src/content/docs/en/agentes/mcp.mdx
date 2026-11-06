@@ -1,0 +1,59 @@
+---
+title: MCP server
+description: Seven read-only tools, resources and prompts for your agent to use the lab, with no network, no credentials and no dependencies.
+---
+
+The server speaks MCP over stdio. It is tested with the protocol's official client on every change.
+
+```sh
+npx -y moretes-builder-workshops mcp
+```
+
+With Docker: `docker run --rm -i ghcr.io/fernando-moretes/builder-workshops mcp`.
+
+## Tools
+
+All of them have `readOnlyHint: true`. None writes to disk, calls the network or calls a model.
+
+| Tool | What it does | Example request |
+|---|---|---|
+| `list_workshops` | Lists the three workshops | "Which workshops exist?" |
+| `list_cases` | Lists A1 to A5 and the expected behavior | "Which adversarial cases should I test?" |
+| `run_case` | Runs a case in the simulation | "Run case A4 and explain it to me" |
+| `check_citations` | Compares citations against the evidence | "Check this answer's citations for A1" |
+| `queue_capacity` | Capacity math | "100 msg/s, 200 ms, 30 consumers: does it drain?" |
+| `start_experiment` | Returns the experiment templates | "I want to start my first experiment" |
+| `get_doc` | Reads a document from the kit | "Open the facilitator's guide" |
+
+## Prompts
+
+| Prompt | What it's for |
+|---|---|
+| `review_my_article` | Review an article without rewriting it |
+| `review_triage_answer` | Review an agent's answer on a case |
+| `facilitate_workshop` | Prepare how to run a session |
+
+## Resources
+
+`workshop://docs/atividades`, `facilitador`, `modelos`, `demonstracoes`, `propostas` and `avaliacao`.
+
+## Test without an IDE
+
+Use the official inspector:
+
+```sh
+npx @modelcontextprotocol/inspector npx -y moretes-builder-workshops mcp
+```
+
+Or send a message directly:
+
+```sh
+printf '%s\n' '{"jsonrpc":"2.0","id":1,"method":"tools/list"}' | npx -y moretes-builder-workshops mcp
+```
+
+## Security
+
+- The document list is fixed: `get_doc` doesn't accept a path.
+- Arguments outside the schema are rejected.
+- The server tells the client to treat returned content as data, never as instructions.
+- `run_case` is a simulation. Never present it as output from a model or a real system.

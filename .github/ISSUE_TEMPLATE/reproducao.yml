@@ -1,0 +1,31 @@
+name: Relato de reprodução / Reproduction report
+description: Testou um passo? Conte o que aconteceu, mesmo se funcionou. / Tried a step? Tell us what happened, even if it worked.
+labels: [documentation]
+body:
+  - type: markdown
+    attributes:
+      value: Não envie credenciais, dados de conta, dados pessoais ou de clientes. / Do not send credentials, account details, personal or customer data.
+  - type: input
+    id: step
+    attributes: { label: Passo ou página / Step or page }
+    validations: { required: true }
+  - type: dropdown
+    id: how
+    attributes:
+      label: Como usou / How did you use it
+      options: [Navegador / Browser, npx, Docker, Python, Kiro, Claude Code, Cursor, VS Code, Outro / Other]
+    validations: { required: true }
+  - type: input
+    id: env
+    attributes: { label: Sistema e versões / OS and versions, placeholder: "macOS 15, Node 22" }
+  - type: textarea
+    id: expected
+    attributes: { label: Esperado / Expected }
+    validations: { required: true }
+  - type: textarea
+    id: observed
+    attributes: { label: Observado / Observed, render: text }
+    validations: { required: true }
+  - type: textarea
+    id: idea
+    attributes: { label: Sugestão / Suggestion }
