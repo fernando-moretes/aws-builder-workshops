@@ -24,7 +24,7 @@ We prefer to say it here rather than let you find out in the middle of a worksho
 
 - **AgentCore managed runtime:** it was not deployed or rehearsed.
 - **Inside Kiro, Cursor and VS Code:** the format follows the official documentation, with no test in the app.
-- **Reproduction by other people:** [issue #1](https://github.com/fernando-moretes/aws-builder-workshops/issues/1) is open for that.
+- **Reproduction by other people:** the [report form](https://github.com/fernando-moretes/aws-builder-workshops/issues/new?template=reproducao.yml) is open for that.
 - **Workshops with a real group:** the times are estimates, not measurements.
 
 ## Content limits

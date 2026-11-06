@@ -24,7 +24,7 @@ Preferimos dizer aqui a deixar você descobrir no meio de um workshop.
 
 - **Runtime gerenciado do AgentCore:** não foi implantado nem ensaiado.
 - **Dentro do Kiro, Cursor e VS Code:** o formato segue a documentação oficial, sem teste no aplicativo.
-- **Reprodução por outras pessoas:** a [issue #1](https://github.com/fernando-moretes/aws-builder-workshops/issues/1) está aberta para isso.
+- **Reprodução por outras pessoas:** o [modelo de relato](https://github.com/fernando-moretes/aws-builder-workshops/issues/new?template=reproducao.yml) está aberto para isso.
 - **Workshops com turma real:** os tempos são estimativas, não medições.
 
 ## Limites do conteúdo

@@ -2,6 +2,14 @@
 
 Formato: [Keep a Changelog](https://keepachangelog.com/pt-BR/1.1.0/). Versões: [SemVer](https://semver.org/lang/pt-BR/).
 
+## [Não publicado]
+
+### Adicionado
+- Workflows de qualidade do PR, segurança e CodeQL.
+
+### Alterado
+- Imagem Docker do kit no Node 26, e CI também testa essa versão. Relatos de teste passam a usar o modelo de reprodução.
+
 ## [0.2.1] - 2026-11-06
 
 ### Adicionado

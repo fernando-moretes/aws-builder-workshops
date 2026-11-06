@@ -169,7 +169,7 @@ Três encontros independentes de 120 minutos, em duplas. Funcionam em meetups e 
 
 - **Sem dependências em runtime,** sem rede e sem credenciais.
 - **Só leitura por construção:** o agente não recebe a capacidade de mudar nada.
-- **Testado:** CLI, servidor MCP com o cliente oficial do protocolo e paridade com o lab Python, em Node 20, 22 e 24.
+- **Testado:** CLI, servidor MCP com o cliente oficial do protocolo e paridade com o lab Python, em Node 20, 22, 24 e 26.
 - **Entregue por pipeline:** CI, GitHub Pages, npm com OIDC, imagens no GHCR e sincronização com o Hugging Face.
 
 ```text
@@ -188,7 +188,10 @@ website/               documentação
 
 | Workflow | Quando | O que faz |
 |---|---|---|
-| [CI](.github/workflows/ci.yml) | Pull request e `main` | Node 20, 22 e 24, Python, Docker e checagem da documentação |
+| [CI](.github/workflows/ci.yml) | Pull request e `main` | Node 20, 22, 24 e 26, Python, Docker e checagem da documentação |
+| [Qualidade do PR](.github/workflows/qualidade.yml) | Pull request | Título, branch e dependências novas |
+| [Segurança](.github/workflows/seguranca.yml) | `main` e semanal | Segredos vazados e dependências vulneráveis |
+| [CodeQL](.github/workflows/codeql.yml) | Pull request, `main` e semanal | Análise estática de JavaScript e Python |
 | [Pages](.github/workflows/pages.yml) | `main` | Publica o site |
 | [npm](.github/workflows/release-npm.yml) | Tag `v*` | Publica com OIDC e provenance, sem token |
 | [Imagens](.github/workflows/release-images.yml) | Tag `v*` | Publica no GHCR |
@@ -241,7 +244,7 @@ Dados, incidentes e métricas são todos **fictícios**. A simulação é determ
 
 ## Contribua
 
-A ajuda mais útil agora é [testar a primeira execução e dizer onde travou](https://github.com/fernando-moretes/aws-builder-workshops/issues/1). Não precisa de conta AWS. Veja o [guia de contribuição](CONTRIBUTING.md).
+A ajuda mais útil agora é [testar a primeira execução e dizer onde travou](https://github.com/fernando-moretes/aws-builder-workshops/issues/new?template=reproducao.yml). Não precisa de conta AWS. Veja o [guia de contribuição](CONTRIBUTING.md).
 
 ## Quem faz
 

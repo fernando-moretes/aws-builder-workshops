@@ -5,7 +5,7 @@ description: Testing the first run, reporting what confused you and proposing sc
 
 ## The most useful right now: test the first run
 
-You don't need an AWS account. Follow [issue #1](https://github.com/fernando-moretes/aws-builder-workshops/issues/1) and tell us where you got stuck. A confusing instruction or a reproducible failure is worth more than a compliment.
+You don't need an AWS account. Follow the [lab guide](/aws-builder-workshops/en/trilhas/lab-triagem/) and [open a report](https://github.com/fernando-moretes/aws-builder-workshops/issues/new?template=reproducao.yml) telling us where you got stuck. A confusing instruction or a reproducible failure is worth more than a compliment.
 
 ## Other ways
 

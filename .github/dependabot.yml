@@ -18,3 +18,7 @@ updates:
   - package-ecosystem: docker
     directories: ['/', '/labs/triage-agent']
     schedule: { interval: monthly }
+    # Versões ímpares do Node não têm LTS e duram poucos meses.
+    ignore:
+      - dependency-name: node
+        versions: ['>=25 <26', '>=27 <28', '>=29 <30']

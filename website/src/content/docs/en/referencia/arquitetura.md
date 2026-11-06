@@ -38,7 +38,10 @@ test/                    tests, including parity and MCP
 
 | Workflow | When it runs | What it does |
 |---|---|---|
-| `ci.yml` | Pull request and `main` | Tests on Node 20, 22 and 24, Python tests, sync, Docker and site |
+| `ci.yml` | Pull request and `main` | Tests on Node 20, 22, 24 and 26, Python tests, sync, Docker and site |
+| `qualidade.yml` | Pull request | Title, branch and new dependencies |
+| `seguranca.yml` | `main` and weekly | Leaked secrets and vulnerable dependencies |
+| `codeql.yml` | Pull request, `main` and weekly | Static analysis of JavaScript and Python |
 | `pages.yml` | `main` | Publishes this site |
 | `release.yml` | Tag `v*` | Publishes npm with OIDC and provenance, images to GHCR and the GitHub Release |
 | `huggingface.yml` | Tag `v*` or manual | Updates the Space and the dataset |
