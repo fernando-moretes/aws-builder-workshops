@@ -1,253 +1,241 @@
 WEBVTT
 
 1
-00:00:00.300 --> 00:00:04.173
-Lia: Fernando, se eu criar uma conta na AWS, vou levar um susto na fatura?
+00:00:00.120 --> 00:00:02.580
+Lia: Fernando, se eu criar uma conta na AWS,
 
 2
-00:00:04.523 --> 00:00:06.700
-Fernando: Essa é a dúvida desta missão.
+00:00:02.580 --> 00:00:04.070
+vou levar um susto na fatura?
 
 3
-00:00:06.700 --> 00:00:09.702
-Leva cerca de 1 hora e não custa nada.
+00:00:04.186 --> 00:00:05.896
+Fernando: Essa é a dúvida desta missão.
 
 4
-00:00:09.702 --> 00:00:13.154
-E os três primeiros passos você faz sem conta.
+00:00:06.006 --> 00:00:09.016
+Leva cerca de 1 hora e não custa nada.
 
 5
-00:00:14.167 --> 00:00:17.906
-Fernando: Antes de abrir qualquer ferramenta, escreva a sua hipótese.
+00:00:09.146 --> 00:00:11.756
+E os três primeiros passos você faz sem conta.
 
 6
-00:00:17.906 --> 00:00:21.518
-O que você acha que gera mais custo em uma conta pequena?
+00:00:12.153 --> 00:00:13.873
+Fernando: Antes de abrir qualquer ferramenta,
 
 7
-00:00:21.868 --> 00:00:22.233
-Lia: Hum.
+00:00:13.873 --> 00:00:15.503
+escreve a sua hipótese.
 
 8
-00:00:22.233 --> 00:00:24.242
-Acho que é o servidor.
+00:00:15.693 --> 00:00:18.363
+O que você acha que gera mais custo numa conta pequena?
 
 9
-00:00:24.592 --> 00:00:25.517
-Fernando: Anote isso.
+00:00:18.482 --> 00:00:20.512
+Lia: Hum. Acho que é o servidor.
 
 10
-00:00:25.517 --> 00:00:26.441
-Pode errar.
+00:00:20.630 --> 00:00:22.510
+Fernando: Anota isso. Pode errar.
 
 11
-00:00:26.441 --> 00:00:29.130
+00:00:22.510 --> 00:00:24.460
 É o erro que vira um bom artigo.
 
 12
-00:00:30.133 --> 00:00:33.402
-Fernando: Agora baixe o arquivo de custos de exemplo.
+00:00:24.853 --> 00:00:27.253
+Fernando: Agora baixa o arquivo de custos de exemplo,
 
 13
-00:00:33.402 --> 00:00:35.150
-Os dados são fictícios.
+00:00:27.253 --> 00:00:31.033
+com dados fictícios, e cola no seu assistente de IA,
 
 14
-00:00:35.150 --> 00:00:38.647
-Cole no seu assistente de IA, com este pedido.
+00:00:31.033 --> 00:00:32.843
+junto com este pedido.
 
 15
-00:00:38.997 --> 00:00:40.722
+00:00:32.955 --> 00:00:34.965
 Lia: Por que o último item diz:
 
 16
-00:00:40.722 --> 00:00:42.646
+00:00:35.135 --> 00:00:36.545
 não me dê a conclusão pronta?
 
 17
-00:00:42.996 --> 00:00:47.402
-Fernando: Porque você quer perguntas, e não uma resposta para copiar.
+00:00:36.671 --> 00:00:40.081
+Fernando: Porque você quer perguntas, e não uma resposta pra copiar.
 
 18
-00:00:48.433 --> 00:00:51.832
-Fernando: Agora confira a conta sem a IA, com este comando.
+00:00:40.487 --> 00:00:42.607
+Fernando: Agora confere a conta sem a IA,
 
 19
-00:00:52.182 --> 00:00:52.530
-Lia: Nossa.
+00:00:42.607 --> 00:00:44.057
+com este comando.
 
 20
-00:00:52.530 --> 00:00:56.881
-Foi de 0,92 USD para vinte e US$ 5 e sessenta e três
+00:00:44.173 --> 00:00:49.183
+Lia: Nossa! Foi de 0,92 USD pra 25,63 USD!
 
 21
-00:00:56.881 --> 00:00:57.403
-centavos!
+00:00:49.311 --> 00:00:51.601
+Fernando: Agora olha a primeira linha da lista.
 
 22
-00:00:57.753 --> 00:00:59.769
-Fernando: Agora olhe a primeira linha da lista.
+00:00:51.714 --> 00:00:55.374
+Lia: NAT Gateway? 16,20 USD.
 
 23
-00:01:00.119 --> 00:01:01.001
-Lia: NAT Gateway?
-
-24
-00:01:01.001 --> 00:01:03.575
-16,20 USD.
-
-25
-00:01:03.575 --> 00:01:05.414
+00:00:55.374 --> 00:00:56.904
 E eu apostei no servidor.
 
-26
-00:01:05.764 --> 00:01:07.187
+24
+00:00:57.020 --> 00:00:58.410
 Fernando: Sua hipótese caiu.
 
-27
-00:01:07.187 --> 00:01:09.717
+25
+00:00:58.580 --> 00:01:00.830
 O servidor EC2 ficou em segundo.
 
-28
-00:01:09.717 --> 00:01:13.669
-Anote isso, porque é a melhor parte do seu artigo.
+26
+00:01:00.940 --> 00:01:03.730
+Anota isso, porque é a melhor parte do seu artigo.
 
-29
-00:01:14.700 --> 00:01:16.389
+27
+00:01:04.120 --> 00:01:05.890
 Lia: E como eu sei se a IA acertou?
 
+28
+00:01:06.001 --> 00:01:07.441
+Fernando: Faz três perguntas.
+
+29
+00:01:07.441 --> 00:01:11.581
+Os totais batem? Ela percebeu que o maior aumento é o NAT
+
 30
-00:01:16.739 --> 00:01:18.514
-Fernando: Faça três perguntas.
+00:01:11.581 --> 00:01:15.311
+Gateway? Ela afirmou algum preço que não tava no arquivo?
 
 31
-00:01:18.514 --> 00:01:19.933
-Os totais batem?
+00:01:15.461 --> 00:01:18.931
+Se afirmou, pede a fonte e abre o link.
 
 32
-00:01:19.933 --> 00:01:24.281
-Ela percebeu que o maior aumento é o NAT Gateway?
-
-33
-00:01:24.281 --> 00:01:28.718
-Ela afirmou algum preço que não estava no arquivo?
-
-34
-00:01:28.718 --> 00:01:32.179
-Se afirmou, peça a fonte e abra o link.
-
-35
-00:01:32.529 --> 00:01:33.697
+00:01:19.052 --> 00:01:20.262
 Lia: Então o que não bateu...
 
-36
-00:01:34.047 --> 00:01:35.748
+33
+00:01:20.388 --> 00:01:21.978
 Fernando: É a sua melhor evidência.
 
-37
-00:01:36.767 --> 00:01:39.128
+34
+00:01:22.353 --> 00:01:24.783
 Lia: E quando eu tiver conta, como fico tranquila?
 
+35
+00:01:24.904 --> 00:01:26.494
+Fernando: Cria um alerta de gastos.
+
+36
+00:01:26.644 --> 00:01:29.538
+Os comandos tão na missão e rodam na CloudShell,
+
+37
+00:01:29.538 --> 00:01:31.334
+o terminal que já vem no navegador.
+
 38
-00:01:39.478 --> 00:01:41.295
-Fernando: Crie um alerta de gastos.
-
-39
-00:01:41.295 --> 00:01:46.746
-Os comandos estão na missão e rodam na CloudShell, o terminal que já vem no
-
-40
-00:01:46.746 --> 00:01:47.473
-navegador.
-
-41
-00:01:47.473 --> 00:01:49.436
+00:01:31.504 --> 00:01:33.014
 No fim, você confere assim.
 
-42
-00:01:49.436 --> 00:01:55.469
-Ele avisa quando o gasto real passa de 80% de US$ 5, e quando
+39
+00:01:33.284 --> 00:01:37.364
+Ele avisa quando o gasto real passa de 80% de US$ 5,
 
-43
-00:01:55.469 --> 00:01:57.940
-a previsão passa de US$ 5.
+40
+00:01:37.364 --> 00:01:39.874
+e quando a previsão passa de US$ 5.
 
-44
-00:01:58.967 --> 00:02:01.134
+41
+00:01:40.253 --> 00:01:42.483
 Lia: Aí, se passar, ele desliga tudo sozinho?
 
-45
-00:02:01.484 --> 00:02:01.850
-Fernando: Não.
+42
+00:01:42.602 --> 00:01:45.962
+Fernando: Não. Esse é o ponto que mais confunde.
 
-46
-00:02:01.850 --> 00:02:04.864
-Esse é o ponto que mais confunde.
-
-47
-00:02:04.864 --> 00:02:07.879
+43
+00:01:45.962 --> 00:01:48.752
 O alerta avisa, mas não bloqueia.
 
-48
-00:02:07.879 --> 00:02:10.802
+44
+00:01:49.002 --> 00:01:51.062
 Se chegar um e-mail, é com você.
 
+45
+00:01:51.062 --> 00:01:53.442
+Eu recomendo manter esse alerta,
+
+46
+00:01:53.442 --> 00:01:55.932
+porque é gratuito e protege a conta.
+
+47
+00:01:56.320 --> 00:01:58.390
+Lia: E o artigo? Como eu começo?
+
+48
+00:01:58.514 --> 00:01:59.664
+Fernando: Cê já tem ele na mão.
+
 49
-00:02:10.802 --> 00:02:17.105
-Eu recomendo manter esse alerta, porque é gratuito e protege a conta.
-
-50
-00:02:18.133 --> 00:02:18.985
-Lia: E o artigo?
-
-51
-00:02:18.985 --> 00:02:20.146
-Como eu começo?
-
-52
-00:02:20.496 --> 00:02:22.383
-Fernando: Você já tem ele na mão.
-
-53
-00:02:22.383 --> 00:02:25.338
+00:01:59.854 --> 00:02:02.764
 O tema é como evitar susto na conta.
 
-54
-00:02:25.338 --> 00:02:26.815
+50
+00:02:02.834 --> 00:02:04.004
 A evidência é sua:
 
-55
-00:02:26.815 --> 00:02:32.314
-a hipótese, a resposta da IA, a saída do comando e o que não bateu.
+51
+00:02:04.154 --> 00:02:08.094
+a hipótese, a resposta da IA, a saída do comando e o que
 
-56
-00:02:32.664 --> 00:02:33.804
+52
+00:02:08.094 --> 00:02:08.704
+não bateu.
+
+53
+00:02:08.828 --> 00:02:10.038
 Lia: E quem escreve o texto?
 
-57
-00:02:34.154 --> 00:02:34.559
-Fernando: Você.
+54
+00:02:10.159 --> 00:02:13.089
+Fernando: Você. A inteligência artificial só revisa.
 
-58
-00:02:34.559 --> 00:02:37.468
-A inteligência artificial só revisa.
-
-59
-00:02:38.500 --> 00:02:40.407
+55
+00:02:13.487 --> 00:02:14.957
 Fernando: Um aviso antes de terminar.
 
-60
-00:02:40.407 --> 00:02:45.705
-Minha narração foi gerada com a minha voz clonada, com a minha autorização.
+56
+00:02:15.067 --> 00:02:17.947
+Minha narração foi gerada com a minha voz clonada,
 
-61
-00:02:45.705 --> 00:02:49.025
+57
+00:02:17.947 --> 00:02:19.317
+com a minha autorização.
+
+58
+00:02:19.467 --> 00:02:22.777
 A personagem Lia é fictícia, com voz sintética.
 
-62
-00:02:49.025 --> 00:02:51.356
+59
+00:02:22.907 --> 00:02:24.677
 E este é um projeto independente.
 
-63
-00:02:51.356 --> 00:02:53.476
+60
+00:02:24.847 --> 00:02:26.877
 Não é material oficial da AWS.

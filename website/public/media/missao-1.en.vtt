@@ -1,193 +1,205 @@
 WEBVTT
 
 1
-00:00:00.300 --> 00:00:04.319
+00:00:00.120 --> 00:00:03.970
 If I create an AWS account, will my bill surprise me?
 
 2
-00:00:04.319 --> 00:00:06.949
+00:00:04.280 --> 00:00:05.970
 That's the question in this mission.
 
 3
-00:00:06.949 --> 00:00:09.945
+00:00:06.200 --> 00:00:08.530
 It takes about an hour and costs nothing.
 
 4
-00:00:09.945 --> 00:00:14.037
+00:00:08.780 --> 00:00:11.570
 And you can do the first three steps without an account.
 
 5
-00:00:15.067 --> 00:00:19.257
+00:00:11.953 --> 00:00:15.563
 Before opening any tool, open a file and write this down.
 
 6
-00:00:19.257 --> 00:00:23.080
+00:00:15.873 --> 00:00:18.543
 What do you think costs the most in a small account?
 
 7
-00:00:23.080 --> 00:00:24.330
-You can be wrong.
+00:00:18.793 --> 00:00:21.863
+You can be wrong. Being wrong is what makes a good article.
 
 8
-00:00:24.330 --> 00:00:27.344
-Being wrong is what makes a good article.
-
-9
-00:00:28.367 --> 00:00:30.925
+00:00:22.253 --> 00:00:24.513
 Now download the sample cost file.
 
-10
-00:00:30.925 --> 00:00:32.581
+9
+00:00:24.513 --> 00:00:26.173
 The data is fictional.
 
-11
-00:00:32.581 --> 00:00:36.344
+10
+00:00:26.173 --> 00:00:29.543
 Paste it into your AI assistant with this request.
 
-12
-00:00:36.344 --> 00:00:37.924
+11
+00:00:29.693 --> 00:00:30.873
 Notice the last item:
 
-13
-00:00:37.924 --> 00:00:40.106
+12
+00:00:30.873 --> 00:00:32.273
 don't give me the conclusion.
 
-14
-00:00:40.106 --> 00:00:43.267
+13
+00:00:32.273 --> 00:00:34.883
 You want questions, not an answer to copy.
 
+14
+00:00:35.287 --> 00:00:37.227
+Now check the math without AI,
+
 15
-00:00:44.300 --> 00:00:48.070
-Now check the math without AI, using this command.
+00:00:37.227 --> 00:00:38.967
+using this command.
 
 16
-00:00:48.070 --> 00:00:54.252
+00:00:38.967 --> 00:00:43.977
 The total went from 0.92 USD to 25.63 USD.
 
 17
-00:00:54.252 --> 00:00:57.193
+00:00:44.247 --> 00:00:46.137
 And look at the first line of the list.
 
 18
-00:00:57.193 --> 00:01:02.998
-The biggest increase is the NAT Gateway, at 16.20 USD.
+00:00:46.307 --> 00:00:48.687
+The biggest increase is the NAT Gateway,
 
 19
-00:01:02.998 --> 00:01:04.808
-It's not the EC2 server.
+00:00:48.687 --> 00:00:52.857
+at 16.20 USD. It's not the EC2 server.
 
 20
-00:01:05.833 --> 00:01:06.721
-Now compare.
+00:00:53.253 --> 00:00:56.193
+Now compare. Do the AI's totals match?
 
 21
-00:01:06.721 --> 00:01:08.569
-Do the AI's totals match?
+00:00:56.193 --> 00:00:58.513
+Did it notice that the biggest increase is the NAT
 
 22
-00:01:08.569 --> 00:01:12.931
-Did it notice that the biggest increase is the NAT Gateway?
+00:00:58.513 --> 00:01:01.793
+Gateway? Did it state a price that wasn't in the file?
 
 23
-00:01:12.931 --> 00:01:16.259
-Did it state a price that wasn't in the file?
-
-24
-00:01:16.259 --> 00:01:19.512
+00:01:01.793 --> 00:01:04.773
 If so, ask for the source and open the link.
 
-25
-00:01:19.512 --> 00:01:20.843
+24
+00:01:04.773 --> 00:01:06.033
 Write it all down.
 
-26
-00:01:20.843 --> 00:01:23.800
+25
+00:01:06.033 --> 00:01:08.163
 What didn't match is your best evidence.
 
+26
+00:01:08.553 --> 00:01:10.253
+If you already have an account,
+
 27
-00:01:24.833 --> 00:01:29.035
-If you already have an account, create a spending alert.
+00:01:10.253 --> 00:01:11.963
+create a spending alert.
 
 28
-00:01:29.035 --> 00:01:35.113
-The commands are in the mission and run in CloudShell, the terminal that comes in
+00:01:12.173 --> 00:01:15.413
+The commands are in the mission and run in CloudShell,
 
 29
-00:01:35.113 --> 00:01:36.088
-your browser.
+00:01:15.413 --> 00:01:17.843
+the terminal that comes in your browser.
 
 30
-00:01:36.088 --> 00:01:38.715
+00:01:18.073 --> 00:01:19.923
 At the end, you check it like this.
 
 31
-00:01:38.715 --> 00:01:44.117
+00:01:20.113 --> 00:01:24.753
 It warns you when actual spending passes 80% of US$ 5.
 
 32
-00:01:44.117 --> 00:01:47.269
+00:01:24.753 --> 00:01:27.823
 And when the forecast passes US$ 5.
 
 33
-00:01:48.300 --> 00:01:51.715
+00:01:28.220 --> 00:01:30.550
 And here's the part that confuses people most.
 
 34
-00:01:51.715 --> 00:01:55.501
+00:01:30.760 --> 00:01:33.750
 The alert warns you, but it doesn't block anything.
 
 35
-00:01:55.501 --> 00:01:58.396
+00:01:33.980 --> 00:01:36.010
 It doesn't turn anything off by itself.
 
 36
-00:01:58.396 --> 00:02:01.068
+00:01:36.160 --> 00:01:38.190
 If an email arrives, it's up to you.
 
 37
-00:02:01.068 --> 00:02:06.635
-I recommend keeping this alert, because it's free and protects the account.
+00:01:38.380 --> 00:01:39.820
+I recommend keeping this alert,
 
 38
-00:02:06.635 --> 00:02:10.199
-The command to delete it is also in the mission.
+00:01:39.820 --> 00:01:42.730
+because it's free and protects the account.
 
 39
-00:02:11.200 --> 00:02:15.101
-That's it, you already have an article in your hands.
+00:01:42.840 --> 00:01:45.450
+The command to delete it is also in the mission.
 
 40
-00:02:15.101 --> 00:02:18.339
-The topic is how to avoid billing surprises.
+00:01:45.853 --> 00:01:48.643
+That's it, you already have an article in your hands.
 
 41
-00:02:18.339 --> 00:02:19.958
-The evidence is yours:
+00:01:48.993 --> 00:01:51.763
+The topic is how to avoid billing surprises.
 
 42
-00:02:19.958 --> 00:02:25.404
-the hypothesis, the AI's answer, the command output and what didn't match.
+00:01:51.973 --> 00:01:53.343
+The evidence is yours:
 
 43
-00:02:25.404 --> 00:02:27.392
-Write it in your own words.
+00:01:53.553 --> 00:01:55.593
+the hypothesis, the AI's answer,
 
 44
-00:02:27.392 --> 00:02:28.569
-AI only reviews.
+00:01:55.593 --> 00:01:57.803
+the command output and what didn't match.
 
 45
-00:02:29.600 --> 00:02:31.515
-One note before we finish.
+00:01:57.933 --> 00:01:59.383
+Write it in your own words.
 
 46
-00:02:31.515 --> 00:02:37.628
-The voice you just heard was generated from my cloned voice, with my authorization.
+00:01:59.473 --> 00:02:00.903
+AI only reviews.
 
 47
-00:02:37.628 --> 00:02:40.205
-And this is an independent project.
+00:02:01.287 --> 00:02:03.267
+One note before we finish.
 
 48
-00:02:40.205 --> 00:02:42.709
+00:02:03.267 --> 00:02:05.867
+The voice you just heard was generated from my cloned
+
+49
+00:02:05.867 --> 00:02:07.907
+voice, with my authorization.
+
+50
+00:02:07.907 --> 00:02:09.887
+And this is an independent project.
+
+51
+00:02:09.887 --> 00:02:12.757
 It is not official AWS material.

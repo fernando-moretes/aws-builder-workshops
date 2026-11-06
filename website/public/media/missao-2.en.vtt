@@ -1,209 +1,233 @@
 WEBVTT
 
 1
-00:00:00.300 --> 00:00:05.908
-How do I put a site online with AWS without leaving anything open by mistake?
+00:00:00.120 --> 00:00:03.680
+How do I put a site online with AWS without leaving
 
 2
-00:00:05.908 --> 00:00:07.612
-That's today's question.
+00:00:03.680 --> 00:00:05.430
+anything open by mistake?
 
 3
-00:00:07.612 --> 00:00:09.245
-It takes about an hour.
+00:00:05.620 --> 00:00:06.750
+That's today's question.
 
 4
-00:00:09.245 --> 00:00:13.221
-And you can do the first three steps without an account.
+00:00:06.800 --> 00:00:07.720
+It takes about an hour.
 
 5
-00:00:13.221 --> 00:00:16.344
-Before asking AI, write down what you think.
+00:00:07.720 --> 00:00:10.850
+And you can do the first three steps without an account.
 
 6
-00:00:17.367 --> 00:00:20.500
-Paste this request into your AI assistant.
+00:00:11.080 --> 00:00:13.170
+Before asking AI, write down what you think.
 
 7
-00:00:20.500 --> 00:00:22.067
-Notice the last item.
+00:00:13.553 --> 00:00:16.533
+Paste this request into your AI assistant.
 
 8
-00:00:22.067 --> 00:00:26.768
-You ask for the official documentation link behind each answer.
+00:00:16.533 --> 00:00:17.973
+Notice the last item.
 
 9
-00:00:26.768 --> 00:00:30.498
-Then comes the most important part of the mission:
+00:00:17.973 --> 00:00:21.373
+You ask for the official documentation link behind each
 
 10
-00:00:30.498 --> 00:00:31.990
-opening those links.
+00:00:21.373 --> 00:00:24.593
+answer. Then comes the most important part of the mission:
 
 11
-00:00:31.990 --> 00:00:34.676
-It's not enough for a link to exist.
+00:00:24.593 --> 00:00:25.903
+opening those links.
 
 12
-00:00:34.676 --> 00:00:37.213
-It has to say what the AI claimed.
+00:00:26.073 --> 00:00:27.853
+It's not enough for a link to exist.
 
 13
-00:00:38.233 --> 00:00:41.311
-Many answers suggest a public S3 bucket.
+00:00:27.853 --> 00:00:29.783
+It has to say what the AI claimed.
 
 14
-00:00:41.311 --> 00:00:44.850
-Look at what the S3 documentation itself says.
+00:00:30.153 --> 00:00:32.703
+An AI may suggest a public S3 bucket.
 
 15
-00:00:44.850 --> 00:00:48.774
-That path requires turning off Block Public Access.
+00:00:32.873 --> 00:00:35.503
+Look at what the S3 documentation itself says.
 
 16
-00:00:48.774 --> 00:00:51.929
-It also recommends keeping that block on.
+00:00:35.673 --> 00:00:38.743
+That path requires turning off Block Public Access.
 
 17
-00:00:51.929 --> 00:00:55.545
-And it warns that the S3 website only has HTTP.
+00:00:38.993 --> 00:00:40.863
+It also recommends keeping that block on.
 
 18
-00:00:55.545 --> 00:00:57.545
-Did your AI tell you that?
+00:00:41.113 --> 00:00:43.843
+And it warns that the S3 website only has HTTP.
 
 19
-00:00:57.545 --> 00:01:00.623
-Write down what matched and what didn't.
+00:00:44.013 --> 00:00:45.283
+Did your AI tell you that?
 
 20
-00:01:01.633 --> 00:01:06.364
-Now download the mission's page and replace the text with yours.
+00:00:45.533 --> 00:00:47.423
+Write down what matched and what didn't.
 
 21
-00:01:06.364 --> 00:01:09.690
-Run this command and open it in your browser.
+00:00:47.820 --> 00:00:50.760
+Now download the mission's page and replace the text with
 
 22
-00:01:09.690 --> 00:01:13.903
-Ask AI to review the clarity, without writing it for you.
+00:00:50.760 --> 00:00:54.360
+yours. Run this command and open it in your browser.
 
 23
-00:01:13.903 --> 00:01:15.012
-And be careful:
+00:00:54.360 --> 00:00:58.160
+Ask AI to review the clarity, without writing it for you.
 
 24
-00:01:15.012 --> 00:01:20.407
-don't include your phone, your address or anything you don't want public.
+00:00:58.160 --> 00:01:00.800
+And be careful: don't include your phone,
 
 25
-00:01:21.433 --> 00:01:25.335
-If you already have an account, publish with Amplify.
+00:01:00.800 --> 00:01:03.610
+your address or anything you don't want public.
 
 26
-00:01:25.335 --> 00:01:26.954
-Put the file in a zip.
+00:01:03.987 --> 00:01:05.547
+If you already have an account,
 
 27
-00:01:26.954 --> 00:01:32.844
-Zip the file, not the folder, because zipping the folder causes an access denied
+00:01:05.547 --> 00:01:06.937
+publish with Amplify.
 
 28
-00:01:32.844 --> 00:01:33.285
-error.
+00:01:07.087 --> 00:01:08.547
+Put the file in a zip.
 
 29
-00:01:33.285 --> 00:01:38.070
-In the console, create an app without Git, drop the zip and save.
+00:01:08.547 --> 00:01:11.787
+Zip the file, not the folder, because zipping the folder
 
 30
-00:01:38.070 --> 00:01:43.959
-In our test, it took about 48 s, and the site answered over HTTPS
+00:01:11.787 --> 00:01:13.777
+causes an access denied error.
 
 31
-00:01:43.959 --> 00:01:45.432
-with no extra setup.
+00:01:14.027 --> 00:01:16.747
+In the console, create an app without Git,
 
 32
-00:01:45.832 --> 00:01:47.102
-An honest caveat.
+00:01:16.747 --> 00:01:18.517
+drop the zip and save.
 
 33
-00:01:47.102 --> 00:01:52.332
-That test ran from the command line, with the same kind of zip upload.
+00:01:18.707 --> 00:01:21.327
+In our test, it took about 48 s,
 
 34
-00:01:52.332 --> 00:01:58.458
-The console clicks follow the documentation, but they weren't tested step by step.
+00:01:21.327 --> 00:01:25.037
+and the site answered over HTTPS with no extra setup.
 
 35
-00:01:58.458 --> 00:02:02.866
-If something looks different on your screen, write it down.
+00:01:25.157 --> 00:01:28.557
+An honest caveat. That test ran from the command line,
 
 36
-00:02:02.866 --> 00:02:04.360
-That's evidence too.
+00:01:28.557 --> 00:01:30.887
+with the same kind of zip upload.
 
 37
-00:02:05.367 --> 00:02:08.242
-If the site was just a test, delete it.
+00:01:31.237 --> 00:01:33.577
+The console clicks follow the documentation,
 
 38
-00:02:08.242 --> 00:02:14.362
-In the Amplify console, open the app and go to settings, to the option that deletes
+00:01:33.577 --> 00:01:35.887
+but they weren't tested step by step.
 
 39
-00:02:14.362 --> 00:02:14.952
-the app.
+00:01:36.097 --> 00:01:37.977
+If something looks different on your screen,
 
 40
-00:02:14.952 --> 00:02:18.860
-Then open the address again and confirm it's offline.
+00:01:37.977 --> 00:01:40.087
+write it down. That's evidence too.
 
 41
-00:02:18.860 --> 00:02:24.759
-The cost is normally zero at this size, but check your account, because the free
+00:01:40.453 --> 00:01:42.713
+If the site was just a test, delete it.
 
 42
-00:02:24.759 --> 00:02:25.718
-tier changes.
+00:01:42.713 --> 00:01:46.333
+In the Amplify console, open the app and go to settings,
 
 43
-00:02:26.733 --> 00:02:29.185
-And now you have a story to tell.
+00:01:46.333 --> 00:01:48.143
+to the option that deletes the app.
 
 44
-00:02:29.185 --> 00:02:33.940
-You compared what AI suggested with what the documentation says.
+00:01:48.493 --> 00:01:51.203
+Then open the address again and confirm it's offline.
 
 45
-00:02:33.940 --> 00:02:36.318
-You published a site with HTTPS.
+00:01:51.493 --> 00:01:53.813
+The cost is normally zero at this size,
 
 46
-00:02:36.318 --> 00:02:38.547
-And you cleaned up at the end.
+00:01:53.813 --> 00:01:57.003
+but check your account, because the free tier changes.
 
 47
-00:02:38.547 --> 00:02:43.228
-That's an article you can write on your own, in your own words.
+00:01:57.487 --> 00:01:59.347
+And now you have a story to tell.
 
 48
-00:02:43.228 --> 00:02:44.417
-AI only reviews.
+00:01:59.347 --> 00:02:02.587
+You compared what AI suggested with what the documentation
 
 49
-00:02:45.433 --> 00:02:47.348
-One note before we finish.
+00:02:02.587 --> 00:02:05.727
+says. You published a site with HTTPS.
 
 50
-00:02:47.348 --> 00:02:53.461
-The voice you just heard was generated from my cloned voice, with my authorization.
+00:02:05.727 --> 00:02:07.937
+And you cleaned up at the end.
 
 51
-00:02:53.461 --> 00:02:56.039
-And this is an independent project.
+00:02:08.027 --> 00:02:10.007
+That's an article you can write on your own,
 
 52
-00:02:56.039 --> 00:02:58.543
+00:02:10.007 --> 00:02:11.107
+in your own words.
+
+53
+00:02:11.107 --> 00:02:12.577
+AI only reviews.
+
+54
+00:02:12.953 --> 00:02:14.933
+One note before we finish.
+
+55
+00:02:14.933 --> 00:02:17.533
+The voice you just heard was generated from my cloned
+
+56
+00:02:17.533 --> 00:02:19.573
+voice, with my authorization.
+
+57
+00:02:19.573 --> 00:02:21.553
+And this is an independent project.
+
+58
+00:02:21.553 --> 00:02:24.423
 It is not official AWS material.

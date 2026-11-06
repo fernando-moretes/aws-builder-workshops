@@ -1,141 +1,149 @@
 WEBVTT
 
 1
-00:00:00.300 --> 00:00:01.842
+00:00:00.120 --> 00:00:01.380
 Hi, this is Fernando.
 
 2
-00:00:01.842 --> 00:00:05.514
+00:00:01.380 --> 00:00:04.570
 If you have never used AWS, this video is for you.
 
 3
-00:00:05.514 --> 00:00:06.909
+00:00:04.780 --> 00:00:06.070
 The idea is simple.
 
 4
-00:00:06.909 --> 00:00:10.874
+00:00:06.280 --> 00:00:09.890
 You learn by testing, not by memorizing service names.
 
 5
-00:00:10.874 --> 00:00:13.224
+00:00:10.080 --> 00:00:12.380
 AI sits next to you, as a tutor.
 
 6
-00:00:13.224 --> 00:00:16.382
+00:00:12.380 --> 00:00:14.450
 But you are the one who writes and decides.
 
 7
-00:00:17.400 --> 00:00:18.872
+00:00:14.820 --> 00:00:16.180
 Here's how it works.
 
 8
-00:00:18.872 --> 00:00:21.963
+00:00:16.180 --> 00:00:18.560
 First, a real question, in your own words.
 
 9
-00:00:21.963 --> 00:00:23.361
+00:00:18.560 --> 00:00:20.320
 Then, a small test.
 
 10
-00:00:23.361 --> 00:00:25.422
+00:00:20.320 --> 00:00:22.080
 Next, you keep the evidence:
 
 11
-00:00:25.422 --> 00:00:28.071
+00:00:22.080 --> 00:00:24.000
 what you expected and what happened.
 
 12
-00:00:28.071 --> 00:00:30.941
+00:00:24.000 --> 00:00:26.100
 Finally, you write an article about it.
 
 13
-00:00:30.941 --> 00:00:33.443
+00:00:26.100 --> 00:00:28.110
 Each mission takes about one hour.
 
 14
-00:00:34.467 --> 00:00:36.298
+00:00:28.520 --> 00:00:30.240
 There are three missions.
 
 15
-00:00:36.298 --> 00:00:38.496
+00:00:30.240 --> 00:00:31.960
 In the first, the question is:
 
 16
-00:00:38.496 --> 00:00:40.768
+00:00:31.960 --> 00:00:34.140
 will I spend money by accident?
 
 17
-00:00:40.768 --> 00:00:41.794
-In the second:
+00:00:34.140 --> 00:00:37.060
+In the second: how do I put a site online safely?
 
 18
-00:00:41.794 --> 00:00:44.285
-how do I put a site online safely?
+00:00:37.060 --> 00:00:39.540
+In the third: what does this error mean?
 
 19
-00:00:44.285 --> 00:00:45.237
-In the third:
-
-20
-00:00:45.237 --> 00:00:47.142
-what does this error mean?
-
-21
-00:00:47.142 --> 00:00:50.952
+00:00:39.540 --> 00:00:42.430
 Start with the one that answers your question today.
 
-22
-00:00:51.967 --> 00:00:55.153
+20
+00:00:42.820 --> 00:00:46.170
 And you don't need an AWS account to start.
 
-23
-00:00:55.153 --> 00:00:58.785
+21
+00:00:46.360 --> 00:00:49.090
 The first steps of every mission run without one.
 
+22
+00:00:49.460 --> 00:00:52.100
+With one command, you can already check a sample cost
+
+23
+00:00:52.100 --> 00:00:54.250
+report, with fictional data.
+
 24
-00:00:58.785 --> 00:01:04.862
-With one command, you can already check a sample cost report, with fictional data.
+00:00:54.560 --> 00:00:58.060
+If you move to AWS later, every mission shows you how to
 
 25
-00:01:04.862 --> 00:01:11.013
-If you move to AWS later, every mission shows you how to clean up what you created.
+00:00:58.060 --> 00:00:59.470
+clean up what you created.
 
 26
-00:01:12.033 --> 00:01:13.667
+00:00:59.853 --> 00:01:01.253
 There's just one rule.
 
 27
-00:01:13.667 --> 00:01:14.856
-AI is the tutor.
+00:01:01.253 --> 00:01:03.973
+AI is the tutor. It asks questions,
 
 28
-00:01:14.856 --> 00:01:17.827
-It asks questions, reviews and explains.
+00:01:03.973 --> 00:01:05.513
+reviews and explains.
 
 29
-00:01:17.827 --> 00:01:22.654
-But it makes mistakes, and catching them is part of the exercise.
+00:01:05.513 --> 00:01:08.533
+But it makes mistakes, and catching them is part of the
 
 30
-00:01:22.654 --> 00:01:27.482
-So check the numbers, open the links and write in your own words.
+00:01:08.533 --> 00:01:10.633
+exercise. So check the numbers,
 
 31
-00:01:27.482 --> 00:01:28.596
-Shall we start?
+00:01:10.633 --> 00:01:13.163
+open the links and write in your own words.
 
 32
-00:01:29.600 --> 00:01:31.515
-One note before we finish.
+00:01:13.333 --> 00:01:14.143
+Shall we start?
 
 33
-00:01:31.515 --> 00:01:37.628
-The voice you just heard was generated from my cloned voice, with my authorization.
+00:01:14.520 --> 00:01:16.500
+One note before we finish.
 
 34
-00:01:37.628 --> 00:01:40.205
-And this is an independent project.
+00:01:16.500 --> 00:01:19.100
+The voice you just heard was generated from my cloned
 
 35
-00:01:40.205 --> 00:01:42.709
+00:01:19.100 --> 00:01:21.140
+voice, with my authorization.
+
+36
+00:01:21.140 --> 00:01:23.120
+And this is an independent project.
+
+37
+00:01:23.120 --> 00:01:25.990
 It is not official AWS material.

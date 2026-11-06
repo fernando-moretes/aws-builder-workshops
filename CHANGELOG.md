@@ -8,6 +8,8 @@ Formato: [Keep a Changelog](https://keepachangelog.com/pt-BR/1.1.0/). Versões: 
 - Workflows de qualidade do PR, segurança e CodeQL.
 
 ### Alterado
+- Vídeos e áudio refeitos: fala mais natural e rápida, e a tela reage à palavra dita, com legenda palavra a palavra. Duração em português: introdução 1:44, missões 2:27, 2:26 e 2:22, áudio 4:24.
+- Na missão 2 em inglês, a fala sobre bucket público deixou de afirmar uma frequência sem fonte.
 - Imagem Docker do kit no Node 26, e CI também testa essa versão. Relatos de teste passam a usar o modelo de reprodução.
 
 ## [0.2.1] - 2026-11-06

@@ -8,37 +8,37 @@ Fernando: his cloned voice, with his authorization. Lia: fictional character, sy
 
 **Lia:** Fernando, eu nunca usei AWS. Tenho até medo de começar.
 
-**Fernando:** Normal, Lia. Você não precisa decorar nome de serviço. Você aprende testando, com a IA do seu lado, como tutora. Quem escreve e quem decide é você.
+**Fernando:** Relaxa, Lia, é normal. Cê não precisa decorar nome de serviço. Você aprende testando, com a IA do lado, como tutora. Mas quem escreve e quem decide é você.
 
 **Lia:** Tá, mas como funciona na prática?
 
-**Fernando:** São quatro passos. Primeiro, uma dúvida real, com as suas palavras. Depois, um teste pequeno. Aí você guarda a evidência: o que você esperava e o que aconteceu. Por último, você escreve um artigo contando isso.
+**Fernando:** São quatro passos. Primeiro, uma dúvida real, com as suas palavras. Depois, um teste pequeno. Aí você guarda a evidência: o que esperava e o que aconteceu. E no fim, escreve um artigo contando isso.
 
-**Lia:** E quanto tempo leva?
+**Lia:** E leva quanto tempo?
 
-**Fernando:** Cerca de uma hora por missão.
+**Fernando:** cerca de 1 hora por missão.
 
 **Fernando:** São três missões, e cada uma começa com uma dúvida.
 
 **Lia:** Qual é a primeira?
 
-**Fernando:** Vou gastar sem querer? Na segunda: como coloco um site no ar com segurança? Na terceira: o que esse erro quer dizer?
+**Fernando:** Vou gastar sem querer? A segunda: como coloco um site no ar com segurança? E a terceira: o que esse erro quer dizer?
 
 **Lia:** Essa última sou eu toda semana.
 
-**Fernando:** Então comece por ela. Comece pela que responde à sua dúvida de hoje.
+**Fernando:** Então começa por ela. Começa pela que responde a sua dúvida de hoje.
 
 **Lia:** Mas eu ainda não tenho conta na AWS.
 
-**Fernando:** Não precisa, para começar. Os primeiros passos de cada missão rodam sem conta. Olha: com um comando, você já confere um relatório de custos de exemplo, com dados fictícios.
+**Fernando:** Pra começar, não precisa. Os primeiros passos de cada missão rodam sem conta. Olha só: com um comando, você já confere um relatório de custos de exemplo, com dados fictícios.
 
 **Lia:** E se depois eu criar a conta?
 
 **Fernando:** Cada missão ensina a limpar o que você criou.
 
-**Lia:** E essa tutora? Posso pedir para ela fazer tudo?
+**Lia:** E essa tutora? Posso pedir pra ela fazer tudo?
 
-**Fernando:** Ela é tutora. Faz perguntas, revisa e explica. Mas ela erra, e pegar esse erro faz parte do exercício. Confira os números, abra os links e escreva com as suas palavras.
+**Fernando:** Ela é tutora: faz perguntas, revisa e explica. Mas ela erra, e pegar esse erro faz parte do exercício. Confere os números, abre os links e escreve com as suas palavras.
 
 **Lia:** Combinado. Vamos lá?
 
@@ -52,31 +52,31 @@ Fernando: his cloned voice, with his authorization. Lia: fictional character, sy
 
 **Fernando:** Essa é a dúvida desta missão. Leva cerca de 1 hora e não custa nada. E os três primeiros passos você faz sem conta.
 
-**Fernando:** Antes de abrir qualquer ferramenta, escreva a sua hipótese. O que você acha que gera mais custo em uma conta pequena?
+**Fernando:** Antes de abrir qualquer ferramenta, escreve a sua hipótese. O que você acha que gera mais custo numa conta pequena?
 
 **Lia:** Hum. Acho que é o servidor.
 
-**Fernando:** Anote isso. Pode errar. É o erro que vira um bom artigo.
+**Fernando:** Anota isso. Pode errar. É o erro que vira um bom artigo.
 
-**Fernando:** Agora baixe o arquivo de custos de exemplo. Os dados são fictícios. Cole no seu assistente de IA, com este pedido.
+**Fernando:** Agora baixa o arquivo de custos de exemplo, com dados fictícios, e cola no seu assistente de IA, junto com este pedido.
 
 **Lia:** Por que o último item diz: não me dê a conclusão pronta?
 
-**Fernando:** Porque você quer perguntas, e não uma resposta para copiar.
+**Fernando:** Porque você quer perguntas, e não uma resposta pra copiar.
 
-**Fernando:** Agora confira a conta sem a IA, com este comando.
+**Fernando:** Agora confere a conta sem a IA, com este comando.
 
-**Lia:** Nossa. Foi de 0,92 USD para 25,63 USD!
+**Lia:** Nossa! Foi de 0,92 USD pra 25,63 USD!
 
-**Fernando:** Agora olhe a primeira linha da lista.
+**Fernando:** Agora olha a primeira linha da lista.
 
 **Lia:** NAT Gateway? 16,20 USD. E eu apostei no servidor.
 
-**Fernando:** Sua hipótese caiu. O servidor EC2 ficou em segundo. Anote isso, porque é a melhor parte do seu artigo.
+**Fernando:** Sua hipótese caiu. O servidor EC2 ficou em segundo. Anota isso, porque é a melhor parte do seu artigo.
 
 **Lia:** E como eu sei se a IA acertou?
 
-**Fernando:** Faça três perguntas. Os totais batem? Ela percebeu que o maior aumento é o NAT Gateway? Ela afirmou algum preço que não estava no arquivo? Se afirmou, peça a fonte e abra o link.
+**Fernando:** Faz três perguntas. Os totais batem? Ela percebeu que o maior aumento é o NAT Gateway? Ela afirmou algum preço que não tava no arquivo? Se afirmou, pede a fonte e abre o link.
 
 **Lia:** Então o que não bateu...
 
@@ -84,7 +84,7 @@ Fernando: his cloned voice, with his authorization. Lia: fictional character, sy
 
 **Lia:** E quando eu tiver conta, como fico tranquila?
 
-**Fernando:** Crie um alerta de gastos. Os comandos estão na missão e rodam na CloudShell, o terminal que já vem no navegador. No fim, você confere assim. Ele avisa quando o gasto real passa de 80% de US$ 5, e quando a previsão passa de US$ 5.
+**Fernando:** Cria um alerta de gastos. Os comandos tão na missão e rodam na CloudShell, o terminal que já vem no navegador. No fim, você confere assim. Ele avisa quando o gasto real passa de 80% de US$ 5, e quando a previsão passa de US$ 5.
 
 **Lia:** Aí, se passar, ele desliga tudo sozinho?
 
@@ -92,7 +92,7 @@ Fernando: his cloned voice, with his authorization. Lia: fictional character, sy
 
 **Lia:** E o artigo? Como eu começo?
 
-**Fernando:** Você já tem ele na mão. O tema é como evitar susto na conta. A evidência é sua: a hipótese, a resposta da IA, a saída do comando e o que não bateu.
+**Fernando:** Cê já tem ele na mão. O tema é como evitar susto na conta. A evidência é sua: a hipótese, a resposta da IA, a saída do comando e o que não bateu.
 
 **Lia:** E quem escreve o texto?
 
@@ -104,9 +104,9 @@ Fernando: his cloned voice, with his authorization. Lia: fictional character, sy
 
 **Lia:** Fernando, como eu coloco um site na internet pela AWS sem deixar nada aberto por engano?
 
-**Fernando:** Essa é a dúvida de hoje. Leva cerca de 1 hora, e os três primeiros passos você faz sem conta. Antes de perguntar à IA, anote o que você acha.
+**Fernando:** Essa é a dúvida de hoje. Leva cerca de 1 hora, e os três primeiros passos você faz sem conta. Antes de perguntar pra IA, anota o que você acha.
 
-**Fernando:** Cole este pedido no seu assistente de IA. Repare no último item: você pede o link da documentação oficial para cada resposta.
+**Fernando:** Cola este pedido no seu assistente de IA. Repara no último item: você pede o link da documentação oficial pra cada resposta.
 
 **Lia:** E aí é só confiar no link?
 
@@ -114,21 +114,21 @@ Fernando: his cloned voice, with his authorization. Lia: fictional character, sy
 
 **Lia:** A IA sugeriu um bucket S3 público. Parece fácil.
 
-**Fernando:** Olhe o que a própria documentação do S3 diz. Esse caminho exige desligar o Block Public Access. Ela também recomenda manter esse bloqueio ligado. E avisa que o site no S3 só tem HTTP.
+**Fernando:** Olha o que a própria documentação do S3 diz. Esse caminho exige desligar o Block Public Access. Ela também recomenda manter esse bloqueio ligado. E avisa que o site no S3 só tem HTTP.
 
 **Lia:** A IA não me contou nada disso.
 
-**Fernando:** Então anote. Essa é a sua melhor evidência.
+**Fernando:** Então anota. Essa é a sua melhor evidência.
 
-**Fernando:** Agora baixe a página da missão, troque o texto pelo seu e rode este comando. Depois, abra no navegador.
+**Fernando:** Agora baixa a página da missão, troca o texto pelo seu e roda este comando. Depois, abre no navegador.
 
-**Lia:** Posso pedir para a IA escrever o texto?
+**Lia:** Posso pedir pra IA escrever o texto?
 
-**Fernando:** Peça só para revisar a clareza. E cuidado: não coloque telefone, endereço nem nada que você não queira público.
+**Fernando:** Pede só pra revisar a clareza. E cuidado: não coloca telefone, endereço nem nada que você não queira público.
 
-**Lia:** E para publicar de verdade?
+**Lia:** E pra publicar de verdade?
 
-**Fernando:** Se você já tem conta, use o Amplify. Coloque o arquivo em um zip. Compacte o arquivo, e não a pasta, porque zipar a pasta causa erro de acesso negado. No console, crie um app sem Git, solte o zip e salve.
+**Fernando:** Se já tem conta, usa o Amplify. Coloca o arquivo num zip. Compacta o arquivo, e não a pasta, porque zipar a pasta dá erro de acesso negado. No console, cria um app sem Git, solta o zip e salva.
 
 **Lia:** E demora?
 
@@ -136,7 +136,7 @@ Fernando: his cloned voice, with his authorization. Lia: fictional character, sy
 
 **Lia:** E depois, deixo lá?
 
-**Fernando:** Se era só um teste, apague o app no console do Amplify. Depois abra o endereço e confirme que saiu do ar. O custo normalmente é zero nesse tamanho, mas confira na sua conta, porque o nível gratuito muda.
+**Fernando:** Se era só um teste, apaga o app no console do Amplify. Depois abre o endereço e confirma que saiu do ar. O custo normalmente é zero nesse tamanho, mas confere na sua conta, porque o nível gratuito muda.
 
 **Lia:** Agora eu tenho o que contar, né?
 
@@ -148,13 +148,13 @@ Fernando: his cloned voice, with his authorization. Lia: fictional character, sy
 
 **Lia:** Fernando, quando dá erro, eu travo. Como eu descubro sozinha o que ele quer dizer?
 
-**Fernando:** Nesta missão, você quebra uma função de propósito. Olhe este código. Ele pede um campo chamado nome. O que acontece se ele receber um evento vazio? E qual código de status você espera?
+**Fernando:** Nesta missão, você quebra uma função de propósito. Olha este código. Ele pede um campo chamado nome. O que acontece se ele receber um evento vazio? E qual código de status você espera?
 
 **Lia:** Acho que vai dar erro. Uns 500?
 
-**Fernando:** Anote a sua hipótese. Vamos testar.
+**Fernando:** Anota a sua hipótese. Vamos testar.
 
-**Fernando:** Baixe os dois arquivos da missão e rode este comando. Só precisa de Python, sem conta na AWS.
+**Fernando:** Baixa os dois arquivos da missão e roda este comando. Só precisa de Python, sem conta na AWS.
 
 **Lia:** Apareceu um erro, com a palavra nome.
 
@@ -162,33 +162,33 @@ Fernando: his cloned voice, with his authorization. Lia: fictional character, sy
 
 **Lia:** Posso colar o erro na IA e pedir a correção?
 
-**Fernando:** Peça diferente. Cole este pedido, com o código e o erro. Ela aponta a linha e faz uma pergunta. Quando você entender a causa, corrija você mesma.
+**Fernando:** Pede diferente. Cola este pedido, com o código e o erro. Ela aponta a linha e faz uma pergunta. Quando entender a causa, corrige você mesma.
 
 **Lia:** O que a função deveria fazer quando o nome não vem?
 
 **Fernando:** Exato. Essa é a pergunta.
 
-**Fernando:** Se você tem conta, crie a função na AWS. Os comandos estão na página da missão. Depois, chame a função com um evento vazio.
+**Fernando:** Se você tem conta, cria a função na AWS. Os comandos tão na página da missão. Depois, chama a função com um evento vazio.
 
 **Lia:** Fernando, olha isso. Deu erro, e mesmo assim a resposta veio com status 200. Como assim?
 
-**Fernando:** Essa foi a resposta real no nosso teste. StatusCode 200. Logo ao lado: FunctionError, Unhandled. E dentro do arquivo: KeyError.
+**Fernando:** Essa foi a resposta real no nosso teste. StatusCode 200. Logo do lado: FunctionError, Unhandled. E dentro do arquivo: KeyError.
 
-**Fernando:** Esse é o ponto da missão. O 200 diz que a chamada ao serviço Lambda funcionou. O erro da sua função está em FunctionError.
+**Fernando:** Esse é o ponto da missão. O 200 diz que a chamada ao serviço Lambda funcionou. O erro da sua função tá em FunctionError.
 
 **Lia:** Então quem olha só o status acha que deu tudo certo.
 
 **Fernando:** Exatamente.
 
-**Fernando:** Espere uns 15 segundos e leia o log.
+**Fernando:** Espera uns 15 segundos e lê o log.
 
 **Lia:** Mostra o erro e a linha 5.
 
-**Fernando:** Agora pergunte à sua IA, sem mostrar esta missão: se o StatusCode voltou 200, a minha função rodou sem erro? Peça a documentação. Ela percebeu a diferença? O link confirma? Abra e anote.
+**Fernando:** Agora pergunta pra sua IA, sem mostrar esta missão: se o StatusCode voltou 200, a minha função rodou sem erro? Pede a documentação. Ela percebeu a diferença? O link confirma? Abre e anota.
 
 **Lia:** E no fim, o que eu apago?
 
-**Fernando:** A missão traz os comandos para apagar a função, a role e o grupo de logs. A última linha precisa mostrar colchetes vazios.
+**Fernando:** A missão traz os comandos pra apagar a função, a role e o grupo de logs. A última linha precisa mostrar colchetes vazios.
 
 **Lia:** E aí eu escrevo o artigo?
 
@@ -198,23 +198,23 @@ Fernando: his cloned voice, with his authorization. Lia: fictional character, sy
 
 ## audio-primeiro-artigo (pt)
 
-**Fernando:** Oi, aqui é o Fernando. Hoje a Lia está comigo. Ela é uma estudante que nunca usou AWS, e vai me fazer as perguntas que você faria.
+**Fernando:** Oi, aqui é o Fernando. Hoje a Lia tá comigo. Ela é uma estudante que nunca usou AWS, e vai fazer as perguntas que você faria.
 
-**Lia:** Oi. Minha primeira pergunta é simples. São três missões. Por qual eu começo?
+**Lia:** Oi! Minha primeira pergunta é simples. São três missões. Por qual eu começo?
 
-**Fernando:** Pela dúvida que você tem hoje. A primeira é: vou gastar sem querer? A segunda é: como coloco um site no ar com segurança? A terceira é: o que esse erro quer dizer?
+**Fernando:** Pela dúvida que você tem hoje. A primeira é: vou gastar sem querer? A segunda: como coloco um site no ar com segurança? E a terceira: o que esse erro quer dizer?
 
 **Lia:** Eu tenho medo de criar a conta. Isso conta como dúvida?
 
-**Fernando:** Conta, e é uma ótima. Então eu começaria pela primeira. Leva cerca de 1 hora, não custa nada, e os três primeiros passos nem precisam de conta. Você termina sabendo ler um relatório de custos.
+**Fernando:** Conta, e é uma ótima. Então eu começaria pela primeira. Leva cerca de 1 hora, não custa nada, e os três primeiros passos nem precisam de conta. Cê termina sabendo ler um relatório de custos.
 
-**Lia:** E se eu quiser ter algo para mostrar?
+**Lia:** E se eu quiser ter algo pra mostrar?
 
-**Fernando:** Aí vá para a segunda. No fim, você pode ter um site seu, com HTTPS. E, se o que mais trava você é erro na tela, vá para a terceira. Ela ensina a ler log, e isso serve em qualquer sistema.
+**Fernando:** Aí vai pra segunda. No fim, você pode ter um site seu, com HTTPS. E, se o que mais te trava é erro na tela, vai pra terceira. Ela ensina a ler log, e isso serve em qualquer sistema.
 
 **Lia:** Tá, escolhi. Agora eu abro a IA?
 
-**Fernando:** Ainda não. Abra um arquivo em branco e escreva a sua hipótese. O que você acha que vai acontecer? Na missão um: o que gera mais custo em uma conta pequena? Na missão três: o que acontece com um evento vazio?
+**Fernando:** Ainda não. Abre um arquivo em branco e escreve a sua hipótese. O que você acha que vai acontecer? Na missão um: o que gera mais custo numa conta pequena? Na missão três: o que acontece com um evento vazio?
 
 **Lia:** E se eu errar? Vou ficar com vergonha de escrever isso depois.
 
@@ -226,45 +226,45 @@ Fernando: his cloned voice, with his authorization. Lia: fictional character, sy
 
 **Lia:** E como eu sei se ela acertou?
 
-**Fernando:** Você confere. Na missão um, você roda um comando que soma o arquivo sem IA nenhuma. O total vai de 0,92 USD para 25,63 USD. O maior aumento é o NAT Gateway. Aí você volta na resposta da IA e olha se ela viu isso.
+**Fernando:** Você confere. Na missão um, você roda um comando que soma o arquivo sem IA nenhuma. O total vai de 0,92 USD pra 25,63 USD. O maior aumento é o NAT Gateway. Aí você volta na resposta da IA e olha se ela viu isso.
 
 **Lia:** E se ela citou um link?
 
-**Fernando:** Abra. Não basta o link existir. Ele precisa dizer o que ela afirmou. Na missão dois, é a própria documentação do S3 que diz que esse caminho exige desligar o Block Public Access, e recomenda mantê-lo ligado.
+**Fernando:** Abre. Não basta o link existir. Ele precisa dizer o que ela afirmou. Na missão dois, é a própria documentação do S3 que diz que esse caminho exige desligar o Block Public Access, e recomenda manter ligado.
 
 **Lia:** Então o que não bateu vira conteúdo?
 
-**Fernando:** Vira a sua melhor evidência. Você não está competindo com a documentação. Não precisa explicar a AWS inteira. Só precisa contar o que testou, o que esperava e o que aconteceu.
+**Fernando:** Vira a sua melhor evidência. Você não tá competindo com a documentação. Não precisa explicar a AWS inteira. Só precisa contar o que testou, o que esperava e o que aconteceu.
 
 **Lia:** Mas eu nunca escrevi um artigo técnico. Por onde começo?
 
-**Fernando:** Cada missão termina com uma tabela de cinco campos: tema, público, problema, objetivo e evidências. Preencha com as suas palavras. Na missão três, o tema pode ser: minha Lambda respondeu 200 e estava quebrada.
+**Fernando:** Cada missão termina com uma tabela de cinco campos: tema, público, problema, objetivo e evidências. Preenche com as suas palavras. Na missão três, o tema pode ser: minha Lambda respondeu 200 e estava quebrada.
 
 **Lia:** Esse título eu leria.
 
-**Fernando:** Pois é. Depois, escreva o primeiro rascunho sozinha. Pode ficar ruim. Comece pela sua dúvida. Mostre a hipótese. Mostre o comando e a saída real. Diga o que surpreendeu você. E termine dizendo o que esse teste não prova.
+**Fernando:** Pois é. Depois, escreve o primeiro rascunho sozinha. Pode ficar ruim. Começa pela sua dúvida. Mostra a hipótese. Mostra o comando e a saída real. Diz o que te surpreendeu. E termina dizendo o que esse teste não prova.
 
 **Lia:** E aí ela pode revisar?
 
-**Fernando:** Aí sim. Peça para ela apontar o que ficou confuso e marcar os números sem fonte. Se ela sugerir uma frase mais clara, e a ideia for sua, tudo bem. Se ela trouxer um fato novo, confira antes de usar.
+**Fernando:** Aí sim. Pede pra ela apontar o que ficou confuso e marcar os números sem fonte. Se ela sugerir uma frase mais clara, e a ideia for sua, tudo bem. Se ela trouxer um fato novo, confere antes de usar.
 
 **Lia:** Como eu sei que o texto ainda é meu?
 
-**Fernando:** Com um teste simples. Toda afirmação do texto, você precisa saber explicar sem a IA. Se você não souber responder, essa frase ainda não é sua. Volte e teste, ou tire do texto.
+**Fernando:** Com um teste simples. Toda afirmação do texto, você precisa saber explicar sem a IA. Se não souber responder, essa frase ainda não é sua. Volta e testa, ou tira do texto.
 
 **Lia:** Tem mais alguma coisa antes de publicar?
 
-**Fernando:** Duas. Primeiro, a limpeza: apague o que era só teste, e confira. Segundo, os dados: nenhuma chave, nenhum número de conta, nada de telefone ou endereço, nem no texto, nem no print.
+**Fernando:** Duas. Primeiro, a limpeza: apaga o que era só teste, e confere. Segundo, os dados: nenhuma chave, nenhum número de conta, nada de telefone ou endereço, nem no texto, nem no print.
 
 **Lia:** Então: uma dúvida minha, um teste pequeno, a evidência e um texto escrito por mim.
 
-**Fernando:** É isso. Não precisa ser grande. Precisa ser verdadeiro, e outra pessoa precisa conseguir repetir. Escolha uma missão hoje e escreva a sua hipótese. Só isso já é o começo.
+**Fernando:** É isso. Não precisa ser grande. Precisa ser verdadeiro, e outra pessoa precisa conseguir repetir. Escolhe uma missão hoje e escreve a sua hipótese. Só isso já é o começo.
 
 **Fernando:** Um aviso antes de terminar. Minha narração foi gerada com a minha voz clonada, com a minha autorização. A personagem Lia é fictícia, com voz sintética. E este é um projeto independente. Não é material oficial da AWS.
 
 # English (Fernando only, OmniVoice)
 
-Fernando's cloned voice, with his authorization. There is no Lia in the English versions. Independent project, not official AWS material.
+Fernando's cloned voice, with his authorization. There is no Lia in the English version.
 
 ## intro (en)
 
@@ -306,7 +306,7 @@ How do I put a site online with AWS without leaving anything open by mistake? Th
 
 Paste this request into your AI assistant. Notice the last item. You ask for the official documentation link behind each answer. Then comes the most important part of the mission: opening those links. It's not enough for a link to exist. It has to say what the AI claimed.
 
-Many answers suggest a public S3 bucket. Look at what the S3 documentation itself says. That path requires turning off Block Public Access. It also recommends keeping that block on. And it warns that the S3 website only has HTTP. Did your AI tell you that? Write down what matched and what didn't.
+An AI may suggest a public S3 bucket. Look at what the S3 documentation itself says. That path requires turning off Block Public Access. It also recommends keeping that block on. And it warns that the S3 website only has HTTP. Did your AI tell you that? Write down what matched and what didn't.
 
 Now download the mission's page and replace the text with yours. Run this command and open it in your browser. Ask AI to review the clarity, without writing it for you. And be careful: don't include your phone, your address or anything you don't want public.
 

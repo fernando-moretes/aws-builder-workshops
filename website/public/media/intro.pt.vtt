@@ -1,189 +1,173 @@
 WEBVTT
 
 1
-00:00:00.300 --> 00:00:02.232
+00:00:00.120 --> 00:00:02.280
 Lia: Fernando, eu nunca usei AWS.
 
 2
-00:00:02.232 --> 00:00:04.026
+00:00:02.280 --> 00:00:03.710
 Tenho até medo de começar.
 
 3
-00:00:04.376 --> 00:00:05.358
-Fernando: Normal, Lia.
+00:00:03.825 --> 00:00:05.585
+Fernando: Relaxa, Lia, é normal.
 
 4
-00:00:05.358 --> 00:00:08.711
-Você não precisa decorar nome de serviço.
+00:00:05.585 --> 00:00:07.725
+Cê não precisa decorar nome de serviço.
 
 5
-00:00:08.711 --> 00:00:13.373
-Você aprende testando, com a IA do seu lado, como tutora.
+00:00:07.725 --> 00:00:10.865
+Você aprende testando, com a IA do lado,
 
 6
-00:00:13.373 --> 00:00:16.153
-Quem escreve e quem decide é você.
+00:00:10.865 --> 00:00:15.715
+como tutora. Mas quem escreve e quem decide é você.
 
 7
-00:00:17.167 --> 00:00:19.144
+00:00:16.087 --> 00:00:18.137
 Lia: Tá, mas como funciona na prática?
 
 8
-00:00:19.494 --> 00:00:21.118
+00:00:18.253 --> 00:00:19.503
 Fernando: São quatro passos.
 
 9
-00:00:21.118 --> 00:00:25.449
+00:00:19.713 --> 00:00:22.403
 Primeiro, uma dúvida real, com as suas palavras.
 
 10
-00:00:25.449 --> 00:00:27.704
+00:00:22.473 --> 00:00:24.303
 Depois, um teste pequeno.
 
 11
-00:00:27.704 --> 00:00:30.140
+00:00:24.433 --> 00:00:26.753
 Aí você guarda a evidência:
 
 12
-00:00:30.140 --> 00:00:33.568
-o que você esperava e o que aconteceu.
+00:00:26.753 --> 00:00:28.663
+o que esperava e o que aconteceu.
 
 13
-00:00:33.568 --> 00:00:37.989
-Por último, você escreve um artigo contando isso.
+00:00:28.753 --> 00:00:31.203
+E no fim, escreve um artigo contando isso.
 
 14
-00:00:38.339 --> 00:00:39.535
-Lia: E quanto tempo leva?
+00:00:31.322 --> 00:00:32.512
+Lia: E leva quanto tempo?
 
 15
-00:00:39.885 --> 00:00:46.499
-Fernando: Cerca de uma hora por missão.
+00:00:32.642 --> 00:00:34.372
+Fernando: cerca de 1 hora por missão.
 
 16
-00:00:47.500 --> 00:00:51.216
+00:00:34.953 --> 00:00:38.103
 Fernando: São três missões, e cada uma começa com uma dúvida.
 
 17
-00:00:51.566 --> 00:00:52.416
+00:00:38.424 --> 00:00:39.354
 Lia: Qual é a primeira?
 
 18
-00:00:52.766 --> 00:00:54.724
+00:00:39.468 --> 00:00:40.408
 Fernando: Vou gastar sem querer?
 
 19
-00:00:54.724 --> 00:00:55.702
-Na segunda:
+00:00:40.408 --> 00:00:44.208
+A segunda: como coloco um site no ar com segurança?
 
 20
-00:00:55.702 --> 00:00:59.262
-como coloco um site no ar com segurança?
+00:00:44.208 --> 00:00:47.038
+E a terceira: o que esse erro quer dizer?
 
 21
-00:00:59.262 --> 00:01:00.330
-Na terceira:
-
-22
-00:01:00.330 --> 00:01:02.733
-o que esse erro quer dizer?
-
-23
-00:01:03.083 --> 00:01:04.671
+00:00:47.361 --> 00:00:49.011
 Lia: Essa última sou eu toda semana.
 
+22
+00:00:49.135 --> 00:00:50.395
+Fernando: Então começa por ela.
+
+23
+00:00:50.395 --> 00:00:53.025
+Começa pela que responde a sua dúvida de hoje.
+
 24
-00:01:05.021 --> 00:01:06.478
-Fernando: Então comece por ela.
-
-25
-00:01:06.478 --> 00:01:09.670
-Comece pela que responde à sua dúvida de hoje.
-
-26
-00:01:10.700 --> 00:01:12.715
+00:00:53.387 --> 00:00:55.457
 Lia: Mas eu ainda não tenho conta na AWS.
 
-27
-00:01:13.065 --> 00:01:15.262
-Fernando: Não precisa, para começar.
+25
+00:00:55.585 --> 00:00:57.105
+Fernando: Pra começar, não precisa.
 
-28
-00:01:15.262 --> 00:01:19.572
+26
+00:00:57.105 --> 00:01:00.435
 Os primeiros passos de cada missão rodam sem conta.
 
+27
+00:01:00.685 --> 00:01:04.685
+Olha só: com um comando, você já confere um relatório de
+
+28
+00:01:04.685 --> 00:01:08.115
+custos de exemplo, com dados fictícios.
+
 29
-00:01:19.572 --> 00:01:19.994
-Olha:
-
-30
-00:01:19.994 --> 00:01:26.416
-com um comando, você já confere um relatório de custos de exemplo, com dados
-
-31
-00:01:26.416 --> 00:01:27.261
-fictícios.
-
-32
-00:01:27.611 --> 00:01:29.111
+00:01:08.228 --> 00:01:09.798
 Lia: E se depois eu criar a conta?
 
-33
-00:01:29.461 --> 00:01:32.270
+30
+00:01:09.920 --> 00:01:12.450
 Fernando: Cada missão ensina a limpar o que você criou.
 
-34
-00:01:33.300 --> 00:01:34.096
-Lia: E essa tutora?
+31
+00:01:12.887 --> 00:01:15.717
+Lia: E essa tutora? Posso pedir pra ela fazer tudo?
 
-35
-00:01:34.096 --> 00:01:35.917
-Posso pedir para ela fazer tudo?
+32
+00:01:15.834 --> 00:01:20.044
+Fernando: Ela é tutora: faz perguntas, revisa e explica.
 
-36
-00:01:36.267 --> 00:01:37.457
-Fernando: Ela é tutora.
-
-37
-00:01:37.457 --> 00:01:40.386
-Faz perguntas, revisa e explica.
-
-38
-00:01:40.386 --> 00:01:45.422
+33
+00:01:20.254 --> 00:01:24.064
 Mas ela erra, e pegar esse erro faz parte do exercício.
 
-39
-00:01:45.422 --> 00:01:51.373
-Confira os números, abra os links e escreva com as suas palavras.
+34
+00:01:24.174 --> 00:01:27.254
+Confere os números, abre os links e escreve com as suas
 
-40
-00:01:51.723 --> 00:01:52.589
-Lia: Combinado.
+35
+00:01:27.254 --> 00:01:28.064
+palavras.
 
-41
-00:01:52.589 --> 00:01:53.368
-Vamos lá?
+36
+00:01:28.175 --> 00:01:29.585
+Lia: Combinado. Vamos lá?
 
-42
-00:01:53.718 --> 00:01:54.425
+37
+00:01:29.711 --> 00:01:30.401
 Fernando: Vamos lá.
 
-43
-00:01:55.433 --> 00:01:57.341
+38
+00:01:30.787 --> 00:01:32.257
 Fernando: Um aviso antes de terminar.
 
-44
-00:01:57.341 --> 00:02:02.639
-Minha narração foi gerada com a minha voz clonada, com a minha autorização.
+39
+00:01:32.367 --> 00:01:35.247
+Minha narração foi gerada com a minha voz clonada,
 
-45
-00:02:02.639 --> 00:02:05.959
+40
+00:01:35.247 --> 00:01:36.617
+com a minha autorização.
+
+41
+00:01:36.767 --> 00:01:40.077
 A personagem Lia é fictícia, com voz sintética.
 
-46
-00:02:05.959 --> 00:02:08.290
+42
+00:01:40.207 --> 00:01:41.977
 E este é um projeto independente.
 
-47
-00:02:08.290 --> 00:02:10.409
+43
+00:01:42.147 --> 00:01:44.177
 Não é material oficial da AWS.

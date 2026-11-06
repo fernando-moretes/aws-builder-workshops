@@ -133,8 +133,8 @@ Installs the MCP server and the `builder-workshops` skill in each client's forma
 ## Videos and audio
 
 <table><tr>
-<td width="50%"><a href="https://fernando-moretes.github.io/aws-builder-workshops/en/referencia/midia/"><img src="docs/img/poster-intro.en.jpg" alt="Video: how it works"></a><br><strong>How it works</strong> (1:43)</td>
-<td width="50%"><a href="https://fernando-moretes.github.io/aws-builder-workshops/en/referencia/midia/"><img src="docs/img/poster-missao-3.en.jpg" alt="Video: broken Lambda"></a><br><strong>Mission 3: broken Lambda</strong> (2:37)</td>
+<td width="50%"><a href="https://fernando-moretes.github.io/aws-builder-workshops/en/referencia/midia/"><img src="docs/img/poster-intro.en.jpg" alt="Video: how it works"></a><br><strong>How it works</strong> (1:26)</td>
+<td width="50%"><a href="https://fernando-moretes.github.io/aws-builder-workshops/en/referencia/midia/"><img src="docs/img/poster-missao-3.en.jpg" alt="Video: broken Lambda"></a><br><strong>Mission 3: broken Lambda</strong> (2:08)</td>
 </tr></table>
 
 There is one video per mission and an audio episode. [See everything, with captions and transcript](https://fernando-moretes.github.io/aws-builder-workshops/en/referencia/midia/).
