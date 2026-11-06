@@ -12,6 +12,9 @@ Formato: [Keep a Changelog](https://keepachangelog.com/pt-BR/1.1.0/). Versões: 
 - Na missão 2 em inglês, a fala sobre bucket público deixou de afirmar uma frequência sem fonte.
 - Imagem Docker do kit no Node 26, e CI também testa essa versão. Relatos de teste passam a usar o modelo de reprodução.
 
+### Corrigido
+- Legenda duplicada nos vídeos do site: a do navegador vinha ligada sobre a que já está na imagem. Agora ela fica opcional, no botão CC.
+
 ## [0.2.1] - 2026-11-06
 
 ### Adicionado
