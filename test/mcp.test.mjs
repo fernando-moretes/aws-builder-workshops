@@ -25,6 +25,7 @@ test("cliente oficial: ferramentas, recursos e prompts", async (t) => {
   assert.equal(JSON.parse((await call("run_case", { case_id: "A5" })).text).mutations, 0);
   assert.equal(JSON.parse((await call("list_missions", { lang: "en" })).text).length, 3);
   assert.match((await call("get_mission", { mission: 3 })).text, /FunctionError/);
+  assert.match((await call("get_mission", { mission: 3, lang: "en" })).text, /^# Mission 3/);
   assert.equal(JSON.parse((await call("compare_costs", { csv: "s,a,b\nx,1,3.5" })).text).change, 2.5);
   assert.equal((await call("get_mission", { mission: 9 })).isError, true);
   assert.equal((await call("run_case", { case_id: "A5" })).structuredContent.case_id, "A5");

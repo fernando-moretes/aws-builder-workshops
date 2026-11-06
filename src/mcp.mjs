@@ -20,9 +20,9 @@ export const TOOLS = [
   },
   {
     name: "get_mission",
-    description: "Read a mission guide in full (in Portuguese): prompts, commands, how to catch AI mistakes, cost and cleanup. Guide the person through it step by step, asking for their hypothesis first. Never run cloud commands for them or write their article.",
-    inputSchema: { type: "object", properties: { mission: { type: "number", enum: [1, 2, 3] } }, required: ["mission"], additionalProperties: false },
-    run: ({ mission }) => readFileSync(new URL(`${MISSIONS.find((m) => m.n === mission).dir}/README.md`, ROOT), "utf8"),
+    description: "Read a mission guide in full, in Portuguese or English: prompts, commands, how to catch AI mistakes, cost and cleanup. Guide the person through it step by step, asking for their hypothesis first. Never run cloud commands for them or write their article.",
+    inputSchema: { type: "object", properties: { mission: { type: "number", enum: [1, 2, 3] }, lang: LANG }, required: ["mission"], additionalProperties: false },
+    run: ({ mission, lang = "pt" }) => readFileSync(new URL(`${MISSIONS.find((m) => m.n === mission).dir}/${lang === "en" ? "README.en.md" : "README.md"}`, ROOT), "utf8"),
   },
   {
     name: "compare_costs",

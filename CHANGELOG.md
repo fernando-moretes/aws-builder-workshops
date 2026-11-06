@@ -2,12 +2,14 @@
 
 Formato: [Keep a Changelog](https://keepachangelog.com/pt-BR/1.1.0/). Versões: [SemVer](https://semver.org/lang/pt-BR/).
 
-## [Não publicado]
+## [0.2.1] - 2026-11-06
 
 ### Adicionado
+- Missões e páginas novas em inglês. `missao --lang en` e `get_mission` com `lang` entregam o guia em inglês.
 - Vídeo de introdução, um vídeo por missão e um episódio de áudio, com legendas e transcrição. Em português, diálogo entre Fernando e Lia; em inglês, só a voz do Fernando.
 
 ### Corrigido
+- Favicon que faltava em todas as páginas do site.
 - O release agora anexa também o pacote com nome fixo, usado na página de instalação.
 
 ## [0.2.0] - 2026-11-06
