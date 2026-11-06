@@ -1,225 +1,233 @@
 WEBVTT
 
 1
-00:00:00.300 --> 00:00:04.354
-Lia: Fernando, como eu coloco um site na internet pela AWS sem deixar nada aberto por
+00:00:00.120 --> 00:00:03.140
+Lia: Fernando, como eu coloco um site na internet pela AWS sem
 
 2
-00:00:04.354 --> 00:00:04.709
-engano?
+00:00:03.140 --> 00:00:04.590
+deixar nada aberto por engano?
 
 3
-00:00:05.059 --> 00:00:06.835
+00:00:04.717 --> 00:00:06.107
 Fernando: Essa é a dúvida de hoje.
 
 4
-00:00:06.835 --> 00:00:12.018
-Leva cerca de 1 hora, e os três primeiros passos você faz sem conta.
+00:00:06.277 --> 00:00:09.797
+Leva cerca de 1 hora, e os três primeiros passos você faz
 
 5
-00:00:12.018 --> 00:00:15.498
-Antes de perguntar à IA, anote o que você acha.
+00:00:09.797 --> 00:00:12.737
+sem conta. Antes de perguntar pra IA,
 
 6
-00:00:16.500 --> 00:00:19.852
-Fernando: Cole este pedido no seu assistente de IA.
+00:00:12.737 --> 00:00:14.027
+anota o que você acha.
 
 7
-00:00:19.852 --> 00:00:21.651
-Repare no último item:
+00:00:14.420 --> 00:00:16.610
+Fernando: Cola este pedido no seu assistente de IA.
 
 8
-00:00:21.651 --> 00:00:26.557
-você pede o link da documentação oficial para cada resposta.
+00:00:16.820 --> 00:00:18.230
+Repara no último item:
 
 9
-00:00:26.907 --> 00:00:28.586
-Lia: E aí é só confiar no link?
+00:00:18.340 --> 00:00:22.510
+você pede o link da documentação oficial pra cada resposta.
 
 10
-00:00:28.936 --> 00:00:29.274
-Fernando: Não.
+00:00:22.636 --> 00:00:24.386
+Lia: E aí é só confiar no link?
 
 11
-00:00:29.274 --> 00:00:31.896
-Aí vem a parte mais importante:
+00:00:24.505 --> 00:00:27.285
+Fernando: Não. Aí vem a parte mais importante:
 
 12
-00:00:31.896 --> 00:00:33.419
+00:00:27.285 --> 00:00:28.905
 abrir esses links.
 
 13
-00:00:33.419 --> 00:00:35.534
+00:00:28.905 --> 00:00:30.605
 Não basta o link existir.
 
 14
-00:00:35.534 --> 00:00:38.663
+00:00:30.605 --> 00:00:32.915
 Ele precisa dizer o que a IA afirmou.
 
 15
-00:00:39.667 --> 00:00:42.563
+00:00:33.320 --> 00:00:36.070
 Lia: A IA sugeriu um bucket S3 público.
 
 16
-00:00:42.563 --> 00:00:43.554
+00:00:36.200 --> 00:00:37.270
 Parece fácil.
 
 17
-00:00:43.904 --> 00:00:47.773
-Fernando: Olhe o que a própria documentação do S3 diz.
+00:00:37.383 --> 00:00:40.813
+Fernando: Olha o que a própria documentação do S3 diz.
 
 18
-00:00:47.773 --> 00:00:51.804
+00:00:40.943 --> 00:00:43.893
 Esse caminho exige desligar o Block Public Access.
 
 19
-00:00:51.804 --> 00:00:55.754
+00:00:44.123 --> 00:00:46.693
 Ela também recomenda manter esse bloqueio ligado.
 
 20
-00:00:55.754 --> 00:00:59.058
+00:00:46.923 --> 00:00:49.573
 E avisa que o site no S3 só tem HTTP.
 
 21
-00:00:59.408 --> 00:01:00.872
+00:00:49.698 --> 00:00:51.228
 Lia: A IA não me contou nada disso.
 
 22
-00:01:01.222 --> 00:01:02.068
-Fernando: Então anote.
+00:00:51.347 --> 00:00:53.977
+Fernando: Então anota. Essa é a sua melhor evidência.
 
 23
-00:01:02.068 --> 00:01:04.184
-Essa é a sua melhor evidência.
+00:00:54.353 --> 00:00:56.473
+Fernando: Agora baixa a página da missão,
 
 24
-00:01:05.200 --> 00:01:10.941
-Fernando: Agora baixe a página da missão, troque o texto pelo seu e rode este comando.
+00:00:56.473 --> 00:00:59.403
+troca o texto pelo seu e roda este comando.
 
 25
-00:01:10.941 --> 00:01:12.906
-Depois, abra no navegador.
+00:00:59.613 --> 00:01:01.783
+Depois, abre no navegador.
 
 26
-00:01:13.256 --> 00:01:15.199
-Lia: Posso pedir para a IA escrever o texto?
+00:01:01.898 --> 00:01:03.868
+Lia: Posso pedir pra IA escrever o texto?
 
 27
-00:01:15.549 --> 00:01:18.611
-Fernando: Peça só para revisar a clareza.
+00:01:03.992 --> 00:01:05.922
+Fernando: Pede só pra revisar a clareza.
 
 28
-00:01:18.611 --> 00:01:19.599
-E cuidado:
+00:01:06.032 --> 00:01:08.132
+E cuidado: não coloca telefone,
 
 29
-00:01:19.599 --> 00:01:26.315
-não coloque telefone, endereço nem nada que você não queira público.
+00:01:08.132 --> 00:01:10.402
+endereço nem nada que você não queira público.
 
 30
-00:01:27.333 --> 00:01:28.781
-Lia: E para publicar de verdade?
+00:01:10.787 --> 00:01:12.237
+Lia: E pra publicar de verdade?
 
 31
-00:01:29.131 --> 00:01:32.192
-Fernando: Se você já tem conta, use o Amplify.
+00:01:12.349 --> 00:01:14.579
+Fernando: Se já tem conta, usa o Amplify.
 
 32
-00:01:32.192 --> 00:01:34.572
-Coloque o arquivo em um zip.
+00:01:14.809 --> 00:01:16.509
+Coloca o arquivo num zip.
 
 33
-00:01:34.572 --> 00:01:41.715
-Compacte o arquivo, e não a pasta, porque zipar a pasta causa erro de acesso negado.
+00:01:16.509 --> 00:01:19.009
+Compacta o arquivo, e não a pasta,
 
 34
-00:01:41.715 --> 00:01:46.221
-No console, crie um app sem Git, solte o zip e salve.
+00:01:19.009 --> 00:01:21.759
+porque zipar a pasta dá erro de acesso negado.
 
 35
-00:01:46.571 --> 00:01:47.260
-Lia: E demora?
+00:01:21.909 --> 00:01:23.829
+No console, cria um app sem Git,
 
 36
-00:01:47.610 --> 00:01:54.883
-Fernando: No nosso teste, cerca de 48 s, e o site respondeu com HTTPS sem
+00:01:23.829 --> 00:01:25.439
+solta o zip e salva.
 
 37
-00:01:54.883 --> 00:01:56.548
-configuração extra.
+00:01:25.560 --> 00:01:26.330
+Lia: E demora?
 
 38
-00:01:56.548 --> 00:01:57.688
-Uma ressalva:
+00:01:26.442 --> 00:01:29.422
+Fernando: No nosso teste, cerca de 48 s,
 
 39
-00:01:57.688 --> 00:02:03.296
-esse teste foi pela linha de comando, com o mesmo tipo de envio.
+00:01:29.422 --> 00:01:34.232
+e o site respondeu com HTTPS sem configuração extra.
 
 40
-00:02:03.296 --> 00:02:09.343
-Os cliques no console seguem a documentação, sem teste passo a passo.
+00:01:34.482 --> 00:01:37.542
+Uma ressalva: esse teste foi pela linha de comando,
 
 41
-00:02:10.367 --> 00:02:11.910
-Lia: E depois, deixo lá?
+00:01:37.542 --> 00:01:39.292
+com o mesmo tipo de envio.
 
 42
-00:02:12.260 --> 00:02:17.143
-Fernando: Se era só um teste, apague o app no console do Amplify.
+00:01:39.442 --> 00:01:42.322
+Os cliques no console seguem a documentação,
 
 43
-00:02:17.143 --> 00:02:21.493
-Depois abra o endereço e confirme que saiu do ar.
+00:01:42.322 --> 00:01:44.252
+sem teste passo a passo.
 
 44
-00:02:21.493 --> 00:02:28.773
-O custo normalmente é zero nesse tamanho, mas confira na sua conta, porque o nível
+00:01:44.820 --> 00:01:46.370
+Lia: E depois, deixo lá?
 
 45
-00:02:28.773 --> 00:02:30.016
-gratuito muda.
+00:01:46.552 --> 00:01:49.602
+Fernando: Se era só um teste, apaga o app no console do Amplify.
 
 46
-00:02:31.033 --> 00:02:32.367
-Lia: Agora eu tenho o que contar, né?
+00:01:49.772 --> 00:01:52.582
+Depois abre o endereço e confirma que saiu do ar.
 
 47
-00:02:32.717 --> 00:02:33.108
-Fernando: Tem.
+00:01:52.732 --> 00:01:55.572
+O custo normalmente é zero nesse tamanho,
 
 48
-00:02:33.108 --> 00:02:39.156
-Você comparou o que a IA sugeriu com o que a documentação diz.
+00:01:55.572 --> 00:01:59.842
+mas confere na sua conta, porque o nível gratuito muda.
 
 49
-00:02:39.156 --> 00:02:41.790
-Publicou um site com HTTPS.
+00:02:00.220 --> 00:02:01.610
+Lia: Agora eu tenho o que contar, né?
 
 50
-00:02:41.790 --> 00:02:43.351
-E limpou no fim.
+00:02:01.728 --> 00:02:05.108
+Fernando: Tem. Você comparou o que a IA sugeriu com o que a
 
 51
-00:02:43.351 --> 00:02:44.814
-A IA só revisa.
+00:02:05.108 --> 00:02:09.188
+documentação diz. Publicou um site com HTTPS.
 
 52
-00:02:45.833 --> 00:02:47.741
-Fernando: Um aviso antes de terminar.
+00:02:09.188 --> 00:02:12.078
+E limpou no fim. A IA só revisa.
 
 53
-00:02:47.741 --> 00:02:53.039
-Minha narração foi gerada com a minha voz clonada, com a minha autorização.
+00:02:12.453 --> 00:02:13.923
+Fernando: Um aviso antes de terminar.
 
 54
-00:02:53.039 --> 00:02:56.359
-A personagem Lia é fictícia, com voz sintética.
+00:02:14.033 --> 00:02:16.913
+Minha narração foi gerada com a minha voz clonada,
 
 55
-00:02:56.359 --> 00:02:58.690
-E este é um projeto independente.
+00:02:16.913 --> 00:02:18.283
+com a minha autorização.
 
 56
-00:02:58.690 --> 00:03:00.809
+00:02:18.433 --> 00:02:21.743
+A personagem Lia é fictícia, com voz sintética.
+
+57
+00:02:21.873 --> 00:02:23.643
+E este é um projeto independente.
+
+58
+00:02:23.813 --> 00:02:25.843
 Não é material oficial da AWS.
