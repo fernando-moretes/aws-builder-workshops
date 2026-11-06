@@ -1,6 +1,6 @@
 {
   "name": "moretes-builder-workshops",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "Hands-on AI agent and architecture workshops: evidence-first triage lab, CLI, MCP server and agent skill. Offline by default, synthetic data, read-only tools.",
   "type": "module",
   "license": "MIT",

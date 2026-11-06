@@ -6,7 +6,7 @@ compatibility: Works with or without the builder-workshops MCP server. The CLI n
 metadata:
   author: Fernando Azevedo
   homepage: https://fernando-moretes.github.io/aws-builder-workshops/
-  version: "0.1.0"
+  version: "0.1.1"
 ---
 
 # Builder Workshops

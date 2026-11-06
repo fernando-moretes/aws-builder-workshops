@@ -18,7 +18,10 @@ jobs:
       - uses: actions/setup-node@v7
         with:
           node-version: '22'
-      - run: npm pack --silent
+      - run: |
+          npm pack --silent
+          # Nome fixo: é o que a documentação usa em releases/latest/download.
+          cp moretes-builder-workshops-*.tgz moretes-builder-workshops.tgz
       - uses: softprops/action-gh-release@v3
         with:
           files: moretes-builder-workshops-*.tgz
