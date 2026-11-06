@@ -74,8 +74,9 @@ jobs:
           docker build -t triage-lab:ci labs/triage-agent
           docker run -d --name lab -p 127.0.0.1:8080:8080 triage-lab:ci
           for i in $(seq 1 20); do
-            curl -fsS http://127.0.0.1:8080/invocations -H 'Content-Type: application/json' -d '{"case_id":"A5"}' | tee /tmp/out.json && break
+            curl -fsS -o /tmp/out.json http://127.0.0.1:8080/invocations -H 'Content-Type: application/json' -d '{"case_id":"A5"}' && break
             sleep 2
           done
+          cat /tmp/out.json
           grep -q offline_simulation /tmp/out.json
           docker rm -f lab
