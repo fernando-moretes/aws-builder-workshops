@@ -1,0 +1,26 @@
+name: Segurança
+
+# Segredos vazados (gitleaks) e dependências vulneráveis (trivy), pelo workflow
+# comum da organização. Só segredo vazado reprova. SonarQube e DefectDojo ficam
+# na rede do homelab e não são alcançáveis daqui.
+on:
+  push:
+    branches: [main]
+  schedule:
+    - cron: '23 7 * * 1'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  seguranca:
+    permissions:
+      contents: read
+      security-events: write
+      actions: read
+    uses: fernando-moretes/platform-workflows/.github/workflows/security.yml@main
+    with:
+      runner: '["ubuntu-latest"]'
+      sonar_host: ""
+      defectdojo_host: ""

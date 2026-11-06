@@ -169,7 +169,7 @@ Three independent 120-minute sessions, in pairs. They work for meetups and User 
 
 - **No runtime dependencies,** no network and no credentials.
 - **Read-only by construction:** the agent never gets the ability to change anything.
-- **Tested:** CLI, MCP server with the official protocol client, and parity with the Python lab, on Node 20, 22 and 24.
+- **Tested:** CLI, MCP server with the official protocol client, and parity with the Python lab, on Node 20, 22, 24 and 26.
 - **Shipped by pipeline:** CI, GitHub Pages, npm with OIDC, images on GHCR and sync to Hugging Face.
 
 ```text
@@ -188,7 +188,10 @@ website/               documentation
 
 | Workflow | When | What it does |
 |---|---|---|
-| [CI](.github/workflows/ci.yml) | Pull request and `main` | Node 20, 22 and 24, Python, Docker and docs checks |
+| [CI](.github/workflows/ci.yml) | Pull request and `main` | Node 20, 22, 24 and 26, Python, Docker and docs checks |
+| [PR quality](.github/workflows/qualidade.yml) | Pull request | Title, branch and PR size |
+| [Security](.github/workflows/seguranca.yml) | `main` and weekly | Leaked secrets and vulnerable dependencies |
+| [CodeQL](.github/workflows/codeql.yml) | Pull request, `main` and weekly | Static analysis of JavaScript and Python |
 | [Pages](.github/workflows/pages.yml) | `main` | Publishes the site |
 | [npm](.github/workflows/release-npm.yml) | Tag `v*` | Publishes with OIDC and provenance, no token |
 | [Images](.github/workflows/release-images.yml) | Tag `v*` | Publishes to GHCR |
@@ -241,7 +244,7 @@ All data, incidents and metrics are **fictional**. The simulation is determinist
 
 ## Contribute
 
-The most useful help right now is to [try the first run and say where you got stuck](https://github.com/fernando-moretes/aws-builder-workshops/issues/1). No AWS account needed. See the [contributing guide](CONTRIBUTING.md).
+The most useful help right now is to [try the first run and say where you got stuck](https://github.com/fernando-moretes/aws-builder-workshops/issues/new?template=reproducao.yml). No AWS account needed. See the [contributing guide](CONTRIBUTING.md).
 
 ## Who makes it
 

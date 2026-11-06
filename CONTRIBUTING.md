@@ -1,8 +1,8 @@
 # Como contribuir / Contributing
 
-**PT:** a contribuição mais útil agora é testar a primeira execução e dizer onde travou: [issue #1](https://github.com/fernando-moretes/aws-builder-workshops/issues/1). Não precisa de conta AWS.
+**PT:** a contribuição mais útil agora é testar a primeira execução e dizer onde travou: [abra um relato](https://github.com/fernando-moretes/aws-builder-workshops/issues/new?template=reproducao.yml). Não precisa de conta AWS.
 
-**EN:** the most useful contribution right now is testing the first run and telling us where you got stuck: [issue #1](https://github.com/fernando-moretes/aws-builder-workshops/issues/1). No AWS account needed.
+**EN:** the most useful contribution right now is testing the first run and telling us where you got stuck: [open a report](https://github.com/fernando-moretes/aws-builder-workshops/issues/new?template=reproducao.yml). No AWS account needed.
 
 ## Desenvolvimento / Development
 

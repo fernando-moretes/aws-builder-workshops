@@ -1,0 +1,17 @@
+name: Qualidade do PR
+
+# Roda no runner do GitHub. Repositório público não usa o runner do homelab,
+# porque aqui entra PR de qualquer pessoa.
+on:
+  pull_request:
+    types: [opened, edited, synchronize, reopened]
+
+permissions:
+  contents: read
+
+jobs:
+  lint:
+    uses: fernando-moretes/platform-workflows/.github/workflows/pr-lint.yml@main
+    with:
+      runner: '["ubuntu-latest"]'
+

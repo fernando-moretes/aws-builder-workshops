@@ -87,4 +87,4 @@ Quase sempre, você compactou a pasta em vez do conteúdo dela. Gere o `.zip` co
 
 ### Encontrei um erro neste material.
 
-Conte na [issue #1](https://github.com/fernando-moretes/aws-builder-workshops/issues/1). É a contribuição mais útil neste momento.
+[Abra um relato](https://github.com/fernando-moretes/aws-builder-workshops/issues/new?template=reproducao.yml). É a contribuição mais útil neste momento.

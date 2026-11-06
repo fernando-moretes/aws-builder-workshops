@@ -5,7 +5,7 @@ description: Testar a primeira execução, relatar o que confundiu e propor cen�
 
 ## A mais útil agora: testar a primeira execução
 
-Você não precisa de conta AWS. Siga a [issue #1](https://github.com/fernando-moretes/aws-builder-workshops/issues/1) e diga onde travou. Uma instrução confusa ou uma falha reproduzível vale mais que um elogio.
+Você não precisa de conta AWS. Siga o [roteiro do lab](/aws-builder-workshops/trilhas/lab-triagem/) e [abra um relato](https://github.com/fernando-moretes/aws-builder-workshops/issues/new?template=reproducao.yml) dizendo onde travou. Uma instrução confusa ou uma falha reproduzível vale mais que um elogio.
 
 ## Outras formas
 

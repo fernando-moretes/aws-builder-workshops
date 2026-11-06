@@ -87,4 +87,4 @@ Almost always, you zipped the folder instead of its contents. Create the `.zip` 
 
 ### I found a mistake in this material.
 
-Tell us in [issue #1](https://github.com/fernando-moretes/aws-builder-workshops/issues/1). It is the most useful contribution right now.
+[Open a report](https://github.com/fernando-moretes/aws-builder-workshops/issues/new?template=reproducao.yml). It is the most useful contribution right now.
