@@ -1,5 +1,5 @@
 # Kit completo em uma imagem: CLI e servidor MCP. Sem rede em runtime e sem root.
-FROM node:22-alpine
+FROM node:25-alpine
 WORKDIR /app
 COPY package.json LICENSE CHANGELOG.md ./
 COPY bin ./bin
