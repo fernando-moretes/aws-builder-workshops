@@ -1,0 +1,193 @@
+WEBVTT
+
+1
+00:00:00.300 --> 00:00:04.319
+If I create an AWS account, will my bill surprise me?
+
+2
+00:00:04.319 --> 00:00:06.949
+That's the question in this mission.
+
+3
+00:00:06.949 --> 00:00:09.945
+It takes about an hour and costs nothing.
+
+4
+00:00:09.945 --> 00:00:14.037
+And you can do the first three steps without an account.
+
+5
+00:00:15.067 --> 00:00:19.257
+Before opening any tool, open a file and write this down.
+
+6
+00:00:19.257 --> 00:00:23.080
+What do you think costs the most in a small account?
+
+7
+00:00:23.080 --> 00:00:24.330
+You can be wrong.
+
+8
+00:00:24.330 --> 00:00:27.344
+Being wrong is what makes a good article.
+
+9
+00:00:28.367 --> 00:00:30.925
+Now download the sample cost file.
+
+10
+00:00:30.925 --> 00:00:32.581
+The data is fictional.
+
+11
+00:00:32.581 --> 00:00:36.344
+Paste it into your AI assistant with this request.
+
+12
+00:00:36.344 --> 00:00:37.924
+Notice the last item:
+
+13
+00:00:37.924 --> 00:00:40.106
+don't give me the conclusion.
+
+14
+00:00:40.106 --> 00:00:43.267
+You want questions, not an answer to copy.
+
+15
+00:00:44.300 --> 00:00:48.070
+Now check the math without AI, using this command.
+
+16
+00:00:48.070 --> 00:00:54.252
+The total went from 0.92 USD to 25.63 USD.
+
+17
+00:00:54.252 --> 00:00:57.193
+And look at the first line of the list.
+
+18
+00:00:57.193 --> 00:01:02.998
+The biggest increase is the NAT Gateway, at 16.20 USD.
+
+19
+00:01:02.998 --> 00:01:04.808
+It's not the EC2 server.
+
+20
+00:01:05.833 --> 00:01:06.721
+Now compare.
+
+21
+00:01:06.721 --> 00:01:08.569
+Do the AI's totals match?
+
+22
+00:01:08.569 --> 00:01:12.931
+Did it notice that the biggest increase is the NAT Gateway?
+
+23
+00:01:12.931 --> 00:01:16.259
+Did it state a price that wasn't in the file?
+
+24
+00:01:16.259 --> 00:01:19.512
+If so, ask for the source and open the link.
+
+25
+00:01:19.512 --> 00:01:20.843
+Write it all down.
+
+26
+00:01:20.843 --> 00:01:23.800
+What didn't match is your best evidence.
+
+27
+00:01:24.833 --> 00:01:29.035
+If you already have an account, create a spending alert.
+
+28
+00:01:29.035 --> 00:01:35.113
+The commands are in the mission and run in CloudShell, the terminal that comes in
+
+29
+00:01:35.113 --> 00:01:36.088
+your browser.
+
+30
+00:01:36.088 --> 00:01:38.715
+At the end, you check it like this.
+
+31
+00:01:38.715 --> 00:01:44.117
+It warns you when actual spending passes 80% of US$ 5.
+
+32
+00:01:44.117 --> 00:01:47.269
+And when the forecast passes US$ 5.
+
+33
+00:01:48.300 --> 00:01:51.715
+And here's the part that confuses people most.
+
+34
+00:01:51.715 --> 00:01:55.501
+The alert warns you, but it doesn't block anything.
+
+35
+00:01:55.501 --> 00:01:58.396
+It doesn't turn anything off by itself.
+
+36
+00:01:58.396 --> 00:02:01.068
+If an email arrives, it's up to you.
+
+37
+00:02:01.068 --> 00:02:06.635
+I recommend keeping this alert, because it's free and protects the account.
+
+38
+00:02:06.635 --> 00:02:10.199
+The command to delete it is also in the mission.
+
+39
+00:02:11.200 --> 00:02:15.101
+That's it, you already have an article in your hands.
+
+40
+00:02:15.101 --> 00:02:18.339
+The topic is how to avoid billing surprises.
+
+41
+00:02:18.339 --> 00:02:19.958
+The evidence is yours:
+
+42
+00:02:19.958 --> 00:02:25.404
+the hypothesis, the AI's answer, the command output and what didn't match.
+
+43
+00:02:25.404 --> 00:02:27.392
+Write it in your own words.
+
+44
+00:02:27.392 --> 00:02:28.569
+AI only reviews.
+
+45
+00:02:29.600 --> 00:02:31.515
+One note before we finish.
+
+46
+00:02:31.515 --> 00:02:37.628
+The voice you just heard was generated from my cloned voice, with my authorization.
+
+47
+00:02:37.628 --> 00:02:40.205
+And this is an independent project.
+
+48
+00:02:40.205 --> 00:02:42.709
+It is not official AWS material.

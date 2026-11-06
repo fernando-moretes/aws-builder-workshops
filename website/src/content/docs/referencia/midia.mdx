@@ -1,6 +1,31 @@
 ---
 title: Vídeos e áudio
-description: Vídeos das missões e episódio de áudio, em produção.
+description: Um vídeo de introdução, um por missão e um episódio de áudio, com legendas e transcrição.
 ---
 
-Os vídeos das missões e o episódio de áudio estão em produção e entram aqui quando estiverem prontos. Enquanto isso, comece pelas [missões](/aws-builder-workshops/comece/escolha/) e pelos [exemplos](/aws-builder-workshops/trilhas/exemplos/).
+export const B = "/aws-builder-workshops/media";
+export const V = [
+  ["intro", "Como funciona"],
+  ["missao-1", "Missão 1: conta sem susto"],
+  ["missao-2", "Missão 2: portfólio no ar"],
+  ["missao-3", "Missão 3: Lambda quebrada"],
+];
+
+{V.map(([id, title]) => (
+  <>
+    <h2>{title}</h2>
+    <video controls preload="none" poster={`${B}/${id}.pt.jpg`} style="width:100%;height:auto">
+      <source src={`${B}/${id}.pt.mp4`} type="video/mp4" />
+      <track kind="captions" src={`${B}/${id}.pt.vtt`} srcLang="pt-BR" label="pt-BR" default />
+    </video>
+  </>
+))}
+
+## Áudio: do teste ao primeiro artigo
+
+<audio controls preload="none" style="width:100%" src={`${B}/audio-primeiro-artigo.pt.mp3`}></audio>
+
+## Sobre as vozes
+
+A narração do Fernando é gerada com a voz clonada dele, com a autorização dele. A Lia é uma personagem fictícia, com voz sintética. A [transcrição completa](https://github.com/fernando-moretes/aws-builder-workshops/blob/main/docs/media/TRANSCRICOES.md) está no repositório.
+

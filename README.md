@@ -28,6 +28,7 @@ Aprenda AWS **testando**, com a IA ao seu lado. São missões de cerca de 1 hora
 - [A rotina do primeiro experimento](#a-rotina-do-primeiro-experimento)
 - [Os cinco casos do lab](#os-cinco-casos-do-lab)
 - [Use no seu agente ou IDE](#use-no-seu-agente-ou-ide)
+- [Vídeos e áudio](#vídeos-e-áudio)
 - [Hugging Face](#hugging-face)
 - [Conduza um workshop](#conduza-um-workshop)
 - [Como é feito](#como-é-feito)
@@ -128,6 +129,15 @@ Instala o servidor MCP e a skill `builder-workshops` no formato de cada cliente,
 | `start_experiment` | Entrega os modelos do experimento |
 | `list_cases`, `list_workshops`, `get_doc` | Consulta o material do kit |
 
+
+## Vídeos e áudio
+
+<table><tr>
+<td width="50%"><a href="https://fernando-moretes.github.io/aws-builder-workshops/referencia/midia/"><img src="docs/img/poster-intro.pt.jpg" alt="Vídeo: como funciona"></a><br><strong>Como funciona</strong> (2:11)</td>
+<td width="50%"><a href="https://fernando-moretes.github.io/aws-builder-workshops/referencia/midia/"><img src="docs/img/poster-missao-3.pt.jpg" alt="Vídeo: Lambda quebrada"></a><br><strong>Missão 3: Lambda quebrada</strong> (2:47)</td>
+</tr></table>
+
+Há um vídeo para cada missão e um episódio de áudio. [Veja tudo, com legendas e transcrição](https://fernando-moretes.github.io/aws-builder-workshops/referencia/midia/).
 
 ## Hugging Face
 

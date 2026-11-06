@@ -1,0 +1,225 @@
+WEBVTT
+
+1
+00:00:00.300 --> 00:00:04.354
+Lia: Fernando, como eu coloco um site na internet pela AWS sem deixar nada aberto por
+
+2
+00:00:04.354 --> 00:00:04.709
+engano?
+
+3
+00:00:05.059 --> 00:00:06.835
+Fernando: Essa é a dúvida de hoje.
+
+4
+00:00:06.835 --> 00:00:12.018
+Leva cerca de 1 hora, e os três primeiros passos você faz sem conta.
+
+5
+00:00:12.018 --> 00:00:15.498
+Antes de perguntar à IA, anote o que você acha.
+
+6
+00:00:16.500 --> 00:00:19.852
+Fernando: Cole este pedido no seu assistente de IA.
+
+7
+00:00:19.852 --> 00:00:21.651
+Repare no último item:
+
+8
+00:00:21.651 --> 00:00:26.557
+você pede o link da documentação oficial para cada resposta.
+
+9
+00:00:26.907 --> 00:00:28.586
+Lia: E aí é só confiar no link?
+
+10
+00:00:28.936 --> 00:00:29.274
+Fernando: Não.
+
+11
+00:00:29.274 --> 00:00:31.896
+Aí vem a parte mais importante:
+
+12
+00:00:31.896 --> 00:00:33.419
+abrir esses links.
+
+13
+00:00:33.419 --> 00:00:35.534
+Não basta o link existir.
+
+14
+00:00:35.534 --> 00:00:38.663
+Ele precisa dizer o que a IA afirmou.
+
+15
+00:00:39.667 --> 00:00:42.563
+Lia: A IA sugeriu um bucket S3 público.
+
+16
+00:00:42.563 --> 00:00:43.554
+Parece fácil.
+
+17
+00:00:43.904 --> 00:00:47.773
+Fernando: Olhe o que a própria documentação do S3 diz.
+
+18
+00:00:47.773 --> 00:00:51.804
+Esse caminho exige desligar o Block Public Access.
+
+19
+00:00:51.804 --> 00:00:55.754
+Ela também recomenda manter esse bloqueio ligado.
+
+20
+00:00:55.754 --> 00:00:59.058
+E avisa que o site no S3 só tem HTTP.
+
+21
+00:00:59.408 --> 00:01:00.872
+Lia: A IA não me contou nada disso.
+
+22
+00:01:01.222 --> 00:01:02.068
+Fernando: Então anote.
+
+23
+00:01:02.068 --> 00:01:04.184
+Essa é a sua melhor evidência.
+
+24
+00:01:05.200 --> 00:01:10.941
+Fernando: Agora baixe a página da missão, troque o texto pelo seu e rode este comando.
+
+25
+00:01:10.941 --> 00:01:12.906
+Depois, abra no navegador.
+
+26
+00:01:13.256 --> 00:01:15.199
+Lia: Posso pedir para a IA escrever o texto?
+
+27
+00:01:15.549 --> 00:01:18.611
+Fernando: Peça só para revisar a clareza.
+
+28
+00:01:18.611 --> 00:01:19.599
+E cuidado:
+
+29
+00:01:19.599 --> 00:01:26.315
+não coloque telefone, endereço nem nada que você não queira público.
+
+30
+00:01:27.333 --> 00:01:28.781
+Lia: E para publicar de verdade?
+
+31
+00:01:29.131 --> 00:01:32.192
+Fernando: Se você já tem conta, use o Amplify.
+
+32
+00:01:32.192 --> 00:01:34.572
+Coloque o arquivo em um zip.
+
+33
+00:01:34.572 --> 00:01:41.715
+Compacte o arquivo, e não a pasta, porque zipar a pasta causa erro de acesso negado.
+
+34
+00:01:41.715 --> 00:01:46.221
+No console, crie um app sem Git, solte o zip e salve.
+
+35
+00:01:46.571 --> 00:01:47.260
+Lia: E demora?
+
+36
+00:01:47.610 --> 00:01:54.883
+Fernando: No nosso teste, cerca de 48 s, e o site respondeu com HTTPS sem
+
+37
+00:01:54.883 --> 00:01:56.548
+configuração extra.
+
+38
+00:01:56.548 --> 00:01:57.688
+Uma ressalva:
+
+39
+00:01:57.688 --> 00:02:03.296
+esse teste foi pela linha de comando, com o mesmo tipo de envio.
+
+40
+00:02:03.296 --> 00:02:09.343
+Os cliques no console seguem a documentação, sem teste passo a passo.
+
+41
+00:02:10.367 --> 00:02:11.910
+Lia: E depois, deixo lá?
+
+42
+00:02:12.260 --> 00:02:17.143
+Fernando: Se era só um teste, apague o app no console do Amplify.
+
+43
+00:02:17.143 --> 00:02:21.493
+Depois abra o endereço e confirme que saiu do ar.
+
+44
+00:02:21.493 --> 00:02:28.773
+O custo normalmente é zero nesse tamanho, mas confira na sua conta, porque o nível
+
+45
+00:02:28.773 --> 00:02:30.016
+gratuito muda.
+
+46
+00:02:31.033 --> 00:02:32.367
+Lia: Agora eu tenho o que contar, né?
+
+47
+00:02:32.717 --> 00:02:33.108
+Fernando: Tem.
+
+48
+00:02:33.108 --> 00:02:39.156
+Você comparou o que a IA sugeriu com o que a documentação diz.
+
+49
+00:02:39.156 --> 00:02:41.790
+Publicou um site com HTTPS.
+
+50
+00:02:41.790 --> 00:02:43.351
+E limpou no fim.
+
+51
+00:02:43.351 --> 00:02:44.814
+A IA só revisa.
+
+52
+00:02:45.833 --> 00:02:47.741
+Fernando: Um aviso antes de terminar.
+
+53
+00:02:47.741 --> 00:02:53.039
+Minha narração foi gerada com a minha voz clonada, com a minha autorização.
+
+54
+00:02:53.039 --> 00:02:56.359
+A personagem Lia é fictícia, com voz sintética.
+
+55
+00:02:56.359 --> 00:02:58.690
+E este é um projeto independente.
+
+56
+00:02:58.690 --> 00:03:00.809
+Não é material oficial da AWS.
