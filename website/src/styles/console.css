@@ -71,3 +71,19 @@ main:has(.bw-hero) .content-panel:first-of-type { padding-top: 0; }
 .bw-author img { width: 72px; height: 72px; border-radius: 50%; border: 0; flex: none; margin: 0; }
 .bw-author p { margin: 0; font-size: .92rem; }
 .bw-section { margin-top: 2.5rem; }
+
+/* Menu interativo e progresso */
+.bw-picker { background: var(--sl-color-black); border: 1px solid var(--sl-color-hairline); border-top: 3px solid var(--bw-orange); padding: 1.25rem; margin-top: 1rem; }
+.sl-markdown-content .bw-picker-q, .bw-picker-q, .bw-picker-title { font-size: 1.15rem; font-weight: 700; color: var(--sl-color-white); margin: 0 0 .75rem; }
+.bw-picker-options { display: grid; grid-template-columns: repeat(auto-fit, minmax(210px, 1fr)); gap: .6rem; margin: 0 !important; }
+.bw-picker-options button { font: inherit; text-align: start; padding: .75rem .9rem; background: transparent; color: var(--sl-color-text-accent); border: 1px solid var(--sl-color-gray-4); border-radius: 2px; cursor: pointer; margin: 0; }
+.bw-picker-options button:hover, .bw-picker-options button:focus-visible { border-color: var(--bw-orange); background: var(--sl-color-gray-6); }
+.bw-picker-restart { font: inherit; background: none; border: 0; color: var(--sl-color-text-accent); cursor: pointer; margin-inline-start: .75rem; text-decoration: underline; }
+.bw-picker .bw-cta.primary { display: inline-block; margin: 0; }
+.bw-progress { border: 1px solid var(--sl-color-hairline); border-inline-start: 3px solid var(--bw-orange); padding: .65rem .9rem; margin-bottom: 1.25rem; background: var(--sl-color-black); }
+.bw-progress summary { cursor: pointer; font-weight: 700; display: flex; justify-content: space-between; gap: 1rem; }
+.bw-progress-bar { height: 6px; background: var(--sl-color-hairline); margin: .55rem 0; }
+.bw-progress-bar div { height: 100%; width: 0; background: var(--bw-orange); transition: width .2s; }
+.bw-progress ul { list-style: none; padding: 0; margin: 0; }
+.bw-progress li { margin: .15rem 0; }
+.bw-progress p { font-size: .78rem; color: var(--sl-color-gray-3); margin: .4rem 0 0; }

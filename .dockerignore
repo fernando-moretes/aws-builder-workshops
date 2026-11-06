@@ -6,5 +6,6 @@
 !src/**
 !skills/**
 !templates/**
+!missoes/**
 !docs/community/workshops/2026-11-builder-series/*.md
 !labs/triage-agent/EVALUATION.md

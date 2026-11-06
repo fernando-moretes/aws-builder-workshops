@@ -9,6 +9,10 @@ builder-workshops <comando> [opções]
 
 | Comando | O que faz |
 |---|---|
+| `menu` | Menu interativo para escolher por onde começar |
+| `missoes` | Lista as missões |
+| `missao <1\|2\|3> [pasta]` | Mostra o guia, ou copia a missão para uma pasta |
+| `custos <arquivo.csv>` | Soma um relatório de custos, para conferir a IA |
 | `experiment <pasta>` | Cria os quatro arquivos do experimento. Não sobrescreve sem `--force` |
 | `run <A1..A5>` | Roda um caso do lab |
 | `cases` | Lista os casos |

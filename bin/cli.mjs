@@ -2,9 +2,10 @@
 // CLI do kit: sem dependências, sem rede, sem credenciais.
 import { copyFileSync, cpSync, existsSync, mkdirSync, readFileSync, readdirSync, writeFileSync } from "node:fs";
 import { dirname, join, resolve } from "node:path";
+import { createInterface } from "node:readline";
 import { parseArgs } from "node:util";
-import { CASES, offlineReport, queueCapacity } from "../src/core.mjs";
-import { CASE_INFO, DOCS, WORKSHOPS } from "../src/catalog.mjs";
+import { CASES, compareCosts, offlineReport, queueCapacity } from "../src/core.mjs";
+import { CASE_INFO, DOCS, MISSIONS, WORKSHOPS } from "../src/catalog.mjs";
 import { startStdioServer } from "../src/mcp.mjs";
 import { CLIENTS, planInit } from "../src/init.mjs";
 
@@ -22,11 +23,15 @@ Workshops práticos de agentes de IA e arquitetura. Offline, dados fictícios, s
 Hands-on AI agent and architecture workshops. Offline, fictional data, read-only.
 
 ${bold("Comece aqui / Start here")}
-  experiment <pasta>         Cria o seu primeiro experimento (dúvida, evidência, artigo)
+  menu                       Menu interativo: te ajuda a escolher por onde começar
+  missoes                    Lista as 3 missões para aprender AWS com IA
+  missao <1|2|3> [pasta]     Mostra o guia, ou copia a missão para uma pasta
+  custos <arquivo.csv>       Soma um relatório de custos, para conferir a IA
+  experiment <pasta>         Cria os modelos: proposta, evidências, artigo, checklist
+
+${bold("Avançado / Advanced")}
   run <A1..A5>               Roda um caso do lab de triagem
   cases                      Lista os casos e o comportamento esperado
-
-${bold("Exercícios / Exercises")}
   queue                      Conta de capacidade de fila
                              --arrivals 100 --service-ms 200 --consumers 30
                              [--backlog 6000] [--dependency-limit 80]
@@ -85,6 +90,63 @@ function printReport(report) {
 }
 
 const commands = {
+  async menu() {
+    const rl = createInterface({ input: process.stdin, output: process.stdout, terminal: false });
+    const say = (pt, enText) => console.log(en ? enText : pt);
+    say(`${orange(bold("Aprenda AWS testando, com a IA ao seu lado."))}\n\nO que você quer agora?`, `${orange(bold("Learn AWS by testing, with AI at your side."))}\n\nWhat do you want right now?`);
+    const options = en
+      ? ["Not get a surprise on my AWS bill", "Have something online to show", "Understand an error in my code", "Write an article about something I tested", "Exit"]
+      : ["Não levar susto com a conta da AWS", "Ter algo no ar para mostrar", "Entender um erro no meu código", "Escrever um artigo sobre o que testei", "Sair"];
+    options.forEach((o, i) => console.log(`  ${orange(i + 1)}. ${o}`));
+    process.stdout.write(en ? "\nType a number: " : "\nDigite o número: ");
+    // Sem entrada (stdin fechado), sai em vez de ficar esperando.
+    const answer = await new Promise((done) => {
+      rl.once("line", (line) => { done(line.trim()); rl.close(); });
+      rl.once("close", () => done("5"));
+    });
+    const base = "https://fernando-moretes.github.io/aws-builder-workshops";
+    const prefix = en ? "/en" : "";
+    const flag = en ? " --lang en" : "";
+    console.log("");
+    if (["1", "2", "3"].includes(answer)) {
+      const m = MISSIONS[Number(answer) - 1];
+      console.log(`${paint(32, "✓")} ${bold(`${en ? "Mission" : "Missão"} ${m.n}: ${m.title[lang]}`)}\n  ${m.question[lang]}\n  ${dim(m.takeaway[lang])}\n`);
+      console.log(`${en ? "Copy it to a folder" : "Copie para uma pasta"}:  builder-workshops missao ${m.n} ${en ? "my-mission" : "minha-missao"}${flag}`);
+      console.log(`${en ? "Or read it online" : "Ou leia no site"}:    ${base}${prefix}/missoes/${m.n}-${m.id}/`);
+    } else if (answer === "4") {
+      console.log(`${en ? "Create the templates" : "Crie os modelos"}:  builder-workshops experiment ${en ? "my-article" : "meu-artigo"}${flag}\n${en ? "Guide" : "Guia"}: ${base}${prefix}/trilhas/primeiro-experimento/`);
+    } else {
+      say("Até a próxima!", "See you next time!");
+    }
+  },
+  missoes() {
+    const data = MISSIONS.map((m) => ({ mission: m.n, id: m.id, title: m.title[lang], question: m.question[lang], takeaway: m.takeaway[lang] }));
+    if (opts.json) return console.log(JSON.stringify(data, null, 2));
+    for (const m of data) console.log(`${orange(bold(`${m.mission}. ${m.title}`))}\n   ${m.question}\n   ${dim(m.takeaway)}`);
+    console.log(dim(`\n${en ? "Next" : "Próximo passo"}: builder-workshops missao 1 ${en ? "my-mission" : "minha-missao"}`));
+  },
+  missao() {
+    const mission = MISSIONS.find((m) => String(m.n) === rest[0]);
+    if (!mission) die(`${en ? "Choose a mission" : "Escolha uma missão"}: 1, 2 ${en ? "or" : "ou"} 3`);
+    const source = new URL(`${mission.dir}/`, ROOT);
+    if (!rest[1]) return process.stdout.write(readFileSync(new URL("README.md", source), "utf8"));
+    const target = resolve(rest[1]);
+    if (existsSync(target) && readdirSync(target).length && !opts.force) die(`${en ? "folder is not empty, nothing changed" : "a pasta não está vazia, nada foi alterado"}: ${target}`);
+    cpSync(source, target, { recursive: true });
+    console.log(`${paint(32, "✓")} ${en ? "Mission copied to" : "Missão copiada para"} ${target}\n${en ? "Open" : "Abra"} README.md`);
+  },
+  custos() {
+    if (!rest[0]) die(en ? "tell me the file: builder-workshops custos costs.csv" : "diga o arquivo: builder-workshops custos custos.csv");
+    let r;
+    try { r = compareCosts(readFileSync(resolve(rest[0]), "utf8")); } catch (error) { die(error.message); }
+    if (opts.json) return console.log(JSON.stringify(r, null, 2));
+    const money = (n) => n.toFixed(2);
+    const sign = (n) => `${n > 0 ? "+" : ""}${money(n)}`;
+    console.log(`${bold("Total")}: ${money(r.totalA)} USD -> ${money(r.totalB)} USD (${sign(r.change)} USD)\n`);
+    console.log(bold(en ? "Biggest changes" : "Maiores mudanças"));
+    for (const c of r.changes) console.log(`  ${c.service}  ${money(c.a)} -> ${money(c.b)}  (${sign(c.change)})`);
+    console.log(dim(`\n${en ? "Only sums the file. It does not explain the cause or know current prices." : "Só soma o arquivo. Não explica a causa nem conhece os preços atuais."}`));
+  },
   cases() {
     const data = CASES.map((id) => ({ id, title: CASE_INFO[id].title[lang], expected: CASE_INFO[id].expected[lang] }));
     if (opts.json) return console.log(JSON.stringify(data, null, 2));
@@ -180,4 +242,4 @@ const commands = {
 if (opts.version) console.log(VERSION);
 else if (opts.help || !command) console.log(HELP);
 else if (!Object.hasOwn(commands, command)) die(`${en ? "unknown command" : "comando desconhecido"}: ${command}\n${en ? "Use --help." : "Use --help."}`);
-else commands[command]();
+else await commands[command]();

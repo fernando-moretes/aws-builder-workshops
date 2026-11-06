@@ -1,0 +1,56 @@
+---
+const en = Astro.currentLocale === "en";
+const prefix = en ? "/aws-builder-workshops/en" : "/aws-builder-workshops";
+const t = en
+  ? { q1: "What do you want right now?", q2: "Do you have an AWS account?", yes: "Yes", no: "Not yet", restart: "Start over", go: "Open this mission",
+      goals: [["1", "Not get a surprise on my AWS bill"], ["2", "Have something online to show"], ["3", "Understand an error in my code"], ["article", "Write about something I tested"]],
+      m: { "1": ["Mission 1: No billing surprises", "1-conta-sem-susto"], "2": ["Mission 2: Portfolio online", "2-portfolio-no-ar"], "3": ["Mission 3: Broken Lambda", "3-lambda-quebrada"] },
+      withAcc: "About 1 hour. You will finish with it working in your account, and everything you don't want will be deleted.", noAcc: "Start with steps 1 to 3: they work with no account and no cost. You already learn the main idea there.",
+      article: "From test to article", articleText: "Already tested something? Turn it into evidence and an article of your own." }
+  : { q1: "O que você quer agora?", q2: "Você já tem conta na AWS?", yes: "Tenho", no: "Ainda não", restart: "Recomeçar", go: "Abrir esta missão",
+      goals: [["1", "Não levar susto com a conta da AWS"], ["2", "Ter algo no ar para mostrar"], ["3", "Entender um erro no meu código"], ["article", "Escrever sobre o que já testei"]],
+      m: { "1": ["Missão 1: Conta sem susto", "1-conta-sem-susto"], "2": ["Missão 2: Portfólio no ar", "2-portfolio-no-ar"], "3": ["Missão 3: Lambda quebrada", "3-lambda-quebrada"] },
+      withAcc: "Cerca de 1 hora. Você termina com tudo funcionando na sua conta, e apaga o que não quiser manter.", noAcc: "Comece pelos passos 1 a 3: funcionam sem conta e sem custo. A ideia principal você já aprende ali.",
+      article: "Do teste ao artigo", articleText: "Já testou algo? Transforme em evidência e em um artigo seu." };
+---
+<div class="bw-picker" data-prefix={prefix} data-copy={JSON.stringify(t)}>
+  <div class="bw-picker-step" data-step="goal">
+    <p class="bw-picker-q">{t.q1}</p>
+    <div class="bw-picker-options">{t.goals.map(([v, label]) => <button type="button" data-goal={v}>{label}</button>)}</div>
+  </div>
+  <div class="bw-picker-step" data-step="account" hidden>
+    <p class="bw-picker-q">{t.q2}</p>
+    <div class="bw-picker-options"><button type="button" data-account="yes">{t.yes}</button><button type="button" data-account="no">{t.no}</button></div>
+  </div>
+  <div class="bw-picker-step" data-step="result" hidden aria-live="polite">
+    <p class="bw-picker-title"></p>
+    <p class="bw-picker-text"></p>
+    <a class="bw-cta primary"></a>
+    <button type="button" class="bw-picker-restart">{t.restart}</button>
+  </div>
+</div>
+<script>
+  for (const root of document.querySelectorAll<HTMLElement>(".bw-picker")) {
+    const t = JSON.parse(root.dataset.copy!);
+    const prefix = root.dataset.prefix!;
+    const show = (name: string) => root.querySelectorAll<HTMLElement>(".bw-picker-step").forEach((s) => { s.hidden = s.dataset.step !== name; });
+    let goal = "";
+    const result = (title: string, text: string, href: string, label: string) => {
+      root.querySelector(".bw-picker-title")!.textContent = title;
+      root.querySelector(".bw-picker-text")!.textContent = text;
+      const a = root.querySelector<HTMLAnchorElement>(".bw-cta")!;
+      a.href = href; a.textContent = label;
+      show("result");
+    };
+    root.querySelectorAll<HTMLButtonElement>("[data-goal]").forEach((b) => b.addEventListener("click", () => {
+      goal = b.dataset.goal!;
+      if (goal === "article") return result(t.article, t.articleText, `${prefix}/trilhas/primeiro-experimento/`, t.article);
+      show("account");
+    }));
+    root.querySelectorAll<HTMLButtonElement>("[data-account]").forEach((b) => b.addEventListener("click", () => {
+      const [title, slug] = t.m[goal];
+      result(title, b.dataset.account === "yes" ? t.withAcc : t.noAcc, `${prefix}/missoes/${slug}/`, t.go);
+    }));
+    root.querySelector(".bw-picker-restart")!.addEventListener("click", () => show("goal"));
+  }
+</script>

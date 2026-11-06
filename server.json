@@ -3,8 +3,8 @@
   "name": "io.github.fernando-moretes/builder-workshops",
   "title": "Builder Workshops",
   "description": "Hands-on agent and architecture labs: offline triage cases, citation checks, capacity math. Read-only.",
-  "version": "0.1.1",
+  "version": "0.2.0",
   "websiteUrl": "https://fernando-moretes.github.io/aws-builder-workshops/",
   "repository": { "url": "https://github.com/fernando-moretes/aws-builder-workshops", "source": "github" },
-  "packages": [{ "registryType": "npm", "identifier": "moretes-builder-workshops", "version": "0.1.1", "transport": { "type": "stdio" } }]
+  "packages": [{ "registryType": "npm", "identifier": "moretes-builder-workshops", "version": "0.2.0", "transport": { "type": "stdio" } }]
 }

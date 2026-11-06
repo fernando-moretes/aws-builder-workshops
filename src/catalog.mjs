@@ -1,4 +1,19 @@
 // O que o kit oferece, em um lugar só. Os textos longos ficam nos Markdown do kit.
+export const MISSIONS = [
+  { n: 1, id: "conta-sem-susto", dir: "missoes/01-conta-sem-susto", minutes: 60,
+    title: { pt: "Conta sem susto", en: "No billing surprises" },
+    question: { pt: "Vou gastar sem querer?", en: "Will I spend money by accident?" },
+    takeaway: { pt: "Um alerta de gastos e o hábito de conferir o que a IA diz.", en: "A spending alert and the habit of checking what AI says." } },
+  { n: 2, id: "portfolio-no-ar", dir: "missoes/02-portfolio-no-ar", minutes: 60,
+    title: { pt: "Portfólio no ar", en: "Portfolio online" },
+    question: { pt: "Como coloco um site no ar sem abrir nada por engano?", en: "How do I publish a site without exposing anything by mistake?" },
+    takeaway: { pt: "Um site com HTTPS e uma regra para desconfiar de atalhos da IA.", en: "A site with HTTPS and a rule for doubting AI shortcuts." } },
+  { n: 3, id: "lambda-quebrada", dir: "missoes/03-lambda-quebrada", minutes: 60,
+    title: { pt: "Lambda quebrada", en: "Broken Lambda" },
+    question: { pt: "O que esse erro quer dizer?", en: "What does this error mean?" },
+    takeaway: { pt: "Um jeito de ler logs que serve em qualquer sistema.", en: "A way to read logs that works on any system." } },
+];
+
 export const WORKSHOPS = [
   {
     id: "ideia-ao-agente",

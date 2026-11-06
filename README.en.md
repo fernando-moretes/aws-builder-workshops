@@ -8,12 +8,14 @@
 <a href="https://github.com/fernando-moretes/aws-builder-workshops/actions/workflows/ci.yml"><img src="https://github.com/fernando-moretes/aws-builder-workshops/actions/workflows/ci.yml/badge.svg" alt="CI"></a>
 <a href="LICENSE"><img src="https://img.shields.io/badge/license-MIT-232f3e" alt="MIT license"></a>
 <img src="https://img.shields.io/badge/cloud%20account-not%20needed-ec7211" alt="No cloud account needed">
-<img src="https://img.shields.io/badge/MCP-7%20read--only%20tools-0073bb" alt="MCP with 7 read-only tools">
+<img src="https://img.shields.io/badge/MCP-10%20read--only%20tools-0073bb" alt="MCP with 10 read-only tools">
 <a href="https://huggingface.co/spaces/fernandofa42/triage-console"><img src="https://img.shields.io/badge/Hugging%20Face-Space-ff9900" alt="Hugging Face Space"></a>
 <a href="https://fernando-moretes.github.io/aws-builder-workshops/en/"><img src="https://img.shields.io/badge/docs-PT%20%7C%20EN-232f3e" alt="Docs in Portuguese and English"></a>
 </p>
 
-Learn AI agents and architecture **by doing**. Start without a cloud account and finish with something someone else can repeat: a decision, its evidence, one risk and the next test.
+Learn AWS **by testing**, with AI at your side. One-hour missions for beginners: test something small, check what AI said and leave with something to show. You can start without an AWS account. The missions are in Portuguese, with English coming next.
+
+**Start here:** [First mission](missoes/01-conta-sem-susto/README.md) · [Portfolio](missoes/02-portfolio-no-ar/README.md) · [Broken Lambda](missoes/03-lambda-quebrada/README.md)
 
 ![Case A2 in the terminal: the query fails and the value stays missing](docs/img/demo-cli.en.gif)
 
@@ -26,7 +28,6 @@ Learn AI agents and architecture **by doing**. Start without a cloud account and
 - [The first experiment routine](#the-first-experiment-routine)
 - [The five lab cases](#the-five-lab-cases)
 - [Use it in your agent or IDE](#use-it-in-your-agent-or-ide)
-- [Videos and audio](#videos-and-audio)
 - [Hugging Face](#hugging-face)
 - [Run a workshop](#run-a-workshop)
 - [How it's built](#how-its-built)
@@ -45,10 +46,9 @@ Learn AI agents and architecture **by doing**. Start without a cloud account and
 | 🧪 | **First experiment:** from a real question to a technical article, with evidence | [Path](https://fernando-moretes.github.io/aws-builder-workshops/en/trilhas/primeiro-experimento/) · [example](examples/first-experiment/en/README.md) |
 | 🚦 | **Triage lab:** evaluate an agent on 5 adverse cases | [Console](https://fernando-moretes.github.io/aws-builder-workshops/console/?lang=en) · [Python](labs/triage-agent/README.md) |
 | 🧮 | **Queue capacity:** predict when more consumers help | [Calculator](https://fernando-moretes.github.io/aws-builder-workshops/console/?lang=en&view=queue) |
-| 🔌 | **MCP server:** 7 read-only tools, no dependencies | [Reference](https://fernando-moretes.github.io/aws-builder-workshops/en/agentes/mcp/) |
+| 🔌 | **MCP server:** 10 read-only tools, no dependencies | [Reference](https://fernando-moretes.github.io/aws-builder-workshops/en/agentes/mcp/) |
 | 🧠 | **Agent skill:** in the open Agent Skills format | [Skill](skills/builder-workshops/SKILL.md) |
 | 🎓 | **Three 120-minute workshops:** agenda, notebook and templates, in Portuguese | [Kit](docs/community/workshops/2026-11-builder-series/README.md) |
-| 🎬 | **Videos and audio:** with captions and transcript | [Media](https://fernando-moretes.github.io/aws-builder-workshops/en/referencia/midia/) |
 
 ## Start in 1 minute
 
@@ -57,7 +57,7 @@ Learn AI agents and architecture **by doing**. Start without a cloud account and
 **In the terminal,** with Node.js 20 or newer:
 
 ```sh
-npx -y moretes-builder-workshops run A2 --lang en
+npx -y moretes-builder-workshops menu --lang en
 ```
 
 **With Python,** from source:
@@ -128,14 +128,6 @@ Installs the MCP server and the `builder-workshops` skill in each client's forma
 | `start_experiment` | Hands over the experiment templates |
 | `list_cases`, `list_workshops`, `get_doc` | Read the kit's material |
 
-## Videos and audio
-
-<table><tr>
-<td width="50%"><a href="https://fernando-moretes.github.io/aws-builder-workshops/en/referencia/midia/"><img src="docs/img/poster-first-experiment.en.jpg" alt="Video: first experiment"></a><br><strong>First experiment</strong></td>
-<td width="50%"><a href="https://fernando-moretes.github.io/aws-builder-workshops/en/referencia/midia/"><img src="docs/img/poster-triage-lab.en.jpg" alt="Video: triage lab"></a><br><strong>Triage lab</strong></td>
-</tr></table>
-
-There is also an audio episode about writing your first technical article. [See everything, with captions and transcript](https://fernando-moretes.github.io/aws-builder-workshops/en/referencia/midia/).
 
 ## Hugging Face
 

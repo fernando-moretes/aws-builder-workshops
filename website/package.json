@@ -3,8 +3,8 @@
   "private": true,
   "type": "module",
   "scripts": {
-    "predev": "node ../scripts/build-console.mjs website/public/console",
-    "prebuild": "node ../scripts/build-console.mjs website/public/console",
+    "predev": "node ../scripts/build-console.mjs website/public/console && node ../scripts/build-mission-pages.mjs",
+    "prebuild": "node ../scripts/build-console.mjs website/public/console && node ../scripts/build-mission-pages.mjs",
     "dev": "astro dev",
     "build": "astro build",
     "preview": "astro preview"

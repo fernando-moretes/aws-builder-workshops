@@ -1,0 +1,6 @@
+{
+  "BudgetName": "conta-sem-susto",
+  "BudgetLimit": { "Amount": "5", "Unit": "USD" },
+  "TimeUnit": "MONTHLY",
+  "BudgetType": "COST"
+}

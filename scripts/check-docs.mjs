@@ -4,7 +4,7 @@ import { dirname, join, relative } from "node:path";
 
 const root = new URL("..", import.meta.url).pathname;
 const walk = (d) => readdirSync(d).flatMap((n) => { const p = join(d, n); if (["node_modules", ".astro", "dist", ".git", "public"].includes(n)) return []; return statSync(p).isDirectory() ? walk(p) : [p]; });
-const roots = ["README.md", "README.en.md", "CONTRIBUTING.md", "SECURITY.md", "AGENTS.md", "CHANGELOG.md", "examples", "skills", "templates", "website/src/content", "docs/media", "console/README.md", "hf"].map((p) => join(root, p)).filter(existsSync);
+const roots = ["README.md", "README.en.md", "CONTRIBUTING.md", "SECURITY.md", "AGENTS.md", "CHANGELOG.md", "examples", "skills", "templates", "website/src/content", "docs/media", "console/README.md", "hf", "missoes"].map((p) => join(root, p)).filter(existsSync);
 const files = roots.flatMap((p) => (statSync(p).isDirectory() ? walk(p) : [p])).filter((f) => /\.(md|mdx)$/.test(f));
 const problems = [];
 // Contexto privado de planejamento e de comunidade fica fora de um repo público.
@@ -21,7 +21,7 @@ for (const file of files) {
     if (clean.startsWith("/aws-builder-workshops/")) {
       const path = clean.replace("/aws-builder-workshops/", "");
       if (/^(img|media)\//.test(path)) { if (!existsSync(join(root, "website/public", path))) problems.push(`${rel}: ${target}`); continue; }
-      if (path.startsWith("console")) continue;
+      if (path.startsWith("console") || /^(en\/)?missoes\//.test(path)) continue; // páginas geradas no build
       const doc = path.replace(/\/$/, "");
       if (![".md", ".mdx"].some((e) => existsSync(join(root, "website/src/content/docs", doc + e))) && !existsSync(join(root, "website/src/content/docs", doc, "index.mdx"))) problems.push(`${rel}: ${target}`);
     } else if (clean && !existsSync(join(dirname(file), clean))) problems.push(`${rel}: ${target}`);
