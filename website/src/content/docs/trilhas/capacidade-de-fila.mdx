@@ -1,0 +1,68 @@
+---
+title: Capacidade de fila
+description: Exercício para prever quando mais consumidores reduzem um backlog, e quando a dependência é o limite de verdade.
+---
+
+import { Steps } from "@astrojs/starlight/components";
+
+Faça a previsão antes de cada comando, e só depois compare. É aí que o aprendizado acontece.
+
+**Cenário fictício:** 100 mensagens por segundo, 200 ms de serviço, 6.000 mensagens no backlog. [Abra a calculadora no navegador](/aws-builder-workshops/console/?view=queue) ou use o terminal.
+
+<Steps>
+
+1. **20 consumidores: o backlog drena?** Cada consumidor processa 5 por segundo.
+
+   ```sh
+   npx -y moretes-builder-workshops queue --arrivals 100 --service-ms 200 --consumers 20 --backlog 6000
+   ```
+
+2. **30 consumidores: em quanto tempo?**
+
+   ```sh
+   npx -y moretes-builder-workshops queue --arrivals 100 --service-ms 200 --consumers 30 --backlog 6000
+   ```
+
+3. **E se o provedor aceitar só 80 por segundo?**
+
+   ```sh
+   npx -y moretes-builder-workshops queue --arrivals 100 --service-ms 200 --consumers 30 --backlog 6000 --dependency-limit 80
+   ```
+
+</Steps>
+
+## O gabarito
+
+Tente responder antes de abrir.
+
+<details>
+<summary>Ver resultados</summary>
+
+| Cenário | Capacidade | Utilização | Folga | Drenagem |
+|---|---|---|---|---|
+| 20 consumidores | 100/s | 100% | 0/s | nunca |
+| 30 consumidores | 150/s | 66,7% | 50/s | 120 s |
+| 30, teto de 80/s | 80/s | 125% | -20/s | nunca |
+
+Com 20, a capacidade é igual à entrada: não sobra nada para drenar. Com o teto de 80/s, aumentar consumidores não cria capacidade no provedor, e o backlog cresce 20 mensagens por segundo.
+
+</details>
+
+## A conta
+
+```text
+capacidade dos consumidores = consumidores × concorrência × 1000 ÷ serviço (ms)
+capacidade efetiva          = menor valor entre consumidores e dependência
+utilização                  = chegadas ÷ capacidade efetiva
+drenagem                    = backlog ÷ (capacidade efetiva − chegadas)
+```
+
+:::caution[O que esta conta não diz]
+Usa taxas constantes e ignora limites de broker, lotes, retries e falhas. Não é benchmark nem configuração de produção. Serve para fazer a pergunta certa antes de escalar.
+:::
+
+## Para discutir
+
+- O que você mediria primeiro em um sistema real?
+- Mais pressão sobre um provedor saturado melhora ou piora?
+- O que você diria ao cliente enquanto a fila drena?

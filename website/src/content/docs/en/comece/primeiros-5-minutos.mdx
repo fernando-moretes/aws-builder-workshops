@@ -1,0 +1,69 @@
+---
+title: First 5 minutes
+description: Run the first case, watch an agent get it wrong and understand why, with nothing to install or with a single command.
+---
+
+import { Steps, Tabs, TabItem } from "@astrojs/starlight/components";
+
+Pick a path and run case A2: a tool fails, and the question is what a good agent does about it.
+
+<Tabs>
+<TabItem label="Browser">
+
+Nothing to install. [Open the console on case A2](/aws-builder-workshops/console/?lang=en&case=A2) and click **Next step** until the end.
+
+![Lab console showing the settlement lookup as unavailable](/aws-builder-workshops/img/console-a2.en.png)
+
+</TabItem>
+<TabItem label="Terminal">
+
+Needs Node.js 20 or newer.
+
+```sh
+npx -y moretes-builder-workshops run A2 --lang en
+```
+
+</TabItem>
+<TabItem label="Docker">
+
+```sh
+docker run --rm ghcr.io/fernando-moretes/builder-workshops run A2 --lang en
+```
+
+</TabItem>
+<TabItem label="Python">
+
+The original lab, with no dependencies for this mode:
+
+```sh
+git clone https://github.com/fernando-moretes/aws-builder-workshops.git
+cd aws-builder-workshops/labs/triage-agent
+python3 cli.py --case A2
+```
+
+</TabItem>
+</Tabs>
+
+## What to look for
+
+<Steps>
+
+1. **Find the settlement line.** The lookup failed, and `metrics` is `null`, not zero.
+
+2. **Read the component's state.** It's `unknown`. An unavailable lookup doesn't mean the component is down, and it doesn't mean it's healthy either.
+
+3. **Look at the three counts.** `model_calls`, `aws_calls` and `mutations` are all 0. This is a teaching simulation, not a model's answer.
+
+4. **Now think:** if an agent answered "settlement is normal", what evidence would you ask for?
+
+</Steps>
+
+:::tip[In real life]
+When we ran these cases with a real model, it recognized the failure in A2, but classified other metrics as normal with no SLO to back that up. [See the evaluation](/aws-builder-workshops/en/trilhas/bedrock-opcional/).
+:::
+
+## Next step
+
+- Want to publish something of your own? Go to the [First experiment](/aws-builder-workshops/en/trilhas/primeiro-experimento/).
+- Want to keep going with the cases? Continue with the [Triage lab](/aws-builder-workshops/en/trilhas/lab-triagem/).
+- Found something confusing? [Tell us in issue #1](https://github.com/fernando-moretes/aws-builder-workshops/issues/1): it's the most useful contribution right now.

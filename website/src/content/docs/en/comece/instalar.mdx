@@ -1,0 +1,75 @@
+---
+title: Install
+description: Install the kit with npx, npm, Docker or from source, and check your environment with one command.
+---
+
+import { Tabs, TabItem } from "@astrojs/starlight/components";
+
+The kit has no runtime dependencies, doesn't call the network and doesn't ask for credentials.
+
+<Tabs>
+<TabItem label="npx (recommended)">
+
+Requires Node.js 20 or newer. Nothing stays installed.
+
+```sh
+npx -y moretes-builder-workshops doctor --lang en
+```
+
+</TabItem>
+<TabItem label="npm">
+
+```sh
+npm install -g moretes-builder-workshops
+builder-workshops doctor --lang en
+```
+
+</TabItem>
+<TabItem label="Docker">
+
+```sh
+docker run --rm ghcr.io/fernando-moretes/builder-workshops doctor --lang en
+```
+
+To write an experiment to your folder:
+
+```sh
+docker run --rm -v "$PWD:/work" -w /work --user "$(id -u):$(id -g)" \
+  ghcr.io/fernando-moretes/builder-workshops experiment my-experiment --lang en
+```
+
+</TabItem>
+<TabItem label="Source code">
+
+```sh
+git clone https://github.com/fernando-moretes/aws-builder-workshops.git
+cd aws-builder-workshops
+node bin/cli.mjs doctor --lang en
+```
+
+</TabItem>
+</Tabs>
+
+## Expected output
+
+```text
+✓ Node.js >= 20 v24.15.0
+✓ Lab engine offline, no mutation
+✓ Kit documents 6
+✓ Skill skills/builder-workshops
+
+No credentials needed. Nothing here calls the network.
+```
+
+:::caution[What doesn't exist yet in the first version]
+`npx`, `npm` and the Docker image depend on the package's first publication. If one of these commands can't find the package, use **Source code**: it's the same program.
+:::
+
+## Common problems
+
+| Symptom | What to do |
+|---|---|
+| `SyntaxError` or old version | Check `node --version`. It must be 20 or newer |
+| `npx` asks for confirmation | Use `-y`, as in the examples |
+| Docker can't write to the folder | Use `--user "$(id -u):$(id -g)"` |
+| Windows | Use PowerShell or WSL. The examples with `$PWD` are for Unix shells |

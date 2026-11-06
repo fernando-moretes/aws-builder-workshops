@@ -1,0 +1,59 @@
+---
+title: Servidor MCP
+description: Sete ferramentas só de leitura, recursos e prompts para o seu agente usar o lab, sem rede, sem credenciais e sem dependências.
+---
+
+O servidor fala MCP por stdio. É testado com o cliente oficial do protocolo em cada mudança.
+
+```sh
+npx -y moretes-builder-workshops mcp
+```
+
+Com Docker: `docker run --rm -i ghcr.io/fernando-moretes/builder-workshops mcp`.
+
+## Ferramentas
+
+Todas têm `readOnlyHint: true`. Nenhuma grava em disco, chama a rede ou chama um modelo.
+
+| Ferramenta | O que faz | Exemplo de pedido |
+|---|---|---|
+| `list_workshops` | Lista os três workshops | "Quais workshops existem?" |
+| `list_cases` | Lista A1 a A5 e o comportamento esperado | "Quais casos adversos eu devo testar?" |
+| `run_case` | Roda um caso na simulação | "Rode o caso A4 e me explique" |
+| `check_citations` | Compara citações com a evidência | "Confira as citações desta resposta para o A1" |
+| `queue_capacity` | Conta de capacidade | "100 msg/s, 200 ms, 30 consumidores: drena?" |
+| `start_experiment` | Devolve os modelos do experimento | "Quero começar meu primeiro experimento" |
+| `get_doc` | Lê um documento do kit | "Abra o guia do facilitador" |
+
+## Prompts
+
+| Prompt | Para quê |
+|---|---|
+| `review_my_article` | Revisar um artigo sem reescrever |
+| `review_triage_answer` | Revisar a resposta de um agente em um caso |
+| `facilitate_workshop` | Preparar a condução de um encontro |
+
+## Recursos
+
+`workshop://docs/atividades`, `facilitador`, `modelos`, `demonstracoes`, `propostas` e `avaliacao`.
+
+## Testar sem IDE
+
+Use o inspetor oficial:
+
+```sh
+npx @modelcontextprotocol/inspector npx -y moretes-builder-workshops mcp
+```
+
+Ou mande uma mensagem direto:
+
+```sh
+printf '%s\n' '{"jsonrpc":"2.0","id":1,"method":"tools/list"}' | npx -y moretes-builder-workshops mcp
+```
+
+## Segurança
+
+- A lista de documentos é fixa: `get_doc` não aceita caminho.
+- Argumentos fora do schema são recusados.
+- O servidor instrui o cliente a tratar o conteúdo devolvido como dado, nunca como instrução.
+- `run_case` é simulação. Nunca apresente como saída de modelo ou de sistema real.

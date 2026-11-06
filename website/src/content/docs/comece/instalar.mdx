@@ -1,0 +1,75 @@
+---
+title: Instalar
+description: Instale o kit por npx, npm, Docker ou a partir do código, e confira o ambiente com um comando.
+---
+
+import { Tabs, TabItem } from "@astrojs/starlight/components";
+
+O kit não tem dependências de runtime, não chama a rede e não pede credenciais.
+
+<Tabs>
+<TabItem label="npx (recomendado)">
+
+Requer Node.js 20 ou mais novo. Nada fica instalado.
+
+```sh
+npx -y moretes-builder-workshops doctor
+```
+
+</TabItem>
+<TabItem label="npm">
+
+```sh
+npm install -g moretes-builder-workshops
+builder-workshops doctor
+```
+
+</TabItem>
+<TabItem label="Docker">
+
+```sh
+docker run --rm ghcr.io/fernando-moretes/builder-workshops doctor
+```
+
+Para gravar um experimento na sua pasta:
+
+```sh
+docker run --rm -v "$PWD:/work" -w /work --user "$(id -u):$(id -g)" \
+  ghcr.io/fernando-moretes/builder-workshops experiment meu-experimento
+```
+
+</TabItem>
+<TabItem label="Código-fonte">
+
+```sh
+git clone https://github.com/fernando-moretes/aws-builder-workshops.git
+cd aws-builder-workshops
+node bin/cli.mjs doctor
+```
+
+</TabItem>
+</Tabs>
+
+## Saída esperada
+
+```text
+✓ Node.js >= 20 v22.23.4
+✓ Motor do lab offline, sem mutação
+✓ Documentos do kit 6
+✓ Skill skills/builder-workshops
+
+Não precisa de credenciais. Nada aqui chama a rede.
+```
+
+:::caution[O que ainda não existe na primeira versão]
+`npx`, `npm` e a imagem Docker dependem da primeira publicação do pacote. Se um desses comandos não encontrar o pacote, use **Código-fonte**: é o mesmo programa.
+:::
+
+## Problemas comuns
+
+| Sintoma | O que fazer |
+|---|---|
+| `SyntaxError` ou versão antiga | Confira `node --version`. Precisa ser 20 ou mais novo |
+| `npx` pede confirmação | Use `-y`, como nos exemplos |
+| Docker sem permissão para gravar | Use `--user "$(id -u):$(id -g)"` |
+| Windows | Use PowerShell ou WSL. Os exemplos com `$PWD` são de shells Unix |

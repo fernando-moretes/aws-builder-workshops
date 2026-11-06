@@ -1,0 +1,36 @@
+name: Hugging Face
+
+# Atualiza o Space e o dataset. Sem o segredo HF_TOKEN, avisa e não faz nada.
+on:
+  push:
+    tags: ['v*']
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  sync:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    env:
+      HF_TOKEN: ${{ secrets.HF_TOKEN }}
+    steps:
+      - uses: actions/checkout@v7
+      - uses: actions/setup-node@v7
+        with:
+          node-version: '22'
+      - uses: actions/setup-python@v7
+        with:
+          python-version: '3.12'
+      - name: Montar
+        run: |
+          node scripts/build-console.mjs dist-space
+          cp console/README.md dist-space/README.md
+          node scripts/build-hf-dataset.mjs dist-dataset
+      - name: Enviar
+        run: |
+          if [ -z "$HF_TOKEN" ]; then echo "::warning::HF_TOKEN não configurado. Nada foi enviado."; exit 0; fi
+          pip install --quiet 'huggingface_hub>=0.34'
+          hf upload fernandofa42/triage-console dist-space . --repo-type space --commit-message "Sync ${GITHUB_REF_NAME}"
+          hf upload fernandofa42/triage-agent-eval dist-dataset . --repo-type dataset --commit-message "Sync ${GITHUB_REF_NAME}"

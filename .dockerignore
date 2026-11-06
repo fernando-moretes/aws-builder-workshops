@@ -1,0 +1,10 @@
+**
+!package.json
+!LICENSE
+!CHANGELOG.md
+!bin/**
+!src/**
+!skills/**
+!templates/**
+!docs/community/workshops/2026-11-builder-series/*.md
+!labs/triage-agent/EVALUATION.md

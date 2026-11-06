@@ -1,0 +1,25 @@
+name: Release GitHub
+
+on:
+  push:
+    tags: ['v*']
+
+permissions:
+  contents: read
+
+jobs:
+  release:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    permissions:
+      contents: write
+    steps:
+      - uses: actions/checkout@v7
+      - uses: actions/setup-node@v7
+        with:
+          node-version: '22'
+      - run: npm pack --silent
+      - uses: softprops/action-gh-release@v3
+        with:
+          files: moretes-builder-workshops-*.tgz
+          generate_release_notes: true

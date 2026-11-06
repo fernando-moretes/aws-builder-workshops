@@ -5,3 +5,10 @@ __pycache__/
 artifacts/
 .env
 .env.*
+website/node_modules/
+website/dist/
+website/.astro/
+website/public/console/
+dist-space/
+dist-dataset/
+*.tgz

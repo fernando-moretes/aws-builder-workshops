@@ -1,0 +1,68 @@
+---
+title: Queue capacity
+description: An exercise to predict when more consumers shrink a backlog, and when the dependency is the real limit.
+---
+
+import { Steps } from "@astrojs/starlight/components";
+
+Make your prediction before each command, and only then compare. That's where the learning happens.
+
+**Fictional scenario:** 100 messages per second, 200 ms of service time, 6,000 messages in the backlog. [Open the calculator in the browser](/aws-builder-workshops/console/?lang=en&view=queue) or use the terminal.
+
+<Steps>
+
+1. **20 consumers: does the backlog drain?** Each consumer processes 5 per second.
+
+   ```sh
+   npx -y moretes-builder-workshops queue --arrivals 100 --service-ms 200 --consumers 20 --backlog 6000 --lang en
+   ```
+
+2. **30 consumers: how long does it take?**
+
+   ```sh
+   npx -y moretes-builder-workshops queue --arrivals 100 --service-ms 200 --consumers 30 --backlog 6000 --lang en
+   ```
+
+3. **What if the provider accepts only 80 per second?**
+
+   ```sh
+   npx -y moretes-builder-workshops queue --arrivals 100 --service-ms 200 --consumers 30 --backlog 6000 --dependency-limit 80 --lang en
+   ```
+
+</Steps>
+
+## The answer key
+
+Try to answer before you open it.
+
+<details>
+<summary>See results</summary>
+
+| Scenario | Capacity | Utilization | Surplus | Drain |
+|---|---|---|---|---|
+| 20 consumers | 100/s | 100% | 0/s | never |
+| 30 consumers | 150/s | 66.7% | 50/s | 120 s |
+| 30, 80/s ceiling | 80/s | 125% | -20/s | never |
+
+With 20, capacity equals the input: nothing is left to drain. With the 80/s ceiling, adding consumers doesn't create capacity at the provider, and the backlog grows by 20 messages per second.
+
+</details>
+
+## The math
+
+```text
+consumer capacity  = consumers × concurrency × 1000 ÷ service time (ms)
+effective capacity = the lower of consumers and dependency
+utilization        = arrivals ÷ effective capacity
+drain time         = backlog ÷ (effective capacity − arrivals)
+```
+
+:::caution[What this math doesn't say]
+It uses constant rates and ignores broker limits, batches, retries and failures. It's not a benchmark or a production setting. It's there to help you ask the right question before scaling.
+:::
+
+## To discuss
+
+- What would you measure first in a real system?
+- Does more pressure on a saturated provider make things better or worse?
+- What would you tell the customer while the queue drains?

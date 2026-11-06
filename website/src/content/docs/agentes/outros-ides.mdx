@@ -1,0 +1,74 @@
+---
+title: Claude Code, Cursor, VS Code e Codex
+description: Instale o MCP e a skill em outros clientes, com o formato de configuração de cada um.
+---
+
+import { Tabs, TabItem } from "@astrojs/starlight/components";
+
+O `init` escreve no formato certo de cada cliente e preserva o que já existe.
+
+<Tabs>
+<TabItem label="Claude Code">
+
+```sh
+npx -y moretes-builder-workshops init claude
+```
+
+```json title=".mcp.json"
+{ "mcpServers": { "builder-workshops": { "type": "stdio", "command": "npx", "args": ["-y", "moretes-builder-workshops", "mcp"] } } }
+```
+
+</TabItem>
+<TabItem label="Cursor">
+
+```sh
+npx -y moretes-builder-workshops init cursor
+```
+
+```json title=".cursor/mcp.json"
+{ "mcpServers": { "builder-workshops": { "type": "stdio", "command": "npx", "args": ["-y", "moretes-builder-workshops", "mcp"] } } }
+```
+
+</TabItem>
+<TabItem label="VS Code">
+
+```sh
+npx -y moretes-builder-workshops init vscode
+```
+
+Atenção: aqui a chave é `servers`, não `mcpServers`.
+
+```json title=".vscode/mcp.json"
+{ "servers": { "builder-workshops": { "type": "stdio", "command": "npx", "args": ["-y", "moretes-builder-workshops", "mcp"] } } }
+```
+
+</TabItem>
+<TabItem label="Codex">
+
+```sh
+npx -y moretes-builder-workshops init codex
+```
+
+Instala a skill em `.agents/skills/`. O servidor MCP se configura no próprio Codex, com o comando `npx -y moretes-builder-workshops mcp`.
+
+</TabItem>
+<TabItem label="Docker em qualquer cliente">
+
+Para quem prefere não ter Node.js:
+
+```json
+{ "mcpServers": { "builder-workshops": { "command": "docker", "args": ["run", "--rm", "-i", "ghcr.io/fernando-moretes/builder-workshops", "mcp"] } } }
+```
+
+</TabItem>
+</Tabs>
+
+## O que foi testado
+
+| Cliente | Situação |
+|---|---|
+| Cliente oficial do MCP (SDK) | Testado automaticamente em cada mudança |
+| Claude Code | Detecta o servidor do repo. O uso pede sua aprovação na primeira vez |
+| Kiro, Cursor, VS Code | Formato conferido na documentação oficial, sem teste no aplicativo |
+
+Se testar em algum destes, [conte na issue #1](https://github.com/fernando-moretes/aws-builder-workshops/issues/1).

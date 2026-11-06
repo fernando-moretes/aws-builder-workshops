@@ -1,0 +1,36 @@
+---
+title: Vídeos e áudios
+description: Vídeos, episódio de áudio, legendas e transcrições, em português e inglês.
+---
+
+export const B = "/aws-builder-workshops/media";
+
+## Primeiro experimento
+
+Da dúvida real ao artigo, com o exemplo da fila.
+
+<video controls preload="none" poster={`${B}/first-experiment.pt.jpg`} style="width:100%;height:auto">
+  <source src={`${B}/first-experiment.pt.mp4`} type="video/mp4" />
+  <track kind="captions" src={`${B}/first-experiment.pt.vtt`} srcLang="pt-BR" label="Português" default />
+</video>
+
+## Lab de triagem
+
+Os cinco casos, e o que aconteceu com um modelo real.
+
+<video controls preload="none" poster={`${B}/triage-lab.pt.jpg`} style="width:100%;height:auto">
+  <source src={`${B}/triage-lab.pt.mp4`} type="video/mp4" />
+  <track kind="captions" src={`${B}/triage-lab.pt.vtt`} srcLang="pt-BR" label="Português" default />
+</video>
+
+## Episódio: como escrever o primeiro artigo técnico
+
+<audio controls preload="none" style="width:100%" src={`${B}/podcast-primeiro-artigo.pt.mp3`}></audio>
+
+## Em inglês
+
+[First experiment](/aws-builder-workshops/en/referencia/midia/) · [Triage lab](/aws-builder-workshops/en/referencia/midia/) · [Podcast episode](/aws-builder-workshops/en/referencia/midia/)
+
+## Sobre as vozes
+
+A narração do Fernando é gerada com a voz clonada dele, com a autorização dele. Lia e o Agente são personagens fictícios com vozes sintéticas. A [transcrição completa](https://github.com/fernando-moretes/aws-builder-workshops/blob/main/docs/media/TRANSCRICOES.md) está no repositório.

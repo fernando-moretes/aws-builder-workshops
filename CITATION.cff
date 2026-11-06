@@ -1,0 +1,10 @@
+cff-version: 1.2.0
+message: Se usar este material, cite assim. / If you use this material, please cite it as below.
+title: Builder Workshops
+type: software
+authors:
+  - family-names: Azevedo
+    given-names: Fernando
+license: MIT
+repository-code: https://github.com/fernando-moretes/aws-builder-workshops
+url: https://fernando-moretes.github.io/aws-builder-workshops/

@@ -1,0 +1,12 @@
+{
+  "mcpServers": {
+    "builder-workshops": {
+      "type": "stdio",
+      "command": "node",
+      "args": [
+        "bin/cli.mjs",
+        "mcp"
+      ]
+    }
+  }
+}

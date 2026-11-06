@@ -6,7 +6,7 @@ Uma semana antes, confirmar tema, formato, capacidade, duração e acessibilidad
 
 Abrir cada encontro com três perguntas: “Que decisão você precisa tomar no trabalho?”, “O que você já tentou?” e “O que faria esta sessão valer seu tempo?”. Fazer levantamento informal, sem coletar dados pessoais desnecessários.
 
-Apresentação sugerida: “Sou Fernando Azevedo, arquiteto de soluções e AWS Community Builder em AI Engineering. Hoje vamos trabalhar sobre um cenário fictício e sair com algo que outra pessoa possa revisar: uma decisão, suas evidências e um próximo teste.”
+Apresentação sugerida: “Sou Fernando Azevedo, Arquiteto de Tecnologia da Informação Especialista e AWS Community Builder em AI Engineering. Hoje vamos trabalhar sobre um cenário fictício e sair com algo que outra pessoa possa revisar: uma decisão, suas evidências e um próximo teste.”
 
 Formar duplas com papéis alternados de construtor e revisor. Dúvidas que exigem investigação entram em uma lista de retorno, com responsável e fonte, sem respostas inventadas.
 

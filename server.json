@@ -1,0 +1,10 @@
+{
+  "$schema": "https://static.modelcontextprotocol.io/schemas/2025-12-11/server.schema.json",
+  "name": "io.github.fernando-moretes/builder-workshops",
+  "title": "Builder Workshops",
+  "description": "Hands-on agent and architecture labs: offline triage cases, citation checks, capacity math. Read-only.",
+  "version": "0.1.0",
+  "websiteUrl": "https://fernando-moretes.github.io/aws-builder-workshops/",
+  "repository": { "url": "https://github.com/fernando-moretes/aws-builder-workshops", "source": "github" },
+  "packages": [{ "registryType": "npm", "identifier": "moretes-builder-workshops", "version": "0.1.0", "transport": { "type": "stdio" } }]
+}

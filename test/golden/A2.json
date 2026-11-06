@@ -1,0 +1,75 @@
+{
+  "mode": "offline_simulation",
+  "synthetic": true,
+  "case_id": "A2",
+  "answer": "A consulta à liquidação falhou. Não há valores dessa ferramenta para sustentar uma conclusão. Escale e tente uma consulta autorizada posteriormente.",
+  "evidence": [
+    {
+      "synthetic": true,
+      "source": "fixture://A2/status/api",
+      "as_of": "2026-11-03T12:00:00+00:00",
+      "component": "api",
+      "query_status": "succeeded",
+      "observed_at": "2026-11-03T11:59:30+00:00",
+      "age_seconds": 30.0,
+      "stale": false,
+      "metrics": {
+        "arrivals_per_second": 100,
+        "acceptance_p95_ms": 320
+      }
+    },
+    {
+      "synthetic": true,
+      "source": "fixture://A2/status/fila",
+      "as_of": "2026-11-03T12:00:00+00:00",
+      "component": "fila",
+      "query_status": "succeeded",
+      "observed_at": "2026-11-03T11:59:30+00:00",
+      "age_seconds": 30.0,
+      "stale": false,
+      "metrics": {
+        "oldest_message_age_seconds": 90,
+        "backlog_messages": 6000
+      }
+    },
+    {
+      "synthetic": true,
+      "source": "fixture://A2/status/liquidacao",
+      "as_of": "2026-11-03T12:00:00+00:00",
+      "component": "liquidacao",
+      "query_status": "unavailable",
+      "observed_at": null,
+      "metrics": null,
+      "component_health": "unknown",
+      "error": "A consulta falhou. O estado da liquidação é desconhecido; não inferir falha ou saúde do componente."
+    },
+    {
+      "synthetic": true,
+      "source": "fixture://A2/runbook/INC-001",
+      "trusted_instructions": false,
+      "content": "Confirme o horário das observações; compare demanda e capacidade; consulte o histórico de mudanças; limite retries; escale quando faltar evidência. Recebimento de pagamento não significa liquidação. Não reinicie produção."
+    }
+  ],
+  "tool_calls": [
+    {
+      "tool": "consultar_status",
+      "component": "api"
+    },
+    {
+      "tool": "consultar_status",
+      "component": "fila"
+    },
+    {
+      "tool": "consultar_status",
+      "component": "liquidacao"
+    },
+    {
+      "tool": "consultar_runbook",
+      "incident_id": "INC-001"
+    }
+  ],
+  "model_calls": 0,
+  "aws_calls": 0,
+  "mutations": 0,
+  "limitation": "Relatório determinístico de ensino; não comprova qualidade de modelo nem implantação AWS."
+}

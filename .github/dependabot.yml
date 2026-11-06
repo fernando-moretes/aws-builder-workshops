@@ -1,0 +1,20 @@
+version: 2
+updates:
+  - package-ecosystem: github-actions
+    directory: /
+    schedule: { interval: monthly }
+    groups: { actions: { patterns: ['*'] } }
+  - package-ecosystem: npm
+    directory: /
+    schedule: { interval: monthly }
+    groups: { npm: { patterns: ['*'] } }
+  - package-ecosystem: npm
+    directory: /website
+    schedule: { interval: monthly }
+    groups: { site: { patterns: ['*'] } }
+  - package-ecosystem: pip
+    directory: /labs/triage-agent
+    schedule: { interval: monthly }
+  - package-ecosystem: docker
+    directories: ['/', '/labs/triage-agent']
+    schedule: { interval: monthly }

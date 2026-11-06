@@ -1,0 +1,74 @@
+---
+title: First experiment
+description: A step-by-step guide for beginners, from a real question to a published technical article, with evidence, a source checklist, cost and cleanup.
+---
+
+import { Steps } from "@astrojs/starlight/components";
+
+For people who have never published anything technical. Two sessions of up to two hours each, with no cloud account.
+
+![The four stages: real question, small experiment, evidence and article](/aws-builder-workshops/img/routine.en.svg)
+
+## Session 1: from question to evidence
+
+<Steps>
+
+1. **Create the experiment folder.**
+
+   ```sh
+   npx -y moretes-builder-workshops experiment my-experiment --lang en
+   ```
+
+   It comes with `PROPOSAL.md`, `EVIDENCE.md`, `ARTICLE.md` and `CHECKLIST.md`.
+
+2. **Write the real question in `PROPOSAL.md`.** Something that genuinely confused you. "I want to talk about SQS" is not a question yet. "Why didn't more consumers shrink my backlog?" is.
+
+3. **Write the hypothesis before testing.** It's what turns a tutorial into learning: afterwards you'll be able to say what changed in your head.
+
+4. **Define the smallest possible test.** If it doesn't fit in two hours, cut it down. Prefer running locally, with fictional data.
+
+5. **Run it and note it down right away in `EVIDENCE.md`.** The command, what you expected, what happened. An error is a result too.
+
+</Steps>
+
+:::tip[No topic idea?]
+Open the terminal and make a prediction: `queue --arrivals 100 --service-ms 200 --consumers 20 --backlog 6000 --lang en`. What do you think will come out? The [queue capacity page](/aws-builder-workshops/en/trilhas/capacidade-de-fila/) takes it further.
+:::
+
+## Session 2: from evidence to article
+
+<Steps>
+
+1. **Write the first draft yourself,** from the evidence log. It can be ugly. Tell what you did, the way you would tell a colleague.
+
+2. **Ask for a review, not for writing.** With the [skill](/aws-builder-workshops/en/agentes/skill/) installed, ask something like this:
+
+   > Review my article with the builder-workshops skill. Don't rewrite it. Point out what another person couldn't repeat and what I claim without evidence.
+
+3. **Go through `CHECKLIST.md`.** Open every link you cite, state the cost and say how to clean up what was created.
+
+4. **Publish and share.** On your blog, on DEV.to, on AWS Builder Center or wherever you prefer.
+
+</Steps>
+
+## Why AI only reviews
+
+Three practical reasons:
+
+- **Your experience is the article's value.** A model didn't test what you tested.
+- **You answer for the text.** You need to be able to explain every claim when someone asks.
+- **It's how you learn.** Writing forces you to notice what you still don't understand.
+
+If AI helped, say with what: "clarity review" is enough.
+
+## Before publishing, check
+
+- [ ] Another person can repeat it using only what's written.
+- [ ] Every number came from your test or has a source.
+- [ ] The article says what the test does **not** prove.
+- [ ] No key, account or customer data appears in text or images.
+- [ ] Nothing in it is forbidden by your job or by a nondisclosure agreement.
+
+## See a finished example
+
+The [complete example](/aws-builder-workshops/en/trilhas/exemplo-completo/) shows the four stages with real outputs, including the two hypotheses that fell.

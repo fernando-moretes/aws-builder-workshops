@@ -1,0 +1,74 @@
+---
+title: Primeiro experimento
+description: Passo a passo para iniciantes, da dúvida real ao artigo técnico publicado, com evidência, checklist de fontes, custo e limpeza.
+---
+
+import { Steps } from "@astrojs/starlight/components";
+
+Para quem nunca publicou nada técnico. São duas sessões de até duas horas, sem conta na nuvem.
+
+![As quatro etapas: dúvida real, experimento pequeno, evidência e artigo](/aws-builder-workshops/img/routine.pt.svg)
+
+## Sessão 1: da dúvida à evidência
+
+<Steps>
+
+1. **Crie a pasta do experimento.**
+
+   ```sh
+   npx -y moretes-builder-workshops experiment meu-experimento
+   ```
+
+   Ela vem com `PROPOSTA.md`, `EVIDENCIAS.md`, `ARTIGO.md` e `CHECKLIST.md`.
+
+2. **Escreva a dúvida real em `PROPOSTA.md`.** Algo que confundiu você de verdade. "Quero falar de SQS" ainda não é uma dúvida. "Por que mais consumidores não reduziram meu backlog?" é.
+
+3. **Escreva a hipótese antes de testar.** É o que transforma um tutorial em aprendizado: depois você vai poder dizer o que mudou na sua cabeça.
+
+4. **Defina o menor teste possível.** Se não cabe em duas horas, corte. Prefira rodar local, com dados fictícios.
+
+5. **Rode e anote na hora em `EVIDENCIAS.md`.** Comando, o que esperava, o que aconteceu. Erro também é resultado.
+
+</Steps>
+
+:::tip[Sem ideia de tema?]
+Abra o terminal e faça uma previsão: `queue --arrivals 100 --service-ms 200 --consumers 20 --backlog 6000`. O que você acha que vai sair? A [página de capacidade de fila](/aws-builder-workshops/trilhas/capacidade-de-fila/) leva isso adiante.
+:::
+
+## Sessão 2: da evidência ao artigo
+
+<Steps>
+
+1. **Escreva o primeiro rascunho você mesmo,** a partir do registro de evidências. Pode ficar feio. Conte o que fez, como contaria a um colega.
+
+2. **Peça revisão, não redação.** Com a [skill](/aws-builder-workshops/agentes/skill/) instalada, peça algo assim:
+
+   > Revise meu artigo com a skill builder-workshops. Não reescreva. Aponte o que outra pessoa não conseguiria repetir e o que eu afirmo sem evidência.
+
+3. **Passe pelo `CHECKLIST.md`.** Abra cada link que você cita, informe o custo e diga como limpar o que foi criado.
+
+4. **Publique e compartilhe.** No seu blog, no DEV.to, no AWS Builder Center ou onde preferir.
+
+</Steps>
+
+## Por que a IA só revisa
+
+Três motivos práticos:
+
+- **A experiência é o valor do artigo.** Um modelo não testou o que você testou.
+- **Você responde pelo texto.** Precisa saber explicar cada afirmação quando alguém perguntar.
+- **É assim que se aprende.** Escrever obriga a perceber o que você ainda não entendeu.
+
+Se a IA ajudou, diga em quê: "revisão de clareza" basta.
+
+## Antes de publicar, confira
+
+- [ ] Outra pessoa consegue repetir só com o que está escrito.
+- [ ] Todo número veio do seu teste ou tem fonte.
+- [ ] O artigo diz o que o teste **não** prova.
+- [ ] Nenhuma chave, conta ou dado de cliente aparece em texto ou imagem.
+- [ ] Nada do que está ali é proibido pelo seu emprego ou por um acordo de confidencialidade.
+
+## Veja um exemplo pronto
+
+O [exemplo completo](/aws-builder-workshops/trilhas/exemplo-completo/) mostra as quatro etapas com saídas reais, inclusive as duas hipóteses que caíram.

@@ -1,0 +1,23 @@
+name: "Novo caso adverso / New adverse case"
+description: "Proponha um caso para o lab. / Propose a case for the lab."
+labels: [enhancement]
+body:
+  - type: textarea
+    id: condition
+    attributes:
+      label: "Condição / Condition"
+      description: "O que acontece no cenário? Use dados fictícios. / What happens? Use fictional data."
+    validations:
+      required: true
+  - type: textarea
+    id: good
+    attributes:
+      label: "Comportamento esperado / Expected behavior"
+    validations:
+      required: true
+  - type: textarea
+    id: bad
+    attributes:
+      label: "Falha comum / Common failure"
+    validations:
+      required: true

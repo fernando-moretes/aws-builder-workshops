@@ -148,11 +148,11 @@ A request to add AI is not yet an architecture. This interactive workshop follow
 
 ## Mini-bio curta
 
-Fernando Azevedo é arquiteto de soluções e AWS Community Builder em AI Engineering. Compartilha artigos, estudos, podcast e projetos open source sobre arquitetura AWS e agentes de IA.
+Fernando Azevedo é Arquiteto de Tecnologia da Informação Especialista, com foco em IA e AWS, e AWS Community Builder em AI Engineering. Compartilha artigos, estudos, podcast e projetos open source sobre arquitetura AWS e agentes de IA.
 
 ## Mini-bio completa
 
-Fernando Azevedo é arquiteto de soluções e AWS Community Builder em AI Engineering. Compartilha conhecimento em português e inglês por meio de artigos, estudos de arquitetura, podcast e projetos open source. Suas propostas conectam experiência em arquitetura bancária, engenharia de agentes e decisões práticas para construir e evoluir soluções na AWS.
+Fernando Azevedo é Arquiteto de Tecnologia da Informação Especialista, com foco em IA e AWS, e AWS Community Builder em AI Engineering. Compartilha conhecimento em português e inglês por meio de artigos, estudos de arquitetura, podcast e projetos open source. Suas propostas conectam experiência em arquitetura bancária, engenharia de agentes e decisões práticas para construir e evoluir soluções na AWS.
 
 ## Evidências públicas
 

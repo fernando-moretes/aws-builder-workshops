@@ -1,0 +1,18 @@
+{
+  "name": "builder-workshops-site",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "predev": "node ../scripts/build-console.mjs website/public/console",
+    "prebuild": "node ../scripts/build-console.mjs website/public/console",
+    "dev": "astro dev",
+    "build": "astro build",
+    "preview": "astro preview"
+  },
+  "dependencies": {
+    "@astrojs/starlight": "0.42.9",
+    "@fontsource/open-sans": "5.3.0",
+    "astro": "7.4.7",
+    "sharp": "0.35.5"
+  }
+}
