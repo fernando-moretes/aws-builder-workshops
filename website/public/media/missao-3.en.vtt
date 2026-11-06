@@ -1,0 +1,213 @@
+WEBVTT
+
+1
+00:00:00.300 --> 00:00:04.959
+What does this error mean, and how do I figure it out on my own?
+
+2
+00:00:04.959 --> 00:00:08.526
+In this mission, you break a function on purpose.
+
+3
+00:00:08.526 --> 00:00:09.836
+Look at this code.
+
+4
+00:00:09.836 --> 00:00:13.475
+It asks for a field called nome, which means name.
+
+5
+00:00:13.475 --> 00:00:14.931
+Now write this down:
+
+6
+00:00:14.931 --> 00:00:17.770
+what happens if it gets an empty event?
+
+7
+00:00:17.770 --> 00:00:20.318
+And what status code do you expect?
+
+8
+00:00:21.333 --> 00:00:25.270
+Download the mission's two files and run this command.
+
+9
+00:00:25.270 --> 00:00:27.968
+You only need Python, no AWS account.
+
+10
+00:00:27.968 --> 00:00:29.280
+An error shows up:
+
+11
+00:00:29.280 --> 00:00:31.978
+KeyError, and the name of the field.
+
+12
+00:00:31.978 --> 00:00:37.738
+In other words, the code looked for the field called nome, and it wasn't there.
+
+13
+00:00:38.767 --> 00:00:40.377
+Now use AI as a tutor.
+
+14
+00:00:40.377 --> 00:00:43.892
+Paste this request, with the code and the error.
+
+15
+00:00:43.892 --> 00:00:44.404
+Notice:
+
+16
+00:00:44.404 --> 00:00:46.967
+you ask it not to give you the fix.
+
+17
+00:00:46.967 --> 00:00:50.335
+It points to the line and asks you a question.
+
+18
+00:00:50.335 --> 00:00:53.776
+Once you understand the cause, fix it yourself.
+
+19
+00:00:53.776 --> 00:00:57.656
+What should the function do when the name is missing?
+
+20
+00:00:58.667 --> 00:01:03.215
+If you already have an account, create the function on AWS.
+
+21
+00:01:03.215 --> 00:01:05.601
+The commands are in the mission.
+
+22
+00:01:05.601 --> 00:01:08.062
+Then call it with an empty event.
+
+23
+00:01:08.062 --> 00:01:10.970
+This was the real response in our test.
+
+24
+00:01:10.970 --> 00:01:12.387
+Look at the detail.
+
+25
+00:01:12.387 --> 00:01:14.176
+StatusCode 200.
+
+26
+00:01:14.176 --> 00:01:15.444
+Right next to it:
+
+27
+00:01:15.444 --> 00:01:17.383
+FunctionError, Unhandled.
+
+28
+00:01:17.383 --> 00:01:18.874
+And inside the file:
+
+29
+00:01:18.874 --> 00:01:19.620
+KeyError.
+
+30
+00:01:20.633 --> 00:01:22.966
+That's the point of this mission.
+
+31
+00:01:22.966 --> 00:01:26.994
+The status is 200, and the function still failed.
+
+32
+00:01:26.994 --> 00:01:31.165
+The 200 says the call to the Lambda service worked.
+
+33
+00:01:31.165 --> 00:01:34.204
+Your function's error is in FunctionError.
+
+34
+00:01:34.204 --> 00:01:38.657
+If you only look at the status, you think everything went fine.
+
+35
+00:01:39.667 --> 00:01:42.903
+Wait about 15 seconds and read the log.
+
+36
+00:01:42.903 --> 00:01:45.330
+It shows the error and line 5.
+
+37
+00:01:45.330 --> 00:01:48.934
+Now ask your AI, without showing it this mission:
+
+38
+00:01:48.934 --> 00:01:54.597
+if the StatusCode came back 200, did my function run without errors?
+
+39
+00:01:54.597 --> 00:01:56.510
+Ask for the documentation.
+
+40
+00:01:56.510 --> 00:01:58.643
+Did it notice the difference?
+
+41
+00:01:58.643 --> 00:02:00.481
+Does the link confirm it?
+
+42
+00:02:00.481 --> 00:02:02.394
+Open it and write it down.
+
+43
+00:02:03.400 --> 00:02:04.903
+At the end, clean up.
+
+44
+00:02:04.903 --> 00:02:10.630
+The mission has the commands to delete the function, the role and the log group.
+
+45
+00:02:10.630 --> 00:02:13.565
+The last line has to show empty brackets.
+
+46
+00:02:13.565 --> 00:02:16.428
+That means the function is off the list.
+
+47
+00:02:16.428 --> 00:02:18.146
+Then write your article:
+
+48
+00:02:18.146 --> 00:02:21.653
+my Lambda returned 200 and it was broken.
+
+49
+00:02:21.653 --> 00:02:22.799
+AI only reviews.
+
+50
+00:02:23.800 --> 00:02:25.715
+One note before we finish.
+
+51
+00:02:25.715 --> 00:02:31.828
+The voice you just heard was generated from my cloned voice, with my authorization.
+
+52
+00:02:31.828 --> 00:02:34.405
+And this is an independent project.
+
+53
+00:02:34.405 --> 00:02:36.909
+It is not official AWS material.

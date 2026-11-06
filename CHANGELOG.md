@@ -2,14 +2,21 @@
 
 Formato: [Keep a Changelog](https://keepachangelog.com/pt-BR/1.1.0/). Versões: [SemVer](https://semver.org/lang/pt-BR/).
 
-## [0.2.0] - não publicada
+## [Não publicado]
+
+### Adicionado
+- Vídeo de introdução, um vídeo por missão e um episódio de áudio, com legendas e transcrição. Em português, diálogo entre Fernando e Lia; em inglês, só a voz do Fernando.
+
+### Corrigido
+- O release agora anexa também o pacote com nome fixo, usado na página de instalação.
+
+## [0.2.0] - 2026-11-06
 
 ### Adicionado
 - Três missões para iniciantes, testadas em conta real: conta sem susto, portfólio no ar e Lambda quebrada.
 - Menu interativo no site e na CLI, progresso por missão, perguntas frequentes e exemplos com respostas reais de IA.
 - Comandos `menu`, `missoes`, `missao` e `custos`, e ferramentas MCP `list_missions`, `get_mission` e `compare_costs`.
 - Roteiro de dois encontros de 1h30.
-- Novos vídeos e áudio, só com a voz do Fernando.
 
 ### Mudado
 - As missões viraram a entrada principal. O lab de triagem e os workshops longos passaram para Avançado.

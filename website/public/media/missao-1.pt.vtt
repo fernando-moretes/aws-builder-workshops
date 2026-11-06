@@ -1,0 +1,253 @@
+WEBVTT
+
+1
+00:00:00.300 --> 00:00:04.173
+Lia: Fernando, se eu criar uma conta na AWS, vou levar um susto na fatura?
+
+2
+00:00:04.523 --> 00:00:06.700
+Fernando: Essa é a dúvida desta missão.
+
+3
+00:00:06.700 --> 00:00:09.702
+Leva cerca de 1 hora e não custa nada.
+
+4
+00:00:09.702 --> 00:00:13.154
+E os três primeiros passos você faz sem conta.
+
+5
+00:00:14.167 --> 00:00:17.906
+Fernando: Antes de abrir qualquer ferramenta, escreva a sua hipótese.
+
+6
+00:00:17.906 --> 00:00:21.518
+O que você acha que gera mais custo em uma conta pequena?
+
+7
+00:00:21.868 --> 00:00:22.233
+Lia: Hum.
+
+8
+00:00:22.233 --> 00:00:24.242
+Acho que é o servidor.
+
+9
+00:00:24.592 --> 00:00:25.517
+Fernando: Anote isso.
+
+10
+00:00:25.517 --> 00:00:26.441
+Pode errar.
+
+11
+00:00:26.441 --> 00:00:29.130
+É o erro que vira um bom artigo.
+
+12
+00:00:30.133 --> 00:00:33.402
+Fernando: Agora baixe o arquivo de custos de exemplo.
+
+13
+00:00:33.402 --> 00:00:35.150
+Os dados são fictícios.
+
+14
+00:00:35.150 --> 00:00:38.647
+Cole no seu assistente de IA, com este pedido.
+
+15
+00:00:38.997 --> 00:00:40.722
+Lia: Por que o último item diz:
+
+16
+00:00:40.722 --> 00:00:42.646
+não me dê a conclusão pronta?
+
+17
+00:00:42.996 --> 00:00:47.402
+Fernando: Porque você quer perguntas, e não uma resposta para copiar.
+
+18
+00:00:48.433 --> 00:00:51.832
+Fernando: Agora confira a conta sem a IA, com este comando.
+
+19
+00:00:52.182 --> 00:00:52.530
+Lia: Nossa.
+
+20
+00:00:52.530 --> 00:00:56.881
+Foi de 0,92 USD para vinte e US$ 5 e sessenta e três
+
+21
+00:00:56.881 --> 00:00:57.403
+centavos!
+
+22
+00:00:57.753 --> 00:00:59.769
+Fernando: Agora olhe a primeira linha da lista.
+
+23
+00:01:00.119 --> 00:01:01.001
+Lia: NAT Gateway?
+
+24
+00:01:01.001 --> 00:01:03.575
+16,20 USD.
+
+25
+00:01:03.575 --> 00:01:05.414
+E eu apostei no servidor.
+
+26
+00:01:05.764 --> 00:01:07.187
+Fernando: Sua hipótese caiu.
+
+27
+00:01:07.187 --> 00:01:09.717
+O servidor EC2 ficou em segundo.
+
+28
+00:01:09.717 --> 00:01:13.669
+Anote isso, porque é a melhor parte do seu artigo.
+
+29
+00:01:14.700 --> 00:01:16.389
+Lia: E como eu sei se a IA acertou?
+
+30
+00:01:16.739 --> 00:01:18.514
+Fernando: Faça três perguntas.
+
+31
+00:01:18.514 --> 00:01:19.933
+Os totais batem?
+
+32
+00:01:19.933 --> 00:01:24.281
+Ela percebeu que o maior aumento é o NAT Gateway?
+
+33
+00:01:24.281 --> 00:01:28.718
+Ela afirmou algum preço que não estava no arquivo?
+
+34
+00:01:28.718 --> 00:01:32.179
+Se afirmou, peça a fonte e abra o link.
+
+35
+00:01:32.529 --> 00:01:33.697
+Lia: Então o que não bateu...
+
+36
+00:01:34.047 --> 00:01:35.748
+Fernando: É a sua melhor evidência.
+
+37
+00:01:36.767 --> 00:01:39.128
+Lia: E quando eu tiver conta, como fico tranquila?
+
+38
+00:01:39.478 --> 00:01:41.295
+Fernando: Crie um alerta de gastos.
+
+39
+00:01:41.295 --> 00:01:46.746
+Os comandos estão na missão e rodam na CloudShell, o terminal que já vem no
+
+40
+00:01:46.746 --> 00:01:47.473
+navegador.
+
+41
+00:01:47.473 --> 00:01:49.436
+No fim, você confere assim.
+
+42
+00:01:49.436 --> 00:01:55.469
+Ele avisa quando o gasto real passa de 80% de US$ 5, e quando
+
+43
+00:01:55.469 --> 00:01:57.940
+a previsão passa de US$ 5.
+
+44
+00:01:58.967 --> 00:02:01.134
+Lia: Aí, se passar, ele desliga tudo sozinho?
+
+45
+00:02:01.484 --> 00:02:01.850
+Fernando: Não.
+
+46
+00:02:01.850 --> 00:02:04.864
+Esse é o ponto que mais confunde.
+
+47
+00:02:04.864 --> 00:02:07.879
+O alerta avisa, mas não bloqueia.
+
+48
+00:02:07.879 --> 00:02:10.802
+Se chegar um e-mail, é com você.
+
+49
+00:02:10.802 --> 00:02:17.105
+Eu recomendo manter esse alerta, porque é gratuito e protege a conta.
+
+50
+00:02:18.133 --> 00:02:18.985
+Lia: E o artigo?
+
+51
+00:02:18.985 --> 00:02:20.146
+Como eu começo?
+
+52
+00:02:20.496 --> 00:02:22.383
+Fernando: Você já tem ele na mão.
+
+53
+00:02:22.383 --> 00:02:25.338
+O tema é como evitar susto na conta.
+
+54
+00:02:25.338 --> 00:02:26.815
+A evidência é sua:
+
+55
+00:02:26.815 --> 00:02:32.314
+a hipótese, a resposta da IA, a saída do comando e o que não bateu.
+
+56
+00:02:32.664 --> 00:02:33.804
+Lia: E quem escreve o texto?
+
+57
+00:02:34.154 --> 00:02:34.559
+Fernando: Você.
+
+58
+00:02:34.559 --> 00:02:37.468
+A inteligência artificial só revisa.
+
+59
+00:02:38.500 --> 00:02:40.407
+Fernando: Um aviso antes de terminar.
+
+60
+00:02:40.407 --> 00:02:45.705
+Minha narração foi gerada com a minha voz clonada, com a minha autorização.
+
+61
+00:02:45.705 --> 00:02:49.025
+A personagem Lia é fictícia, com voz sintética.
+
+62
+00:02:49.025 --> 00:02:51.356
+E este é um projeto independente.
+
+63
+00:02:51.356 --> 00:02:53.476
+Não é material oficial da AWS.

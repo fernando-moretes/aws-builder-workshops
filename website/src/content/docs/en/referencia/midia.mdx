@@ -1,6 +1,31 @@
 ---
 title: Videos and audio
-description: Mission videos and an audio episode, in production.
+description: An intro video, one video per mission and an audio episode, with captions and transcript.
 ---
 
-The mission videos and the audio episode are in production and will appear here when ready. Meanwhile, start with the [missions](/aws-builder-workshops/comece/escolha/) and the [examples](/aws-builder-workshops/trilhas/exemplos/).
+export const B = "/aws-builder-workshops/media";
+export const V = [
+  ["intro", "How it works"],
+  ["missao-1", "Mission 1: no billing surprises"],
+  ["missao-2", "Mission 2: portfolio online"],
+  ["missao-3", "Mission 3: broken Lambda"],
+];
+
+{V.map(([id, title]) => (
+  <>
+    <h2>{title}</h2>
+    <video controls preload="none" poster={`${B}/${id}.en.jpg`} style="width:100%;height:auto">
+      <source src={`${B}/${id}.en.mp4`} type="video/mp4" />
+      <track kind="captions" src={`${B}/${id}.en.vtt`} srcLang="en" label="en" default />
+    </video>
+  </>
+))}
+
+## Audio: from test to first article
+
+<audio controls preload="none" style="width:100%" src={`${B}/audio-primeiro-artigo.en.mp3`}></audio>
+
+## About the voice
+
+The narration is generated with Fernando's cloned voice, with his authorization. The [full transcript](https://github.com/fernando-moretes/aws-builder-workshops/blob/main/docs/media/TRANSCRICOES.md) is in the repository.
+The Portuguese versions are a dialogue with Lia, a fictional character: [see them here](/aws-builder-workshops/referencia/midia/).
