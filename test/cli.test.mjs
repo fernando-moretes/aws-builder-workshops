@@ -88,6 +88,11 @@ test("missões: lista, guia, cópia sem sobrescrever e custos", () => {
   assert.match(run("missoes").stdout, /Lambda quebrada/);
   assert.match(run("missao", "2").stdout, /Block Public Access/);
   assert.equal(run("missao", "9").status, 2);
+  assert.match(run("missao", "1", "--lang", "en").stdout, /^# Mission 1/);
+  const enDir = join(tmp(), "m-en");
+  assert.equal(run("missao", "1", enDir, "--lang", "en").status, 0);
+  assert.match(readFileSync(join(enDir, "README.md"), "utf8"), /^# Mission 1/);
+  assert.equal(existsSync(join(enDir, "README.en.md")), false);
   const dir = join(tmp(), "m");
   assert.equal(run("missao", "3", dir).status, 0);
   assert.ok(existsSync(join(dir, "lambda_function.py")));

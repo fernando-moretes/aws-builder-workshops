@@ -13,7 +13,7 @@
 <a href="https://fernando-moretes.github.io/aws-builder-workshops/en/"><img src="https://img.shields.io/badge/docs-PT%20%7C%20EN-232f3e" alt="Docs in Portuguese and English"></a>
 </p>
 
-Learn AWS **by testing**, with AI at your side. One-hour missions for beginners: test something small, check what AI said and leave with something to show. You can start without an AWS account. The missions are in Portuguese, with English coming next.
+Learn AWS **by testing**, with AI at your side. One-hour missions for beginners: test something small, check what AI said and leave with something to show. You can start without an AWS account.
 
 **Start here:** [First mission](missoes/01-conta-sem-susto/README.md) · [Portfolio](missoes/02-portfolio-no-ar/README.md) · [Broken Lambda](missoes/03-lambda-quebrada/README.md)
 

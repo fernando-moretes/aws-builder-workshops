@@ -1,6 +1,6 @@
 ---
 title: Builder Workshops
-description: Learn AI agents and architecture by doing. Open, offline labs with real evidence, to run in the terminal, in the browser or in your IDE.
+description: Learn AWS by testing, with AI at your side. 1-hour missions for beginners, with cost and cleanup explained, that turn into an article of your own.
 template: splash
 tableOfContents: false
 editUrl: false
@@ -8,54 +8,76 @@ lastUpdated: false
 pagefind: true
 ---
 
+import MissionPicker from "../../../components/MissionPicker.astro";
+
 <div class="bw-hero">
 <div class="bw-hero-text">
-  <p class="bw-eyebrow">By an AWS Community Builder, for people who are building</p>
-  <h1>Build. Test. Show the evidence.</h1>
-  <p>Open labs to learn AI agents and architecture by doing. Start without a cloud account and leave with something another person can repeat.</p>
+  <p class="bw-eyebrow">By an AWS Community Builder, for people just getting started</p>
+  <h1>Learn AWS by testing, with AI at your side.</h1>
+  <p>1-hour missions built around a real problem. You test, check what the AI said and leave with something to show. You can start without an AWS account.</p>
   <div class="bw-actions">
-    <a class="bw-cta primary" href="/aws-builder-workshops/en/comece/primeiros-5-minutos/">Start in 5 minutes</a>
-    <a class="bw-cta secondary" href="/aws-builder-workshops/console/?lang=en">Open the lab console</a>
+    <a class="bw-cta primary" href="#where-to-start">Choose my mission</a>
+    <a class="bw-cta secondary" href="/aws-builder-workshops/en/referencia/midia/">Watch the videos</a>
   </div>
-  <div class="bw-install">npx -y moretes-builder-workshops run A2 --lang en</div>
+  <div class="bw-install">npx -y moretes-builder-workshops menu --lang en</div>
 </div>
-<a class="bw-hero-shot" href="/aws-builder-workshops/console/?lang=en&case=A2"><img class="bare" src="/aws-builder-workshops/img/console-a2.en.png" alt="Lab console with the settlement query unavailable" width="1100" height="760" /></a>
+<a class="bw-hero-shot" href="/aws-builder-workshops/en/missoes/3-lambda-quebrada/"><img class="bare" src="/aws-builder-workshops/img/mission-lambda.en.png" alt="Terminal showing StatusCode 200 with FunctionError Unhandled" width="1100" height="640" /></a>
 </div>
 
 <div class="bw-stats">
-  <div class="bw-stat"><b>0</b><span>credentials to get started</span></div>
-  <div class="bw-stat"><b>5</b><span>adversarial agent cases</span></div>
-  <div class="bw-stat"><b>3</b><span>120-minute workshops</span></div>
-  <div class="bw-stat"><b>7</b><span>MCP tools, read-only</span></div>
+  <div class="bw-stat"><b>3</b><span>missions of about 1 hour</span></div>
+  <div class="bw-stat"><b>0</b><span>AWS accounts needed to start</span></div>
+  <div class="bw-stat"><b>100%</b><span>of missions with cost and cleanup</span></div>
+  <div class="bw-stat"><b>1</b><span>article of your own at the end</span></div>
 </div>
 
-<div class="bw-section">
+<div class="bw-section" id="where-to-start">
 
-## Where do you want to start?
+## Where to start?
 
-<div class="bw-grid">
-  <a class="bw-card" href="/aws-builder-workshops/en/trilhas/primeiro-experimento/"><strong>I want to learn and publish</strong><span>From a real question to your first technical article, with a small experiment and evidence. AI reviews, you write.</span><small>Beginner · no cloud account</small></a>
-  <a class="bw-card" href="/aws-builder-workshops/en/trilhas/lab-triagem/"><strong>I want to evaluate an agent</strong><span>Missing data, stale evidence, a malicious instruction in a runbook and an out-of-scope request.</span><small>Offline · Bedrock optional</small></a>
-  <a class="bw-card" href="/aws-builder-workshops/en/agentes/kiro/"><strong>I want to use it in my IDE</strong><span>An MCP server and skill for Kiro, Claude Code, Cursor, VS Code and Codex, with one command.</span><small>npx · Docker</small></a>
-  <a class="bw-card" href="/aws-builder-workshops/en/facilitar/os-tres-workshops/"><strong>I want to run a session</strong><span>A minute-by-minute script, workbook, templates, contingencies and success criteria.</span><small>Meetups · User Groups</small></a>
-</div>
+<MissionPicker />
 
 </div>
 
 <div class="bw-section">
 
-## How we think
+## The missions
 
 <div class="bw-grid">
-  <div class="bw-card"><strong>Evidence before opinion</strong><span>Expected and observed, including what failed. We publish the model's real mistakes in the evaluation.</span></div>
-  <div class="bw-card"><strong>Local first</strong><span>Everything starts with no account and no cost. The cloud comes in when it makes sense, with cost and cleanup explained.</span></div>
-  <div class="bw-card"><strong>Read-only</strong><span>No tool changes anything. This limit is structural: the agent is never given the capability.</span></div>
-  <div class="bw-card"><strong>Your authorship</strong><span>AI is the reviewer. What you publish is what you tested and can explain.</span></div>
+  <a class="bw-card" href="/aws-builder-workshops/en/missoes/1-conta-sem-susto/"><strong>1. A bill without surprises</strong><span>Read a cost report with the AI, check the bill and create a spending alert.</span><small>Good for: every AWS account</small></a>
+  <a class="bw-card" href="/aws-builder-workshops/en/missoes/2-portfolio-no-ar/"><strong>2. Portfolio online</strong><span>Compare options with the AI, check them against the documentation and publish your site with HTTPS.</span><small>Good for: resume and portfolio</small></a>
+  <a class="bw-card" href="/aws-builder-workshops/en/missoes/3-lambda-quebrada/"><strong>3. Broken Lambda</strong><span>Break a function on purpose, read the log and find out why the status came back 200.</span><small>Good for: debugging any system</small></a>
+</div>
+
+</div>
+
+<div class="bw-section">
+
+## See how it works
+
+<video controls preload="none" poster="/aws-builder-workshops/media/intro.en.jpg" width="1280" height="720" style="width:100%;height:auto">
+  <source src="/aws-builder-workshops/media/intro.en.mp4" type="video/mp4" />
+  <track kind="captions" src="/aws-builder-workshops/media/intro.en.vtt" srclang="en" label="English" default />
+</video>
+
+[Examples with real AI answers](/aws-builder-workshops/en/trilhas/exemplos/) · [Frequently asked questions](/aws-builder-workshops/en/comece/perguntas-frequentes/) · [Two sessions for groups](/aws-builder-workshops/en/facilitar/dois-encontros/)
+
+</div>
+
+<div class="bw-section">
+
+## The rules of the game
+
+<div class="bw-grid">
+  <div class="bw-card"><strong>You test</strong><span>Every mission starts from a real question and has an expected and an observed result.</span></div>
+  <div class="bw-card"><strong>The AI is a tutor</strong><span>It explains, asks and reviews. The text is yours, and you can explain every line.</span></div>
+  <div class="bw-card"><strong>Always check</strong><span>Even when the AI is right. Opening the source is what turns an answer into evidence.</span></div>
+  <div class="bw-card"><strong>No surprises</strong><span>Before each step in the cloud, you see the cost and how to delete everything.</span></div>
 </div>
 
 </div>
 
 <div class="bw-author">
   <img src="/aws-builder-workshops/img/fernando.jpg" alt="Photo of Fernando Azevedo" width="72" height="72" />
-  <p><strong>Fernando Azevedo</strong>, Specialist IT Architect focused on AI and AWS, and AWS Community Builder (AI Engineering). <a href="https://fernando.moretes.com">fernando.moretes.com</a> · <a href="https://github.com/fernando-moretes/aws-builder-workshops">GitHub</a> · <a href="https://huggingface.co/spaces/fernandofa42/triage-console">Hugging Face</a></p>
+  <p><strong>Fernando Azevedo</strong>, Specialist IT Architect focused on AI and AWS, and AWS Community Builder (AI Engineering). <a href="https://fernando.moretes.com">fernando.moretes.com</a> · <a href="https://github.com/fernando-moretes/aws-builder-workshops">GitHub</a> · <a href="https://huggingface.co/fernandofa42">Hugging Face</a></p>
 </div>

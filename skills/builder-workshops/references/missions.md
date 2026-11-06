@@ -1,6 +1,6 @@
 # Missions
 
-Three missions of about an hour for people who are new to AWS. Read the full guide with `get_mission` or `builder-workshops missao <n>`. The guides are in Portuguese: translate as you go if needed.
+Three missions of about an hour for people who are new to AWS. Read the full guide with `get_mission` or `builder-workshops missao <n>`. The guides exist in Portuguese and English: pass `lang` to `get_mission` or `--lang en` to the CLI.
 
 | Mission | Real question | Works without an AWS account? |
 |---|---|---|

@@ -1,19 +1,54 @@
 {
   "name": "moretes-builder-workshops",
-  "version": "0.2.0",
+  "version": "0.2.1",
   "description": "Hands-on AI agent and architecture workshops: evidence-first triage lab, CLI, MCP server and agent skill. Offline by default, synthetic data, read-only tools.",
   "type": "module",
   "license": "MIT",
   "author": "Fernando Azevedo <fernando@moretes.com> (https://fernando.moretes.com)",
   "mcpName": "io.github.fernando-moretes/builder-workshops",
   "homepage": "https://fernando-moretes.github.io/aws-builder-workshops/",
-  "repository": { "type": "git", "url": "git+https://github.com/fernando-moretes/aws-builder-workshops.git" },
-  "bugs": { "url": "https://github.com/fernando-moretes/aws-builder-workshops/issues" },
-  "keywords": ["mcp", "model-context-protocol", "ai-agents", "agent-skills", "workshop", "bedrock", "agentcore", "architecture", "evaluation", "education", "kiro"],
-  "bin": { "builder-workshops": "bin/cli.mjs" },
-  "exports": { ".": "./src/index.mjs", "./core": "./src/core.mjs" },
-  "files": ["bin/", "src/", "skills/", "templates/", "missoes/", "docs/community/workshops/2026-11-builder-series/*.md", "labs/triage-agent/EVALUATION.md", "CHANGELOG.md", "README.md", "LICENSE"],
-  "engines": { "node": ">=20" },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/fernando-moretes/aws-builder-workshops.git"
+  },
+  "bugs": {
+    "url": "https://github.com/fernando-moretes/aws-builder-workshops/issues"
+  },
+  "keywords": [
+    "mcp",
+    "model-context-protocol",
+    "ai-agents",
+    "agent-skills",
+    "workshop",
+    "bedrock",
+    "agentcore",
+    "architecture",
+    "evaluation",
+    "education",
+    "kiro"
+  ],
+  "bin": {
+    "builder-workshops": "bin/cli.mjs"
+  },
+  "exports": {
+    ".": "./src/index.mjs",
+    "./core": "./src/core.mjs"
+  },
+  "files": [
+    "bin/",
+    "src/",
+    "skills/",
+    "templates/",
+    "missoes/",
+    "docs/community/workshops/2026-11-builder-series/*.md",
+    "labs/triage-agent/EVALUATION.md",
+    "CHANGELOG.md",
+    "README.md",
+    "LICENSE"
+  ],
+  "engines": {
+    "node": ">=20"
+  },
   "scripts": {
     "test": "node --test test/*.test.mjs",
     "golden": "python3 scripts/golden.py",

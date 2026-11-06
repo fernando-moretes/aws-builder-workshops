@@ -1,6 +1,6 @@
 #!/usr/bin/env node
 // CLI do kit: sem dependências, sem rede, sem credenciais.
-import { copyFileSync, cpSync, existsSync, mkdirSync, readFileSync, readdirSync, writeFileSync } from "node:fs";
+import { copyFileSync, cpSync, existsSync, mkdirSync, readFileSync, readdirSync, rmSync, writeFileSync } from "node:fs";
 import { dirname, join, resolve } from "node:path";
 import { createInterface } from "node:readline";
 import { parseArgs } from "node:util";
@@ -129,10 +129,13 @@ const commands = {
     const mission = MISSIONS.find((m) => String(m.n) === rest[0]);
     if (!mission) die(`${en ? "Choose a mission" : "Escolha uma missão"}: 1, 2 ${en ? "or" : "ou"} 3`);
     const source = new URL(`${mission.dir}/`, ROOT);
-    if (!rest[1]) return process.stdout.write(readFileSync(new URL("README.md", source), "utf8"));
+    const guide = readFileSync(new URL(en ? "README.en.md" : "README.md", source), "utf8");
+    if (!rest[1]) return process.stdout.write(guide);
     const target = resolve(rest[1]);
     if (existsSync(target) && readdirSync(target).length && !opts.force) die(`${en ? "folder is not empty, nothing changed" : "a pasta não está vazia, nada foi alterado"}: ${target}`);
     cpSync(source, target, { recursive: true });
+    writeFileSync(join(target, "README.md"), guide);
+    rmSync(join(target, "README.en.md"));
     console.log(`${paint(32, "✓")} ${en ? "Mission copied to" : "Missão copiada para"} ${target}\n${en ? "Open" : "Abra"} README.md`);
   },
   custos() {
